@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f5f7;
+  --foreground: #111111;
+
+  /* 2010 FIFA World Cup palette — black · gold · green */
+  --wc-black:  #111111;
+  --wc-gold:   #C9A84C;
+  --wc-green:  #005C29;
+
+  /* Legacy aliases */
+  --fifa-navy:   #111111;
+  --fifa-yellow: #C9A84C;
+  --fifa-green:  #005C29;
+  --fifa-rainbow: linear-gradient(90deg, #111111 0%, #C9A84C 45%, #005C29 100%);
 }
 
 @theme inline {
@@ -10,17 +21,32 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-bebas);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Display font for hero titles */
+h1 {
+  font-family: var(--font-bebas), Impact, 'Arial Black', sans-serif;
+  letter-spacing: 0.06em !important;
+  font-weight: 400;
+}
+
+/* Utility: stripe */
+.fifa-rainbow {
+  background: var(--fifa-rainbow);
+}
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
