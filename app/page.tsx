@@ -69,7 +69,7 @@ export default async function Page() {
   return (
     <div className="min-h-full">
       {/* Header */}
-      <div className="relative overflow-hidden bg-black">
+      <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
         <img src="/cris-leo-ney.png" alt="Jugadores del Mundial" className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{display:'block'}} />
         <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%)'}} />
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
@@ -78,7 +78,6 @@ export default async function Page() {
             <span className="text-[10px] font-bold uppercase tracking-widest" style={{color:'#C9A84C'}}>Mundial 2026</span>
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight">La clika</h1>
-          <p className="text-sm mt-0.5 font-medium text-gray-300">Próximos partidos · Fase de Grupos</p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-10 h-[4px] fifa-rainbow" />
       </div>
@@ -116,7 +115,7 @@ export default async function Page() {
                     >
                       {/* Top row: grupo + hora */}
                       <div className="flex items-center justify-between mb-2.5">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide text-white" style={{background:'#004FA3'}}>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide text-white" style={{background:'#004d40'}}>
                           Grupo {p.grupo} · J{p.jornada}
                         </span>
                         <span className="flex items-center gap-1 text-[10px] text-gray-400">

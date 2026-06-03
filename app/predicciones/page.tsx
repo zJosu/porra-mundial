@@ -26,13 +26,15 @@ export default async function PrediccionesPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
 
+  const jugadoresSelect = 'id, nombre, apellidos, posicion, numero_dorsal, foto_url, equipo_id'
   const [
     { data: equiposRaw },
     { data: partidosRaw },
     { data: prediRaw },
     { data: clasifRaw },
     { data: tercerosRaw },
-    { data: jugadoresRaw },
+    { data: jugadoresPage1 },
+    { data: jugadoresPage2 },
     { data: bracketRaw },
     { data: extrasRaw },
   ] = await Promise.all([
@@ -57,18 +59,26 @@ export default async function PrediccionesPage() {
       .eq('usuario_id', user.id),
     supabase
       .from('jugadores')
-      .select('id, nombre, apellidos, posicion, numero_dorsal, foto_url, equipo_id')
-      .order('apellidos', { ascending: true }),
+      .select(jugadoresSelect)
+      .order('apellidos', { ascending: true })
+      .range(0, 749),
+    supabase
+      .from('jugadores')
+      .select(jugadoresSelect)
+      .order('apellidos', { ascending: true })
+      .range(750, 1499),
     supabase
       .from('predicciones_bracket')
       .select('ronda, slot, ganador_equipo_id')
       .eq('usuario_id', user.id),
     supabase
       .from('predicciones_extras')
-      .select('campeon_equipo_id, pichichi_jugador_id, mvp_jugador_id')
+      .select('campeon_equipo_id, pichichi_jugador_id, mvp_jugador_id, guante_oro_jugador_id, joven_jugador_id, best_xi')
       .eq('usuario_id', user.id)
       .maybeSingle(),
   ])
+
+  const jugadoresRaw = [...(jugadoresPage1 ?? []), ...(jugadoresPage2 ?? [])]
 
   const equipos: EquipoInfo[] = (equiposRaw ?? []).map((e) => ({
     id: e.id as number,
@@ -134,13 +144,16 @@ export default async function PrediccionesPage() {
     campeon_equipo_id: (extrasRaw?.campeon_equipo_id as number | null) ?? null,
     pichichi_jugador_id: (extrasRaw?.pichichi_jugador_id as number | null) ?? null,
     mvp_jugador_id: (extrasRaw?.mvp_jugador_id as number | null) ?? null,
+    guante_oro_jugador_id: (extrasRaw?.guante_oro_jugador_id as number | null) ?? null,
+    joven_jugador_id: (extrasRaw?.joven_jugador_id as number | null) ?? null,
+    best_xi: (extrasRaw?.best_xi as Record<string, number> | null) ?? {},
   }
 
   return (
     <div className="min-h-full">
       {/* Header */}
-      <div className="relative overflow-hidden bg-black">
-        <img src="/cris-leo-ney.png" alt="Jugadores del Mundial" className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{display:'block'}} />
+      <div className="sticky top-0 z-40 h-32 md:h-auto relative overflow-hidden bg-black">
+        <img src="/cris-leo-ney.png" alt="Jugadores del Mundial" className="w-full h-full object-cover object-top block md:h-auto md:max-h-[300px] md:object-contain md:object-center" style={{display:'block'}} />
         <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%)'}} />
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
           <div className="flex items-center gap-2 mb-1.5">
@@ -148,7 +161,6 @@ export default async function PrediccionesPage() {
             <span className="text-[10px] font-bold uppercase tracking-widest" style={{color:'#C9A84C'}}>FIFA WORLD CUP 2026</span>
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight">Mi porra</h1>
-          <p className="text-sm mt-0.5 font-medium text-gray-300">Tres fases · Group Stage, Clasification y Knockout Stage</p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-10 h-[4px] fifa-rainbow" />
       </div>

@@ -233,7 +233,7 @@ export function ClasificacionStep({
   const posStyle = (pos: number) => {
     if (pos === 1) return { bg: '#00A651', color: 'white', label: '1º' }
     if (pos === 2) return { bg: '#00A651', color: 'white', label: '2º' }
-    if (pos === 3) return { bg: '#FFD100', color: '#0a1628', label: '3º' }
+    if (pos === 3) return { bg: '#FFD100', color: '#004d40', label: '3º' }
     return { bg: '#E8192C', color: 'white', label: '4º' }
   }
 
@@ -250,14 +250,14 @@ export function ClasificacionStep({
               <div className="flex items-center gap-2 mb-2">
                 <span
                   className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
-                  style={{ background: '#0a1628' }}
+                  style={{ background: '#004d40' }}
                 >
                   Grupo {grupo}
                 </span>
                 {!complete && (
                   <span
                     className="text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
-                    style={{ background: '#fff8d6', color: '#0a1628' }}
+                    style={{ background: '#fff3e0', color: '#c07700' }}
                   >
                     Provisional · {played}/6
                   </span>
@@ -314,7 +314,7 @@ export function ClasificacionStep({
                       <span className="text-[11px] text-gray-500 text-center tabular-nums">{r.p}</span>
                       <span
                         className="text-[12px] font-black text-center tabular-nums"
-                        style={{ color: '#004FA3' }}
+                        style={{ color: '#004d40' }}
                       >
                         {r.puntos}
                       </span>
@@ -352,7 +352,7 @@ export function ClasificacionStep({
         <div className="flex items-center gap-2 mb-3 mt-2">
           <span
             className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
-            style={{ background: '#FFD100', color: '#0a1628' }}
+            style={{ background: '#FFD100', color: '#004d40' }}
           >
             Mejores terceros
           </span>
@@ -361,7 +361,7 @@ export function ClasificacionStep({
         <p className="text-[11px] text-gray-500 mb-3 px-1">
           Se ordenan por <span className="font-bold text-gray-700">puntos</span>. Solo puedes
           reordenar manualmente los terceros que estén <span className="font-bold">empatados</span>.
-          Los <span className="font-bold" style={{ color: '#004FA3' }}>8 primeros</span> se
+          Los <span className="font-bold" style={{ color: '#004d40' }}>8 primeros</span> se
           clasifican a dieciseisavos.
         </p>
         {thirdsOrder.length < 12 && (
@@ -467,7 +467,7 @@ export function ClasificacionStep({
             className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
             style={{ background: '#fff8d6' }}
           >
-            <Trophy size={20} style={{ color: '#0a1628' }} />
+            <Trophy size={20} style={{ color: '#004d40' }} />
           </div>
           <div className="text-[11px] text-gray-500 leading-relaxed">
             <span className="font-bold text-gray-700">32 selecciones</span> pasarán a dieciseisavos: 24

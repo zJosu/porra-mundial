@@ -36,16 +36,16 @@ export default async function RootLayout({
     <html lang="es" className={`${geist.variable} ${bebasNeue.variable} h-full antialiased`}>
       <body className="h-full bg-gray-50 text-gray-900 font-sans">
         {user ? (
-          <div className="flex min-h-full">
+          <div className="flex h-full">
             <SideNav userEmail={user.email} isAdmin={isAdmin} />
-            <main className="flex-1 pb-16 md:pb-0 overflow-y-auto">
+            <main className="flex-1 min-h-0 pb-16 md:pb-0 overflow-y-auto">
               {children}
             </main>
           </div>
         ) : (
           <main className="min-h-full">{children}</main>
         )}
-        {user && <BottomNav />}
+        {user && <BottomNav userEmail={user.email} isAdmin={isAdmin} />}
       </body>
     </html>
   );

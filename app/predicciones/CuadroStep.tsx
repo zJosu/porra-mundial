@@ -10,6 +10,13 @@ import {
   AlertCircle,
   MoveHorizontal,
   Medal,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  PlayCircle,
+  RotateCcw,
+  Shirt,
+  Sparkles,
 } from 'lucide-react'
 import {
   ROUND_ORDER,
@@ -18,6 +25,8 @@ import {
   type Round,
 } from './bracket'
 import { PlayerSelect, type Jugador, type EquipoLite } from './PlayerSelect'
+import { BestXIBuilder, type BestXI } from './BestXIBuilder'
+export type { BestXI }
 
 type ClasifSnap = { grupo: string; equipo_id: number; posicion: number }
 type TercerosSnap = { equipo_id: number; posicion: number }
@@ -51,11 +60,30 @@ const CONN_W = 26
 const HEADER_H = 26
 
 // FIFA palette
-const NAVY = '#0a1628'
+const NAVY = '#004d40'
 const GOLD = '#FFD100'
 const GREEN = '#00A651'
 const RED = '#E8192C'
-const BLUE = '#004FA3'
+const BLUE = '#004d40'
+
+// Walk-through (paso a paso) — orden lineal de los 32 partidos del KO
+const WALK_ROUNDS: Round[] = ['R32', 'R16', 'QF', 'SF', 'P3', 'F']
+const ROUND_SIZE: Record<Round, number> = { R32: 16, R16: 8, QF: 4, SF: 2, P3: 1, F: 1 }
+const WALK_STEPS: Array<{ round: Round; slot: number }> = (() => {
+  const out: Array<{ round: Round; slot: number }> = []
+  for (const r of WALK_ROUNDS) {
+    for (let s = 1; s <= ROUND_SIZE[r]; s++) out.push({ round: r, slot: s })
+  }
+  return out
+})()
+const WALK_TOTAL = WALK_STEPS.length // 32
+
+function matchKey(r: Round, slot: number) {
+  return `${r}:${slot}`
+}
+function stepIdxOf(r: Round, slot: number) {
+  return WALK_STEPS.findIndex((s) => s.round === r && s.slot === slot)
+}
 
 function FlagImg({
   codigo,
@@ -86,6 +114,8 @@ function MatchCard({
   onPick,
   equipos,
   variant = 'default',
+  isActive = false,
+  isDimmed = false,
 }: {
   match: Match
   ronda: Round
@@ -93,6 +123,8 @@ function MatchCard({
   onPick: (teamId: number) => void
   equipos: Map<number, EquipoLite>
   variant?: 'default' | 'final' | 'p3'
+  isActive?: boolean
+  isDimmed?: boolean
 }) {
   const bothSet = match.teamA != null && match.teamB != null
   const teamA = match.teamA != null ? equipos.get(match.teamA) ?? null : null
@@ -159,6 +191,10 @@ function MatchCard({
 
   return (
     <div
+      data-match-key={`${ronda}:${match.slot}`}
+      className={`w-full ${isActive ? 'walk-active' : ''} ${isDimmed ? 'walk-dim' : ''}`}
+    >
+    <div
       className="w-full overflow-hidden flex flex-col rounded-md bg-white"
       style={{
         height: CARD_H,
@@ -186,6 +222,7 @@ function MatchCard({
         placeholder={match.labelB}
         selected={winnerId != null && winnerId === match.teamB}
       />
+    </div>
     </div>
   )
 }
@@ -280,6 +317,8 @@ function RoundColumn({
   onPick,
   equipos,
   label,
+  activeKey,
+  walkMode,
 }: {
   matches: Match[]
   ronda: Round
@@ -288,25 +327,34 @@ function RoundColumn({
   onPick: (slot: number, teamId: number) => void
   equipos: Map<number, EquipoLite>
   label?: string
+  activeKey: string | null
+  walkMode: boolean
 }) {
   return (
     <div className="flex flex-col" style={{ width: COL_W }}>
       {label != null ? <RoundHeader>{label}</RoundHeader> : <div style={{ height: HEADER_H + 8 }} />}
-      {matches.map((m, i) => (
-        <div
-          key={`${ronda}-${m.slot}`}
-          className="flex items-center"
-          style={{ height: boxH, marginTop: i === 0 ? 0 : GAP }}
-        >
-          <MatchCard
-            match={m}
-            ronda={ronda}
-            winnerId={winners.get(`${ronda}:${m.slot}`) ?? null}
-            onPick={(teamId) => onPick(m.slot, teamId)}
-            equipos={equipos}
-          />
-        </div>
-      ))}
+      {matches.map((m, i) => {
+        const key = matchKey(ronda, m.slot)
+        const isActive = activeKey === key
+        const isDimmed = walkMode && activeKey != null && !isActive
+        return (
+          <div
+            key={`${ronda}-${m.slot}`}
+            className="flex items-center"
+            style={{ height: boxH, marginTop: i === 0 ? 0 : GAP }}
+          >
+            <MatchCard
+              match={m}
+              ronda={ronda}
+              winnerId={winners.get(key) ?? null}
+              onPick={(teamId) => onPick(m.slot, teamId)}
+              equipos={equipos}
+              isActive={isActive}
+              isDimmed={isDimmed}
+            />
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -336,9 +384,15 @@ export function CuadroStep({
   campeonId,
   pichichiId,
   mvpId,
+  guanteOroId,
+  jovenId,
+  bestXI,
   onCampeonChange,
   onPichichiChange,
   onMvpChange,
+  onGuanteOroChange,
+  onJovenChange,
+  onBestXIChange,
 }: {
   equipos: EquipoLite[]
   jugadores: Jugador[]
@@ -349,11 +403,52 @@ export function CuadroStep({
   campeonId: number | null
   pichichiId: number | null
   mvpId: number | null
+  guanteOroId: number | null
+  jovenId: number | null
+  bestXI: BestXI
   onCampeonChange: (id: number | null) => void
   onPichichiChange: (id: number | null) => void
   onMvpChange: (id: number | null) => void
+  onGuanteOroChange: (id: number | null) => void
+  onJovenChange: (id: number | null) => void
+  onBestXIChange: (xi: BestXI) => void
 }) {
   const equipoById = useMemo(() => new Map(equipos.map((e) => [e.id, e])), [equipos])
+
+  // ---- Walk-through (paso a paso) ----
+  const [mode, setMode] = useState<'walk' | 'full'>('walk')
+  // stepIdx = índice del PRÓXIMO partido pendiente; va de 0 a WALK_TOTAL (incluido = terminado)
+  const initialStep = useMemo(() => {
+    // Coloca el cursor en el primer partido sin ganador (por orden lineal)
+    for (let i = 0; i < WALK_STEPS.length; i++) {
+      const { round, slot } = WALK_STEPS[i]
+      if (!winners.has(matchKey(round, slot))) return i
+    }
+    return WALK_TOTAL
+    // intencionalmente solo al montar
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  const [stepIdx, setStepIdx] = useState(initialStep)
+
+  // En walk mode, derivamos los ganadores "visibles" cortando por el cursor.
+  // Esto hace que las rondas posteriores aparezcan vacías progresivamente.
+  const displayWinners = useMemo<BracketWinners>(() => {
+    if (mode === 'full') return winners
+    const out = new Map<string, number>()
+    for (let i = 0; i < stepIdx; i++) {
+      const { round, slot } = WALK_STEPS[i]
+      const k = matchKey(round, slot)
+      const w = winners.get(k)
+      if (w != null) out.set(k, w)
+    }
+    return out
+  }, [mode, stepIdx, winners])
+
+  const activeKey =
+    mode === 'walk' && stepIdx < WALK_TOTAL
+      ? matchKey(WALK_STEPS[stepIdx].round, WALK_STEPS[stepIdx].slot)
+      : null
+  const walkMode = mode === 'walk'
 
   // Build all rounds (R32..F)
   const rounds = useMemo(() => {
@@ -382,8 +477,8 @@ export function CuadroStep({
     for (const [prev, next] of chain) {
       const prevMatches = result[prev]
       for (let s = 0; s < prevMatches.length; s += 2) {
-        const a = winners.get(`${prev}:${prevMatches[s].slot}`) ?? null
-        const b = winners.get(`${prev}:${prevMatches[s + 1].slot}`) ?? null
+        const a = displayWinners.get(`${prev}:${prevMatches[s].slot}`) ?? null
+        const b = displayWinners.get(`${prev}:${prevMatches[s + 1].slot}`) ?? null
         result[next].push({
           slot: s / 2 + 1,
           teamA: a,
@@ -396,8 +491,8 @@ export function CuadroStep({
     // P3: losers of SF1 vs SF2
     const sf1 = result.SF[0]
     const sf2 = result.SF[1]
-    const sf1Winner = sf1 ? winners.get(`SF:${sf1.slot}`) ?? null : null
-    const sf2Winner = sf2 ? winners.get(`SF:${sf2.slot}`) ?? null : null
+    const sf1Winner = sf1 ? displayWinners.get(`SF:${sf1.slot}`) ?? null : null
+    const sf2Winner = sf2 ? displayWinners.get(`SF:${sf2.slot}`) ?? null : null
     const sf1Loser =
       sf1 && sf1.teamA != null && sf1.teamB != null && sf1Winner != null
         ? sf1Winner === sf1.teamA
@@ -420,10 +515,12 @@ export function CuadroStep({
       },
     ]
     return result
-  }, [clasif, terceros, winners])
+  }, [clasif, terceros, displayWinners])
 
   // Cascade invalidation: if a winner is no longer in its match, remove it.
+  // Solo en modo "cuadro completo" — en walk mode la limpieza se hace al editar (setWinner).
   useEffect(() => {
+    if (walkMode) return
     let changed = false
     const next = new Map(winners)
     for (const r of ROUND_ORDER) {
@@ -439,18 +536,18 @@ export function CuadroStep({
     }
     if (changed) onWinnersChange(next)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rounds])
+  }, [rounds, walkMode])
 
   const finalMatch = rounds.F[0]
   const p3Match = rounds.P3[0]
-  const finalWinnerId = finalMatch ? winners.get(`F:${finalMatch.slot}`) ?? null : null
+  const finalWinnerId = finalMatch ? displayWinners.get(`F:${finalMatch.slot}`) ?? null : null
   const subcampeonId =
     finalMatch && finalWinnerId != null
       ? finalWinnerId === finalMatch.teamA
         ? finalMatch.teamB
         : finalMatch.teamA
       : null
-  const p3WinnerId = p3Match ? winners.get(`P3:${p3Match.slot}`) ?? null : null
+  const p3WinnerId = p3Match ? displayWinners.get(`P3:${p3Match.slot}`) ?? null : null
   const p3LoserId =
     p3Match && p3WinnerId != null
       ? p3WinnerId === p3Match.teamA
@@ -467,7 +564,20 @@ export function CuadroStep({
 
   const setWinner = (ronda: Round, slot: number, teamId: number) => {
     const next = new Map(winners)
-    next.set(`${ronda}:${slot}`, teamId)
+    next.set(matchKey(ronda, slot), teamId)
+    if (walkMode) {
+      // En walk mode, editar un partido anterior re-arranca desde ese punto:
+      // se descartan todos los ganadores posteriores y el cursor avanza al siguiente.
+      const idx = stepIdxOf(ronda, slot)
+      if (idx >= 0) {
+        for (let i = idx + 1; i < WALK_TOTAL; i++) {
+          next.delete(matchKey(WALK_STEPS[i].round, WALK_STEPS[i].slot))
+        }
+        onWinnersChange(next)
+        setStepIdx(idx + 1)
+        return
+      }
+    }
     onWinnersChange(next)
   }
 
@@ -495,6 +605,45 @@ export function CuadroStep({
     return () => el.removeEventListener('scroll', onScroll)
   }, [r32Ready])
 
+  // Auto-scroll al partido activo (modo walk)
+  useEffect(() => {    if (!walkMode || !activeKey) return
+    // Esperamos al siguiente frame para que React pinte la clase walk-active
+    const t = window.setTimeout(() => {
+      const el = document.querySelector(`[data-match-key="${activeKey}"]`) as HTMLElement | null
+      if (!el) return
+      // Scroll horizontal dentro del bracket
+      const scroller = scrollerRef.current
+      if (scroller) {
+        const elBox = el.getBoundingClientRect()
+        const scBox = scroller.getBoundingClientRect()
+        const target =
+          scroller.scrollLeft +
+          (elBox.left - scBox.left) -
+          scroller.clientWidth / 2 +
+          elBox.width / 2
+        scroller.scrollTo({ left: target, behavior: 'smooth' })
+      }
+      // Scroll vertical de la página (el scroller corta overflow-y)
+      const r = el.getBoundingClientRect()
+      const targetY = window.scrollY + r.top - window.innerHeight / 2 + r.height / 2
+      window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' })
+    }, 60)
+    return () => window.clearTimeout(t)
+  }, [activeKey, walkMode])
+
+  // Confeti: solo dispara cuando el usuario completa la final ahora (no al recargar)
+  const [showConfetti, setShowConfetti] = useState(false)
+  const prevStepRef = useRef(stepIdx)
+  useEffect(() => {
+    const prev = prevStepRef.current
+    prevStepRef.current = stepIdx
+    if (walkMode && prev < WALK_TOTAL && stepIdx >= WALK_TOTAL) {
+      setShowConfetti(true)
+      const t = window.setTimeout(() => setShowConfetti(false), 6500)
+      return () => window.clearTimeout(t)
+    }
+  }, [stepIdx, walkMode])
+
   const champion = finalWinnerId != null ? equipoById.get(finalWinnerId) : null
   const subcampeon = subcampeonId != null ? equipoById.get(subcampeonId) : null
   const tercero = p3WinnerId != null ? equipoById.get(p3WinnerId) : null
@@ -502,6 +651,87 @@ export function CuadroStep({
 
   return (
     <div className="pb-2">
+      {walkMode && showConfetti && champion && <Confetti />}
+      {/* Modo de visualización: paso a paso vs cuadro completo */}
+      {r32Ready && (
+        <div className="px-4 pt-3 flex items-center gap-2 flex-wrap">
+          <div
+            className="inline-flex p-0.5 rounded-full bg-slate-100 border border-slate-200 text-[10px] font-black uppercase tracking-[0.16em]"
+          >
+            <button
+              type="button"
+              onClick={() => setMode('walk')}
+              className={`px-3 py-1.5 rounded-full flex items-center gap-1.5 transition ${
+                walkMode ? 'bg-white shadow text-slate-900' : 'text-slate-500'
+              }`}
+            >
+              <PlayCircle size={11} /> Paso a paso
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode('full')}
+              className={`px-3 py-1.5 rounded-full flex items-center gap-1.5 transition ${
+                !walkMode ? 'bg-white shadow text-slate-900' : 'text-slate-500'
+              }`}
+            >
+              <Eye size={11} /> Cuadro completo
+            </button>
+          </div>
+
+          {walkMode && (
+            <div className="ml-auto flex items-center gap-1.5">
+              <button
+                type="button"
+                onClick={() => setStepIdx((s) => Math.max(0, s - 1))}
+                disabled={stepIdx === 0}
+                className="w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 disabled:opacity-30"
+                aria-label="Anterior"
+              >
+                <ChevronLeft size={14} />
+              </button>
+              <div
+                className="text-[10px] font-black tabular-nums px-2 py-1 rounded-full bg-white border border-slate-200"
+                style={{ color: NAVY }}
+              >
+                {Math.min(stepIdx + 1, WALK_TOTAL)} / {WALK_TOTAL}
+              </div>
+              <button
+                type="button"
+                onClick={() => setStepIdx((s) => Math.min(WALK_TOTAL, s + 1))}
+                disabled={stepIdx >= WALK_TOTAL}
+                className="w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 disabled:opacity-30"
+                aria-label="Siguiente (saltar)"
+              >
+                <ChevronRight size={14} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setStepIdx(0)}
+                className="ml-1 w-7 h-7 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-500"
+                aria-label="Reiniciar"
+                title="Reiniciar narración"
+              >
+                <RotateCcw size={12} />
+              </button>
+            </div>
+          )}
+
+          {walkMode && (
+            <div className="basis-full">
+              <div className="h-1 rounded-full bg-slate-100 overflow-hidden">
+                <div
+                  className="h-full rounded-full transition-[width] duration-500"
+                  style={{
+                    width: `${(stepIdx / WALK_TOTAL) * 100}%`,
+                    background: `linear-gradient(90deg, ${NAVY} 0%, #65ffd9 100%)`,
+                  }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       {!r32Ready && (
         <div className="px-4 pt-3">
           <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-3 py-2.5 flex items-start gap-2">
@@ -551,30 +781,36 @@ export function CuadroStep({
                 matches={leftR32}
                 ronda="R32"
                 boxH={BOX_H.R32}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R32', slot, teamId)}
                 equipos={equipoById}
                 label="R32"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
               <Connectors count={4} boxH={BOX_H.R16} prevBoxH={BOX_H.R32} side="left" />
               <RoundColumn
                 matches={leftR16}
                 ronda="R16"
                 boxH={BOX_H.R16}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R16', slot, teamId)}
                 equipos={equipoById}
                 label="Octavos"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
               <Connectors count={2} boxH={BOX_H.QF} prevBoxH={BOX_H.R16} side="left" />
               <RoundColumn
                 matches={leftQF}
                 ronda="QF"
                 boxH={BOX_H.QF}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('QF', slot, teamId)}
                 equipos={equipoById}
                 label="Cuartos"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
               <Connectors count={1} boxH={BOX_H.SF} prevBoxH={BOX_H.QF} side="left" />
               {/* Left SF */}
@@ -585,9 +821,11 @@ export function CuadroStep({
                     <MatchCard
                       match={leftSF}
                       ronda="SF"
-                      winnerId={winners.get(`SF:${leftSF.slot}`) ?? null}
+                      winnerId={displayWinners.get(`SF:${leftSF.slot}`) ?? null}
                       onPick={(teamId) => setWinner('SF', leftSF.slot, teamId)}
                       equipos={equipoById}
+                      isActive={activeKey === matchKey('SF', leftSF.slot)}
+                      isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', leftSF.slot)}
                     />
                   )}
                 </div>
@@ -621,6 +859,8 @@ export function CuadroStep({
                       onPick={(teamId) => setWinner('F', finalMatch.slot, teamId)}
                       equipos={equipoById}
                       variant="final"
+                      isActive={activeKey === matchKey('F', finalMatch.slot)}
+                      isDimmed={walkMode && activeKey != null && activeKey !== matchKey('F', finalMatch.slot)}
                     />
                   </div>
                 )}
@@ -668,6 +908,8 @@ export function CuadroStep({
                         onPick={(teamId) => setWinner('P3', p3Match.slot, teamId)}
                         equipos={equipoById}
                         variant="p3"
+                        isActive={activeKey === matchKey('P3', p3Match.slot)}
+                        isDimmed={walkMode && activeKey != null && activeKey !== matchKey('P3', p3Match.slot)}
                       />
                     </div>
                   )}
@@ -682,9 +924,11 @@ export function CuadroStep({
                     <MatchCard
                       match={rightSF}
                       ronda="SF"
-                      winnerId={winners.get(`SF:${rightSF.slot}`) ?? null}
+                      winnerId={displayWinners.get(`SF:${rightSF.slot}`) ?? null}
                       onPick={(teamId) => setWinner('SF', rightSF.slot, teamId)}
                       equipos={equipoById}
+                      isActive={activeKey === matchKey('SF', rightSF.slot)}
+                      isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', rightSF.slot)}
                     />
                   )}
                 </div>
@@ -694,30 +938,36 @@ export function CuadroStep({
                 matches={rightQF}
                 ronda="QF"
                 boxH={BOX_H.QF}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('QF', slot, teamId)}
                 equipos={equipoById}
                 label="Cuartos"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
               <Connectors count={2} boxH={BOX_H.QF} prevBoxH={BOX_H.R16} side="right" />
               <RoundColumn
                 matches={rightR16}
                 ronda="R16"
                 boxH={BOX_H.R16}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R16', slot, teamId)}
                 equipos={equipoById}
                 label="Octavos"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
               <Connectors count={4} boxH={BOX_H.R16} prevBoxH={BOX_H.R32} side="right" />
               <RoundColumn
                 matches={rightR32}
                 ronda="R32"
                 boxH={BOX_H.R32}
-                winners={winners}
+                winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R32', slot, teamId)}
                 equipos={equipoById}
                 label="R32"
+                activeKey={activeKey}
+                walkMode={walkMode}
               />
             </div>
           </div>
@@ -801,7 +1051,7 @@ export function CuadroStep({
         <div className="flex items-center gap-2">
           <span
             className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
-            style={{ background: RED }}
+            style={{ background: '#004d40' }}
           >
             Premios individuales
           </span>
@@ -828,6 +1078,54 @@ export function CuadroStep({
           value={mvpId}
           onChange={onMvpChange}
           placeholder="Buscar por nombre o selección…"
+        />
+
+        <PlayerSelect
+          label="Guante de Oro · Mejor portero"
+          icon={<Shirt size={18} />}
+          iconColor="#1a56db"
+          jugadores={jugadores}
+          equipos={equipoById}
+          value={guanteOroId}
+          onChange={onGuanteOroChange}
+          placeholder="Buscar portero…"
+          posicionFilter={['portero']}
+        />
+
+        <PlayerSelect
+          label="Mejor jugador joven"
+          icon={<Sparkles size={18} />}
+          iconColor="#7c3aed"
+          jugadores={jugadores}
+          equipos={equipoById}
+          value={jovenId}
+          onChange={onJovenChange}
+          placeholder="Buscar por nombre o selección…"
+        />
+      </div>
+
+      {/* WORLD CUP BEST XI */}
+      <div className="px-4 pt-5 pb-2 space-y-3">
+        <div className="flex items-center gap-2">
+          <span
+            className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
+            style={{ background: '#004d40' }}
+          >
+            World Cup Best XI
+          </span>
+          <div className="flex-1 h-px bg-gray-200" />
+          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+            4-3-3
+          </span>
+        </div>
+        <p className="text-[10px] text-slate-500 leading-snug">
+          Elige tu once ideal del torneo. Toca una posición y busca el jugador.
+        </p>
+        <BestXIBuilder
+          bestXI={bestXI}
+          onChange={onBestXIChange}
+          jugadores={jugadores}
+          equipos={equipoById}
         />
       </div>
     </div>
@@ -899,6 +1197,46 @@ function FifaLogo({ size = 40 }: { size?: number }) {
       >
         26
       </span>
+    </div>
+  )
+}
+
+// Confetti que se dispara cuando se completa la final en modo paso a paso.
+function Confetti() {
+  const pieces = useMemo(() => {
+    const palette = ['#FFD100', '#C9A84C', '#65ffd9', '#004d40', '#E8192C', '#ffffff']
+    return Array.from({ length: 80 }).map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      cx: (Math.random() - 0.5) * 220,
+      delay: Math.random() * 0.8,
+      dur: 2.4 + Math.random() * 2.2,
+      color: palette[i % palette.length],
+      w: 6 + Math.round(Math.random() * 6),
+      h: 10 + Math.round(Math.random() * 8),
+    }))
+  }, [])
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 overflow-hidden"
+      style={{ zIndex: 60 }}
+    >
+      {pieces.map((p) => (
+        <span
+          key={p.id}
+          className="confetti-piece"
+          style={{
+            left: `${p.left}%`,
+            background: p.color,
+            width: p.w,
+            height: p.h,
+            ['--cx' as string]: `${p.cx}px`,
+            ['--cd' as string]: `${p.dur}s`,
+            animationDelay: `${p.delay}s`,
+          }}
+        />
+      ))}
     </div>
   )
 }

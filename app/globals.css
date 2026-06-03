@@ -13,7 +13,7 @@
   --fifa-navy:   #111111;
   --fifa-yellow: #C9A84C;
   --fifa-green:  #005C29;
-  --fifa-rainbow: linear-gradient(90deg, #111111 0%, #C9A84C 45%, #005C29 100%);
+  --fifa-rainbow: linear-gradient(90deg, #006600 0%, #C8102E 22%, #74ACDF 50%, #F6B40E 78%, #009C3B 100%);
 }
 
 @theme inline {
@@ -39,6 +39,48 @@ h1 {
 /* Utility: stripe */
 .fifa-rainbow {
   background: var(--fifa-rainbow);
+}
+
+/* Walk-mode (Knockout step-by-step) */
+@keyframes walkPulse {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(201,168,76,0.85), 0 8px 28px rgba(201,168,76,0.30); }
+  50%      { box-shadow: 0 0 0 4px rgba(201,168,76,1),    0 10px 32px rgba(201,168,76,0.55); }
+}
+.walk-active {
+  animation: walkPulse 1.6s ease-in-out infinite;
+  transform: scale(1.06);
+  z-index: 5;
+  position: relative;
+  border-radius: 8px;
+  transition: transform 250ms ease;
+}
+.walk-dim {
+  opacity: 0.22;
+  filter: saturate(0.6);
+  pointer-events: none;
+  transition: opacity 350ms ease, filter 350ms ease;
+}
+.walk-revealed {
+  animation: walkReveal 480ms ease-out both;
+}
+@keyframes walkReveal {
+  0%   { transform: translateY(-6px) scale(0.96); opacity: 0; }
+  100% { transform: translateY(0)    scale(1);    opacity: 1; }
+}
+
+/* Confetti */
+@keyframes confettiFall {
+  0%   { transform: translate3d(0, -10vh, 0) rotate(0deg);    opacity: 1; }
+  100% { transform: translate3d(var(--cx, 0), 110vh, 0) rotate(720deg); opacity: 0.9; }
+}
+.confetti-piece {
+  position: absolute;
+  top: -10vh;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  animation: confettiFall var(--cd, 3.6s) cubic-bezier(.18,.55,.5,1) forwards;
+  will-change: transform, opacity;
 }
 
 /* Hide scrollbar but keep scroll */

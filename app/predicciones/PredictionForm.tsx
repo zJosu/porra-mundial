@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { Lock, Check } from 'lucide-react'
 import type { Resultado } from './standings'
 
@@ -58,7 +58,7 @@ function ResultButton({
           ? 'text-white shadow-md'
           : 'text-gray-500 bg-white border border-gray-200 hover:border-gray-300 disabled:opacity-40'
       }`}
-      style={active ? { background: '#004FA3', borderColor: '#004FA3' } : undefined}
+      style={active ? { background: '#004d40', borderColor: '#004d40' } : undefined}
     >
       {children}
     </button>
@@ -84,7 +84,6 @@ export function PredictionForm({
   picks: Map<number, Resultado>
   onPicksChange: (m: Map<number, Resultado>) => void
 }) {
-  const [activeGroup, setActiveGroup] = useState<string | null>(null)
   const nowMs = Date.now()
 
   const { completas, bloqueadas, editables } = useMemo(() => {
@@ -140,68 +139,26 @@ export function PredictionForm({
     onPicksChange(next)
   }
 
-  const scrollToGroup = (g: string) => {
-    setActiveGroup(g)
-    const el = document.getElementById(`grupo-${g}`)
-    if (el) {
-      const y = el.getBoundingClientRect().top + window.scrollY - 80
-      window.scrollTo({ top: y, behavior: 'smooth' })
-    }
-  }
-
   return (
     <>
-      <div className="px-4 pt-3">
-        <div className="bg-white rounded-2xl shadow-sm p-4">
-          <div className="flex items-center justify-between mb-2.5">
-            <div>
-              <p className="text-xs font-bold text-gray-800">Pronósticos 1X2</p>
-              <p className="text-[10px] text-gray-400">
-                {completas} de {editables} partidos
-                {bloqueadas > 0 && ` · ${bloqueadas} cerrados`}
-              </p>
-            </div>
-            <span className="text-2xl font-black tabular-nums" style={{ color: '#004FA3' }}>
-              {pct}%
-            </span>
-          </div>
-          <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+      <div className="px-4 pt-2 pb-2 sticky top-32 md:top-0 z-10" style={{ background: '#f9fafb' }}>
+        <div className="bg-white rounded-2xl shadow-sm px-4 py-2.5 flex items-center gap-3">
+          <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full transition-all duration-500"
               style={{
                 width: `${pct}%`,
-                background: 'linear-gradient(90deg, #004FA3 0%, #0066d4 100%)',
+                background: 'linear-gradient(90deg, #004d40 0%, #65ffd9 100%)',
               }}
             />
           </div>
+          <span className="text-sm font-black tabular-nums shrink-0" style={{ color: '#004d40' }}>
+            {pct}%
+          </span>
         </div>
       </div>
 
-      <div className="px-4 pt-3 pb-1">
-        <div className="flex gap-1.5 overflow-x-auto -mx-4 px-4 pb-1 scrollbar-hide">
-          {groupKeys.map((g) => {
-            const prog = groupProgress.get(g)!
-            const done = prog.total === 0 ? true : prog.done === prog.total
-            const isActive = activeGroup === g
-            return (
-              <button
-                key={g}
-                onClick={() => scrollToGroup(g)}
-                className={`shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold transition ${
-                  isActive ? 'text-white' : done ? 'bg-green-50' : 'bg-white border border-gray-200 text-gray-500'
-                }`}
-                style={isActive ? { background: '#0a1628' } : done ? { color: '#00A651' } : undefined}
-              >
-                <span>Grupo {g}</span>
-                <span className="text-[9px] opacity-70 tabular-nums">
-                  {prog.done}/{prog.total || 0}
-                </span>
-                {done && prog.total > 0 && <Check size={11} />}
-              </button>
-            )
-          })}
-        </div>
-      </div>
+
 
       <div className="px-4 py-4 space-y-7">
         {groupKeys.map((grupo) => {
@@ -212,10 +169,22 @@ export function PredictionForm({
               <div className="flex items-center gap-2 mb-3">
                 <span
                   className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
-                  style={{ background: '#0a1628' }}
+                  style={{ background: '#004d40' }}
                 >
                   Grupo {grupo}
                 </span>
+                {(() => {
+                  const prog = groupProgress.get(grupo)!
+                  const done = prog.total > 0 && prog.done === prog.total
+                  return (
+                    <span
+                      className="text-[11px] font-bold tabular-nums"
+                      style={{ color: done ? '#005C29' : '#94a3b8' }}
+                    >
+                      {prog.done}/{prog.total}{done && ' ✓'}
+                    </span>
+                  )
+                })()}
                 <div className="flex-1 h-px bg-gray-200" />
               </div>
 
@@ -235,7 +204,7 @@ export function PredictionForm({
                             key={p.id}
                             className={`bg-white rounded-2xl shadow-sm px-3.5 py-3 transition ${
                               started ? 'opacity-60' : ''
-                            } ${pick && !started ? 'ring-1 ring-blue-100' : ''}`}
+                            } ${pick && !started ? 'ring-1 ring-green-100' : ''}`}
                           >
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-[10px] text-gray-400">{formatHora(p.fecha)}</span>
@@ -246,7 +215,7 @@ export function PredictionForm({
                               ) : pick ? (
                                 <span
                                   className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide"
-                                  style={{ color: '#004FA3' }}
+                                  style={{ color: '#004d40' }}
                                 >
                                   <Check size={11} /> Listo
                                 </span>

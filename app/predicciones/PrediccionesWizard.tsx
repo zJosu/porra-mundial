@@ -16,6 +16,7 @@ import {
 import { PredictionForm, type PartidoUI, type PrediccionExistente } from './PredictionForm'
 import { ClasificacionStep } from './ClasificacionStep'
 import { CuadroStep, type BracketWinners } from './CuadroStep'
+import type { BestXI } from './BestXIBuilder'
 import type { Jugador } from './PlayerSelect'
 import type { EquipoInfo, PartidoInfo, Resultado } from './standings'
 import { submitPorraCompleta } from '@/app/actions/submit'
@@ -36,6 +37,9 @@ type ExtrasSaved = {
   campeon_equipo_id: number | null
   pichichi_jugador_id: number | null
   mvp_jugador_id: number | null
+  guante_oro_jugador_id: number | null
+  joven_jugador_id: number | null
+  best_xi: Record<string, number> | null
 }
 
 type CacheState = {
@@ -43,7 +47,14 @@ type CacheState = {
   clasif: ClasifSnap[]
   terceros: TercerosSnap[]
   bracket: [string, number][]
-  extras: ExtrasSaved
+  extras: {
+    campeon_equipo_id: number | null
+    pichichi_jugador_id: number | null
+    mvp_jugador_id: number | null
+    guante_oro_jugador_id: number | null
+    joven_jugador_id: number | null
+    best_xi: Record<string, number>
+  }
   ts: number
 }
 
@@ -76,6 +87,11 @@ export function PrediccionesWizard({
 
   const [step, setStep] = useState<Step>(1)
 
+  const changeStep = (n: Step) => {
+    setStep(n)
+    document.querySelector('main')?.scrollTo({ top: 0, behavior: 'instant' })
+  }
+
   // State (will be overwritten from localStorage on mount if present)
   const [picks, setPicks] = useState<Map<number, Resultado>>(
     () => new Map(iniciales.map((p) => [p.partido_id, p.resultado])),
@@ -88,6 +104,9 @@ export function PrediccionesWizard({
   const [campeonId, setCampeonId] = useState<number | null>(extrasSaved.campeon_equipo_id)
   const [pichichiId, setPichichiId] = useState<number | null>(extrasSaved.pichichi_jugador_id)
   const [mvpId, setMvpId] = useState<number | null>(extrasSaved.mvp_jugador_id)
+  const [guanteOroId, setGuanteOroId] = useState<number | null>(extrasSaved.guante_oro_jugador_id)
+  const [jovenId, setJovenId] = useState<number | null>(extrasSaved.joven_jugador_id)
+  const [bestXI, setBestXI] = useState<BestXI>((extrasSaved.best_xi ?? {}) as BestXI)
 
   const [hydrated, setHydrated] = useState(false)
   const [saveTick, setSaveTick] = useState(0)
@@ -111,6 +130,12 @@ export function PrediccionesWizard({
               setPichichiId(parsed.extras.pichichi_jugador_id)
             if (parsed.extras.mvp_jugador_id !== undefined)
               setMvpId(parsed.extras.mvp_jugador_id)
+            if (parsed.extras.guante_oro_jugador_id !== undefined)
+              setGuanteOroId(parsed.extras.guante_oro_jugador_id)
+            if (parsed.extras.joven_jugador_id !== undefined)
+              setJovenId(parsed.extras.joven_jugador_id)
+            if (parsed.extras.best_xi !== undefined)
+              setBestXI(parsed.extras.best_xi as BestXI)
           }
           lastSavedRef.current = parsed.ts ?? Date.now()
         }
@@ -133,6 +158,9 @@ export function PrediccionesWizard({
         campeon_equipo_id: campeonId,
         pichichi_jugador_id: pichichiId,
         mvp_jugador_id: mvpId,
+        guante_oro_jugador_id: guanteOroId,
+        joven_jugador_id: jovenId,
+        best_xi: bestXI as Record<string, number>,
       },
       ts: Date.now(),
     }
@@ -143,7 +171,7 @@ export function PrediccionesWizard({
     } catch {
       // quota exceeded etc.
     }
-  }, [hydrated, picks, clasifSnap, tercerosSnap, bracketWinners, campeonId, pichichiId, mvpId, cacheKey])
+  }, [hydrated, picks, clasifSnap, tercerosSnap, bracketWinners, campeonId, pichichiId, mvpId, guanteOroId, jovenId, bestXI, cacheKey])
 
   const totalGroupMatches = partidos.length
   const completedPicks = useMemo(() => {
@@ -205,6 +233,9 @@ export function PrediccionesWizard({
           campeon_equipo_id: campeonId,
           pichichi_jugador_id: pichichiId,
           mvp_jugador_id: mvpId,
+          guante_oro_jugador_id: guanteOroId,
+          joven_jugador_id: jovenId,
+          best_xi: bestXI as Record<string, number>,
         },
       })
       if (res.ok) {
@@ -243,7 +274,7 @@ export function PrediccionesWizard({
               <>
                 <button
                   key={s.n}
-                  onClick={() => setStep(s.n)}
+                  onClick={() => changeStep(s.n)}
                   className="relative flex-1 flex flex-col items-center gap-1.5 py-2 px-1 rounded-xl transition-all duration-150"
                   style={{
                     border: isActive
@@ -282,7 +313,7 @@ export function PrediccionesWizard({
                     <span
                       className="text-[11px] font-black"
                       style={{
-                        color: isActive ? '#0a1628' : isDone ? '#0a1628' : '#94a3b8',
+                        color: isActive ? '#004d40' : isDone ? '#004d40' : '#94a3b8',
                       }}
                     >
                       {s.label}
@@ -364,9 +395,15 @@ export function PrediccionesWizard({
           campeonId={campeonId}
           pichichiId={pichichiId}
           mvpId={mvpId}
+          guanteOroId={guanteOroId}
+          jovenId={jovenId}
+          bestXI={bestXI}
           onCampeonChange={setCampeonId}
           onPichichiChange={setPichichiId}
           onMvpChange={setMvpId}
+          onGuanteOroChange={setGuanteOroId}
+          onJovenChange={setJovenId}
+          onBestXIChange={setBestXI}
         />
       )}
 
@@ -387,7 +424,7 @@ export function PrediccionesWizard({
           {step > 1 ? (
             <button
               type="button"
-              onClick={() => setStep((s) => Math.max(1, s - 1) as Step)}
+              onClick={() => changeStep(Math.max(1, step - 1) as Step)}
               className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold bg-white border border-gray-200 text-gray-600 transition active:scale-95"
             >
               <ChevronLeft size={14} />
@@ -400,9 +437,9 @@ export function PrediccionesWizard({
           {step < 3 ? (
             <button
               type="button"
-              onClick={() => setStep((s) => Math.min(3, s + 1) as Step)}
+              onClick={() => changeStep(Math.min(3, step + 1) as Step)}
               className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold text-white transition active:scale-95"
-              style={{ background: '#0a1628' }}
+              style={{ background: '#004d40' }}
             >
               Siguiente
               <ChevronRight size={14} />

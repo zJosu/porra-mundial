@@ -13,6 +13,9 @@ export type ExtrasInput = {
   campeon_equipo_id: number | null
   pichichi_jugador_id: number | null
   mvp_jugador_id: number | null
+  guante_oro_jugador_id: number | null
+  joven_jugador_id: number | null
+  best_xi: Record<string, number> | null
 }
 
 export async function saveBracket(
@@ -48,6 +51,9 @@ export async function saveBracket(
         campeon_equipo_id: extras.campeon_equipo_id,
         pichichi_jugador_id: extras.pichichi_jugador_id,
         mvp_jugador_id: extras.mvp_jugador_id,
+        guante_oro_jugador_id: extras.guante_oro_jugador_id,
+        joven_jugador_id: extras.joven_jugador_id,
+        best_xi: extras.best_xi ?? {},
         updated_at: new Date().toISOString(),
       },
       { onConflict: 'usuario_id' },

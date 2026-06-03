@@ -37,6 +37,7 @@ export async function createParticipant(email: string): Promise<ParticipantResul
   const { data: players, error: playersErr } = await admin
     .from('jugadores')
     .select('nombre, apellidos')
+    .limit(2000)
   if (playersErr || !players?.length) {
     return { ok: false, error: 'No hay jugadores en la base de datos. Ejecuta el seed primero.' }
   }

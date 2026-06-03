@@ -73,6 +73,7 @@ export function PlayerSelect({
   value,
   onChange,
   placeholder = 'Buscar jugador…',
+  posicionFilter,
 }: {
   label: string
   icon: React.ReactNode
@@ -82,6 +83,7 @@ export function PlayerSelect({
   value: number | null
   onChange: (id: number | null) => void
   placeholder?: string
+  posicionFilter?: string[]
 }) {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
@@ -95,18 +97,24 @@ export function PlayerSelect({
   const selectedTeam = selected ? equipos.get(selected.equipo_id) ?? null : null
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    if (!q) return jugadores.slice(0, 50)
+    const q = query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    const base =
+      posicionFilter && posicionFilter.length > 0
+        ? jugadores.filter((j) => j.posicion != null && posicionFilter.includes(j.posicion))
+        : jugadores
+    const hasFilter = posicionFilter && posicionFilter.length > 0
+    if (!q) return hasFilter ? base : base.slice(0, 50)
     const matches: Jugador[] = []
-    for (const j of jugadores) {
+    for (const j of base) {
       const team = equipos.get(j.equipo_id)
-      const hay =
-        `${j.nombre} ${j.apellidos} ${team?.nombre ?? ''}`.toLowerCase().includes(q)
+      const hay = `${j.nombre} ${j.apellidos} ${team?.nombre ?? ''}`
+        .toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .includes(q)
       if (hay) matches.push(j)
-      if (matches.length >= 60) break
+      if (!hasFilter && matches.length >= 60) break
     }
     return matches
-  }, [query, jugadores, equipos])
+  }, [query, jugadores, equipos, posicionFilter])
 
   useEffect(() => {
     if (!open) return
@@ -131,24 +139,25 @@ export function PlayerSelect({
         onClick={() => setOpen((v) => !v)}
         className="w-full bg-white rounded-2xl shadow-sm p-3 flex items-center gap-3 text-left active:scale-[0.99] transition"
       >
-        <div
-          className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-          style={{ background: `${iconColor}1a` }}
-        >
-          <span style={{ color: iconColor }}>{icon}</span>
-        </div>
+        {selected ? (
+          <PhotoOrInitials jugador={selected} size={40} />
+        ) : (
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+            style={{ background: `${iconColor}1a` }}
+          >
+            <span style={{ color: iconColor }}>{icon}</span>
+          </div>
+        )}
         <div className="flex-1 min-w-0">
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{label}</p>
           {selected ? (
-            <div className="flex items-center gap-2 mt-0.5 min-w-0">
-              <PhotoOrInitials jugador={selected} size={20} />
+            <div className="flex items-center gap-1.5 mt-0.5 min-w-0">
               <span className="text-[13px] font-bold text-gray-900 truncate">
                 {selected.nombre} {selected.apellidos}
               </span>
               {selectedTeam && (
-                <div className="flex items-center gap-1 shrink-0">
-                  <FlagImg codigo={selectedTeam.codigo_bandera} alt={selectedTeam.nombre} />
-                </div>
+                <FlagImg codigo={selectedTeam.codigo_bandera} alt={selectedTeam.nombre} />
               )}
             </div>
           ) : (
@@ -213,7 +222,7 @@ export function PlayerSelect({
                     setQuery('')
                   }}
                   className={`w-full flex items-center gap-3 px-3 py-2.5 text-left hover:bg-gray-50 border-t border-gray-50 first:border-t-0 ${
-                    isSel ? 'bg-blue-50/60' : ''
+                    isSel ? 'bg-[#e6fff9]' : ''
                   }`}
                 >
                   <PhotoOrInitials jugador={j} size={36} />

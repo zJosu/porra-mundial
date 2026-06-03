@@ -57,30 +57,24 @@ export default async function PlantillasPage() {
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
 
-  const { data: equipos } = await supabase
+  const { data: rawEquipos } = await supabase
     .from('equipos')
-    .select('id, nombre, codigo_bandera')
+    .select('id, nombre, codigo_bandera, jugadores(id, equipo_id, nombre, apellidos, posicion, club, foto_url)')
     .order('nombre')
 
-  const { data: jugadores } = await supabase
-    .from('jugadores')
-    .select('id, equipo_id, nombre, apellidos, posicion, club, foto_url')
-
-  // Agrupar jugadores por equipo
-  const jugadoresByEquipo: Record<number, Jugador[]> = {}
-  for (const j of jugadores ?? []) {
-    if (!jugadoresByEquipo[j.equipo_id]) jugadoresByEquipo[j.equipo_id] = []
-    jugadoresByEquipo[j.equipo_id].push(j)
-  }
-
-  const equiposConJugadores: Equipo[] = (equipos ?? [])
-    .map(e => ({ ...e, jugadores: jugadoresByEquipo[e.id] ?? [] }))
+  const equiposConJugadores: Equipo[] = (rawEquipos ?? [])
+    .map(e => ({
+      id: e.id,
+      nombre: e.nombre,
+      codigo_bandera: e.codigo_bandera,
+      jugadores: (e.jugadores ?? []) as Jugador[],
+    }))
     .filter(e => e.jugadores.length > 0)
 
   return (
     <div className="min-h-full">
       {/* Hero */}
-      <div className="relative overflow-hidden bg-[#0a1628]">
+      <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
         {/* Imagen completa, respeta su ratio 16:9 — en desktop se limita a 300px */}
         <img
           src="/cris-leo-ney.png"
@@ -95,7 +89,6 @@ export default async function PlantillasPage() {
             <span className="text-[10px] font-bold uppercase tracking-widest" style={{color:'#C9A84C'}}>FIFA WORLD CUP 2026</span>
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight">Plantillas</h1>
-          <p className="text-sm mt-0.5 font-medium text-gray-300">{equiposConJugadores.length} selecciones · {jugadores?.length ?? 0} jugadores</p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-10 h-[4px] fifa-rainbow" />
       </div>
@@ -123,7 +116,7 @@ export default async function PlantillasPage() {
                 if (!grupo.length) return null
                 return (
                   <div key={pos} className="mt-3">
-                    <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{color:'#004FA3'}}>
+                    <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{color:'#004d40'}}>
                       {POS_LABEL[pos]}
                     </p>
                     <div className="divide-y divide-gray-100">

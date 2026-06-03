@@ -18,7 +18,7 @@ export default async function AdminPage() {
   return (
     <div className="min-h-full">
       {/* Header */}
-      <div style={{ background: '#0a1628' }} className="px-4 pt-8 pb-5">
+      <div style={{ background: '#004d40' }} className="px-4 pt-8 pb-5">
         <div className="flex items-center gap-2 mb-1.5">
           <ShieldCheck size={13} style={{ color: '#FFD100' }} />
           <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: '#FFD100' }}>
@@ -37,7 +37,7 @@ export default async function AdminPage() {
         {/* Participants list */}
         <div className="bg-white rounded-2xl shadow-sm p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Users size={16} style={{ color: '#004FA3' }} />
+            <Users size={16} style={{ color: '#004d40' }} />
             <h2 className="text-base font-bold text-gray-800">
               Participantes ({participants.length})
             </h2>
@@ -56,7 +56,7 @@ export default async function AdminPage() {
                     <p className="text-sm font-medium text-gray-800">{p.nombre || p.email}</p>
                     {p.nombre && <p className="text-xs text-gray-400">{p.email}</p>}
                   </div>
-                  <span className="text-sm font-bold tabular-nums" style={{ color: '#004FA3' }}>
+                  <span className="text-sm font-bold tabular-nums" style={{ color: '#004d40' }}>
                     {p.puntos_totales ?? 0} pts
                   </span>
                 </div>

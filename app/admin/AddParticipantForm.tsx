@@ -37,13 +37,13 @@ export function AddParticipantForm() {
           value={email}
           onChange={e => setEmail(e.target.value)}
           placeholder="email@ejemplo.com"
-          className="flex-1 border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue-400"
+          className="flex-1 border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#65ffd9]"
         />
         <button
           type="submit"
           disabled={loading || !email}
           className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-semibold text-white disabled:opacity-50 transition-opacity"
-          style={{ background: '#004FA3' }}
+          style={{ background: '#004d40' }}
         >
           <UserPlus size={15} />
           {loading ? 'Creando…' : 'Registrar'}
@@ -59,7 +59,7 @@ export function AddParticipantForm() {
                 Envía esto por Gmail a <strong>{result.email}</strong>:
               </p>
               <div className="bg-white rounded-lg p-3 border border-green-200 font-mono text-xs space-y-1">
-                <p>🔐 <strong>Contraseña:</strong> <span className="text-blue-700">{result.password}</span></p>
+                <p>🔐 <strong>Contraseña:</strong> <span className="text-[#004d40] font-semibold">{result.password}</span></p>
                 <p>⚽ <strong>Tu jugador:</strong> {result.jugador}</p>
               </div>
               <button

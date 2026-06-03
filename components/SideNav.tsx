@@ -27,7 +27,7 @@ export function SideNav({ userEmail, isAdmin }: { userEmail?: string; isAdmin?: 
       {/* Logo */}
       <div className="flex items-center gap-2.5 px-5 py-5 border-b border-[#2a2a2a]">
         <Image
-          src="/fifa26-logo.png"
+          src="/fifa26-logo.jpg"
           alt="FIFA World Cup 26"
           width={42}
           height={42}
