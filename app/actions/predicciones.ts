@@ -9,6 +9,8 @@ export type Resultado = 'L' | 'X' | 'V'
 export type PrediccionInput = {
   partido_id: number
   resultado: Resultado
+  goles_local?: number | null
+  goles_visitante?: number | null
 }
 
 export type SaveResult =
@@ -17,17 +19,30 @@ export type SaveResult =
 
 const VALID: ReadonlySet<Resultado> = new Set(['L', 'X', 'V'])
 
+function sanitizeGoles(v: unknown): number | null {
+  if (v === null || v === undefined) return null
+  if (typeof v !== 'number' || !Number.isFinite(v)) return null
+  const n = Math.trunc(v)
+  if (n < 0 || n > 99) return null
+  return n
+}
+
 export async function savePredicciones(items: PrediccionInput[]): Promise<SaveResult> {
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { ok: false, error: 'No autenticado' }
 
-  const clean: PrediccionInput[] = []
+  const clean: Required<PrediccionInput>[] = []
   for (const it of items) {
     if (!Number.isInteger(it.partido_id)) continue
     if (!VALID.has(it.resultado)) continue
-    clean.push({ partido_id: it.partido_id, resultado: it.resultado })
+    clean.push({
+      partido_id: it.partido_id,
+      resultado: it.resultado,
+      goles_local: sanitizeGoles(it.goles_local),
+      goles_visitante: sanitizeGoles(it.goles_visitante),
+    })
   }
   if (!clean.length) return { ok: false, error: 'Sin predicciones válidas' }
 
@@ -57,6 +72,8 @@ export async function savePredicciones(items: PrediccionInput[]): Promise<SaveRe
     usuario_id: user.id,
     partido_id: c.partido_id,
     resultado: c.resultado,
+    goles_local: c.goles_local,
+    goles_visitante: c.goles_visitante,
   }))
 
   const { error } = await supabase

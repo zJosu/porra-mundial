@@ -48,7 +48,7 @@ export default async function PrediccionesPage() {
         equipo_visitante:equipo_visitante_id(nombre, codigo_bandera)
       `)
       .order('fecha', { ascending: true }),
-    supabase.from('predicciones').select('partido_id, resultado').eq('usuario_id', user.id),
+    supabase.from('predicciones').select('partido_id, resultado, goles_local, goles_visitante').eq('usuario_id', user.id),
     supabase
       .from('clasificaciones_grupos')
       .select('grupo, equipo_id, posicion')
@@ -111,6 +111,8 @@ export default async function PrediccionesPage() {
   const predicciones: PrediccionExistente[] = (prediRaw ?? []).map((r) => ({
     partido_id: r.partido_id as number,
     resultado: r.resultado as 'L' | 'X' | 'V',
+    goles_local: (r.goles_local as number | null) ?? null,
+    goles_visitante: (r.goles_visitante as number | null) ?? null,
   }))
 
   const clasifSaved = (clasifRaw ?? []).map((r) => ({
@@ -149,6 +151,9 @@ export default async function PrediccionesPage() {
     best_xi: (extrasRaw?.best_xi as Record<string, number> | null) ?? {},
   }
 
+  // Porra enviada = pichichi seleccionado (campeón está oculto mientras no haya cuadro)
+  const porraEnviada = !!extrasRaw?.pichichi_jugador_id
+
   return (
     <div className="min-h-full">
       {/* Header */}
@@ -176,6 +181,7 @@ export default async function PrediccionesPage() {
         jugadores={jugadores}
         bracketSaved={bracketSaved}
         extrasSaved={extrasSaved}
+        porraEnviada={porraEnviada}
       />
     </div>
   )

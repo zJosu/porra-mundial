@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Trophy, Target, ListOrdered, Swords, Users, BarChart3, Info, LogOut, ShieldCheck } from 'lucide-react'
+import { Trophy, Target, ListOrdered, Swords, Users, BarChart3, Info, LogOut, ShieldCheck, KeyRound } from 'lucide-react'
 import { signOut } from '@/app/actions/auth'
 
 const navItems = [
@@ -74,6 +74,16 @@ export function SideNav({ userEmail, isAdmin }: { userEmail?: string; isAdmin?: 
             Admin
           </Link>
         )}
+        <Link
+          href="/perfil/cambiar-password"
+          className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+            pathname === '/perfil/cambiar-password' ? 'bg-[#1e1a00]' : 'text-[#666] hover:bg-[#1e1e1e] hover:text-[#f4f0e8]'
+          }`}
+          style={pathname === '/perfil/cambiar-password' ? {color:'#C9A84C'} : {}}
+        >
+          <KeyRound size={18} strokeWidth={pathname === '/perfil/cambiar-password' ? 2.5 : 1.8} />
+          Cambiar contraseña
+        </Link>
       </nav>
 
       {/* Footer: user + logout */}

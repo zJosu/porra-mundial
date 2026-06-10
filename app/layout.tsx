@@ -18,7 +18,7 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "Porra Mundial 2026",
+  title: "Porra World Cup 2026",
   description: "Pool Manager para el Mundial de Fútbol 2026 · USA · Canadá · México",
 };
 

@@ -1,6 +1,7 @@
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
-import { Globe, MapPin, Clock } from 'lucide-react'
+import { Globe, MapPin, Clock, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 type Partido = {
   id: number
@@ -13,6 +14,39 @@ type Partido = {
   equipo_visitante: { nombre: string; codigo_bandera: string }
   goles_local_oficial: number | null
   goles_visitante_oficial: number | null
+}
+
+type UserPred = {
+  resultado: 'L' | 'X' | 'V'
+  goles_local: number | null
+  goles_visitante: number | null
+}
+
+function signoFromGoles(gl: number, gv: number): 'L' | 'X' | 'V' {
+  if (gl > gv) return 'L'
+  if (gl < gv) return 'V'
+  return 'X'
+}
+
+// Returns 3 (exact), 1 (1X2 ok, score wrong), 0 (miss), or null (no data).
+function computePoints(
+  actualL: number | null,
+  actualV: number | null,
+  pred: UserPred | undefined,
+): 3 | 1 | 0 | null {
+  if (actualL == null || actualV == null) return null
+  if (!pred) return null
+  const actualSigno = signoFromGoles(actualL, actualV)
+  if (
+    pred.goles_local != null &&
+    pred.goles_visitante != null &&
+    pred.goles_local === actualL &&
+    pred.goles_visitante === actualV
+  ) {
+    return 3
+  }
+  if (pred.resultado === actualSigno) return 1
+  return 0
 }
 
 function FlagImg({ codigo, nombre }: { codigo: string; nombre: string }) {
@@ -51,17 +85,45 @@ export default async function Page() {
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
 
-  const { data: partidos } = await supabase
-    .from('partidos')
-    .select(`
-      id, fecha, grupo, jornada, sede, estado,
-      goles_local_oficial, goles_visitante_oficial,
-      equipo_local:equipo_local_id(nombre, codigo_bandera),
-      equipo_visitante:equipo_visitante_id(nombre, codigo_bandera)
-    `)
-    .eq('estado', 'pendiente')
-    .order('fecha', { ascending: true })
-    .limit(30)
+  const { data: { user } } = await supabase.auth.getUser()
+
+  const [{ data: partidos }, { data: extrasRow }, { data: misPreds }] = await Promise.all([
+    supabase
+      .from('partidos')
+      .select(`
+        id, fecha, grupo, jornada, sede, estado,
+        goles_local_oficial, goles_visitante_oficial,
+        equipo_local:equipo_local_id(nombre, codigo_bandera),
+        equipo_visitante:equipo_visitante_id(nombre, codigo_bandera)
+      `)
+      .eq('estado', 'pendiente')
+      .order('fecha', { ascending: true })
+      .limit(30),
+    user
+      ? supabase
+          .from('predicciones_extras')
+          .select('pichichi_jugador_id')
+          .eq('usuario_id', user.id)
+          .maybeSingle()
+      : Promise.resolve({ data: null }),
+    user
+      ? supabase
+          .from('predicciones')
+          .select('partido_id, resultado, goles_local, goles_visitante')
+          .eq('usuario_id', user.id)
+      : Promise.resolve({ data: null }),
+  ])
+
+  const predsByMatch = new Map<number, UserPred>()
+  for (const p of misPreds ?? []) {
+    predsByMatch.set(p.partido_id as number, {
+      resultado: p.resultado as 'L' | 'X' | 'V',
+      goles_local: (p.goles_local as number | null) ?? null,
+      goles_visitante: (p.goles_visitante as number | null) ?? null,
+    })
+  }
+
+  const porraEnviada = !!extrasRow?.pichichi_jugador_id
 
   const byDay = groupByDay((partidos as unknown as Partido[]) ?? [])
   const days = [...byDay.keys()]
@@ -75,12 +137,30 @@ export default async function Page() {
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
           <div className="flex items-center gap-2 mb-1.5">
             <Globe size={13} style={{color:'#C9A84C'}} />
-            <span className="text-[10px] font-bold uppercase tracking-widest" style={{color:'#C9A84C'}}>Mundial 2026</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest" style={{color:'#C9A84C'}}>World Cup 2026</span>
           </div>
           <h1 className="text-3xl font-black text-white tracking-tight">La clika</h1>
         </div>
         <div className="absolute bottom-0 left-0 right-0 z-10 h-[4px] fifa-rainbow" />
       </div>
+
+      {/* CTA porra */}
+      {user && !porraEnviada && (
+        <div className="px-4 pt-4">
+          <Link
+            href="/predicciones"
+            className="flex items-center justify-between gap-3 rounded-2xl px-4 py-3.5 text-white active:scale-[0.98] transition-transform"
+            style={{ background: 'linear-gradient(135deg, #004d40 0%, #00897b 100%)' }}
+          >
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-widest opacity-70 mb-0.5">FIFA World Cup 2026</p>
+              <p className="text-base font-black leading-tight">¿Quieres hacer tu porra?</p>
+              <p className="text-[11px] opacity-70 mt-0.5">Rellena tus predicciones antes de que empiece</p>
+            </div>
+            <ChevronRight size={22} className="shrink-0 opacity-80" />
+          </Link>
+        </div>
+      )}
 
       {/* Matches by day */}
       <div className="px-4 py-5 space-y-6">
@@ -108,6 +188,11 @@ export default async function Page() {
               <div className="space-y-2.5">
                 {matches.map((p) => {
                   const { hora } = formatFecha(p.fecha)
+                  const puntos = computePoints(
+                    p.goles_local_oficial,
+                    p.goles_visitante_oficial,
+                    predsByMatch.get(p.id),
+                  )
                   return (
                     <div
                       key={p.id}
@@ -118,10 +203,35 @@ export default async function Page() {
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide text-white" style={{background:'#004d40'}}>
                           Grupo {p.grupo} · J{p.jornada}
                         </span>
-                        <span className="flex items-center gap-1 text-[10px] text-gray-400">
-                          <Clock size={10} />
-                          {hora}
-                        </span>
+                        <div className="flex items-center gap-1.5">
+                          {puntos != null && (
+                            <span
+                              className="text-[10px] font-black px-1.5 py-0.5 rounded-full tabular-nums"
+                              style={{
+                                background:
+                                  puntos === 3
+                                    ? '#00A651'
+                                    : puntos === 1
+                                      ? '#FFD100'
+                                      : '#e5e7eb',
+                                color: puntos === 1 ? '#7a5b00' : puntos === 3 ? 'white' : '#9ca3af',
+                              }}
+                              title={
+                                puntos === 3
+                                  ? 'Resultado exacto +3'
+                                  : puntos === 1
+                                    ? '1X2 acertado +1'
+                                    : 'Sin acertar 0'
+                              }
+                            >
+                              {puntos === 0 ? '0' : `+${puntos}`}
+                            </span>
+                          )}
+                          <span className="flex items-center gap-1 text-[10px] text-gray-400">
+                            <Clock size={10} />
+                            {hora}
+                          </span>
+                        </div>
                       </div>
 
                       {/* Teams row */}

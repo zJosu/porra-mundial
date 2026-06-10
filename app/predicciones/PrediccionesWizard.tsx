@@ -12,8 +12,9 @@ import {
   Send,
   CloudCheck,
   AlertCircle,
+  Pencil,
 } from 'lucide-react'
-import { PredictionForm, type PartidoUI, type PrediccionExistente } from './PredictionForm'
+import { PredictionForm, type PartidoUI, type PrediccionExistente, type ScorePick, resultadoFromScore } from './PredictionForm'
 import { ClasificacionStep } from './ClasificacionStep'
 import { CuadroStep, type BracketWinners } from './CuadroStep'
 import type { BestXI } from './BestXIBuilder'
@@ -22,12 +23,17 @@ import type { EquipoInfo, PartidoInfo, Resultado } from './standings'
 import { submitPorraCompleta } from '@/app/actions/submit'
 import type { Round } from './bracket'
 
+// Feature flag: bracket (knockout cuadro) hidden until activated.
+// Cuando se quiera activar, poner SHOW_BRACKET = true y restaurar el botón
+// del cuadro en el stepper + requisito en phase3Complete.
+const SHOW_BRACKET = false
+
 type Step = 1 | 2 | 3
 
 const STEPS: { n: Step; label: string; sub: string }[] = [
   { n: 1, label: 'Group Stage', sub: 'Fase 1' },
   { n: 2, label: 'Clasification', sub: 'Fase 2' },
-  { n: 3, label: 'Knockout Stage', sub: 'Fase 3' },
+  { n: 3, label: 'Individual Awards', sub: 'Fase 3' },
 ]
 
 type ClasifSnap = { grupo: string; equipo_id: number; posicion: number }
@@ -44,6 +50,7 @@ type ExtrasSaved = {
 
 type CacheState = {
   picks: [number, Resultado][]
+  scores: [number, ScorePick][]
   clasif: ClasifSnap[]
   terceros: TercerosSnap[]
   bracket: [string, number][]
@@ -71,6 +78,7 @@ export function PrediccionesWizard({
   jugadores,
   bracketSaved,
   extrasSaved,
+  porraEnviada,
 }: {
   userId: string
   partidos: PartidoUI[]
@@ -82,8 +90,12 @@ export function PrediccionesWizard({
   jugadores: Jugador[]
   bracketSaved: BracketSaved[]
   extrasSaved: ExtrasSaved
+  porraEnviada: boolean
 }) {
   const cacheKey = `${CACHE_KEY_PREFIX}${userId}`
+
+  const [localEnviada, setLocalEnviada] = useState(porraEnviada)
+  const [editMode, setEditMode] = useState(false)
 
   const [step, setStep] = useState<Step>(1)
 
@@ -92,10 +104,24 @@ export function PrediccionesWizard({
     document.querySelector('main')?.scrollTo({ top: 0, behavior: 'instant' })
   }
 
-  // State (will be overwritten from localStorage on mount if present)
-  const [picks, setPicks] = useState<Map<number, Resultado>>(
-    () => new Map(iniciales.map((p) => [p.partido_id, p.resultado])),
-  )
+  // Scores: source of truth. Picks (Resultado) are derived from scores when both gl & gv set.
+  const [scores, setScores] = useState<Map<number, ScorePick>>(() => {
+    const m = new Map<number, ScorePick>()
+    for (const p of iniciales) {
+      if (p.goles_local != null || p.goles_visitante != null) {
+        m.set(p.partido_id, { gl: p.goles_local, gv: p.goles_visitante })
+      }
+    }
+    return m
+  })
+
+  const picks = useMemo<Map<number, Resultado>>(() => {
+    const m = new Map<number, Resultado>()
+    for (const [id, s] of scores) {
+      if (s.gl != null && s.gv != null) m.set(id, resultadoFromScore(s.gl, s.gv))
+    }
+    return m
+  }, [scores])
   const [clasifSnap, setClasifSnap] = useState<ClasifSnap[]>(clasifSaved)
   const [tercerosSnap, setTercerosSnap] = useState<TercerosSnap[]>(tercerosSaved)
   const [bracketWinners, setBracketWinners] = useState<BracketWinners>(
@@ -118,8 +144,12 @@ export function PrediccionesWizard({
       const raw = localStorage.getItem(cacheKey)
       if (raw) {
         const parsed: CacheState = JSON.parse(raw)
-        if (parsed && Array.isArray(parsed.picks)) {
-          setPicks(new Map(parsed.picks))
+        if (parsed && typeof parsed === 'object') {
+          if (Array.isArray(parsed.scores)) setScores(new Map(parsed.scores))
+          else if (Array.isArray(parsed.picks)) {
+            // Legacy cache: synthesize scores from 1X2 (gl/gv unknown)
+            // We just leave scores empty so the user re-enters; picks are derived
+          }
           if (Array.isArray(parsed.clasif)) setClasifSnap(parsed.clasif)
           if (Array.isArray(parsed.terceros)) setTercerosSnap(parsed.terceros)
           if (Array.isArray(parsed.bracket)) setBracketWinners(new Map(parsed.bracket))
@@ -151,6 +181,7 @@ export function PrediccionesWizard({
     if (!hydrated) return
     const state: CacheState = {
       picks: [...picks.entries()],
+      scores: [...scores.entries()],
       clasif: clasifSnap,
       terceros: tercerosSnap,
       bracket: [...bracketWinners.entries()],
@@ -171,7 +202,7 @@ export function PrediccionesWizard({
     } catch {
       // quota exceeded etc.
     }
-  }, [hydrated, picks, clasifSnap, tercerosSnap, bracketWinners, campeonId, pichichiId, mvpId, guanteOroId, jovenId, bestXI, cacheKey])
+  }, [hydrated, picks, scores, clasifSnap, tercerosSnap, bracketWinners, campeonId, pichichiId, mvpId, guanteOroId, jovenId, bestXI, cacheKey])
 
   const totalGroupMatches = partidos.length
   const completedPicks = useMemo(() => {
@@ -184,9 +215,11 @@ export function PrediccionesWizard({
   const phase2Complete =
     clasifSnap.length === 48 && tercerosSnap.length === 12
 
-  // Phase 3 = 32 bracket matches filled (31 main + 3rd place) + campeon + pichichi + mvp
-  const phase3Complete =
-    bracketWinners.size === 32 && campeonId != null && pichichiId != null && mvpId != null
+  // Phase 3 (Individual Awards): pichichi + mvp + guante + joven required.
+  // Best XI and bracket NOT required while SHOW_BRACKET = false.
+  const phase3Complete = SHOW_BRACKET
+    ? bracketWinners.size === 32 && campeonId != null && pichichiId != null && mvpId != null
+    : pichichiId != null && mvpId != null && guanteOroId != null && jovenId != null
 
   // --- Submit ---
   const [pending, startTransition] = useTransition()
@@ -207,14 +240,21 @@ export function PrediccionesWizard({
           ? `Faltan ${totalGroupMatches - completedPicks} pronósticos`
           : !phase2Complete
             ? 'Completa la clasificación en Fase 2'
-            : 'Completa el cuadro, pichichi y MVP en Fase 3',
+            : SHOW_BRACKET
+              ? 'Completa el cuadro, pichichi y MVP en Fase 3'
+              : 'Completa los premios individuales en Fase 3',
       })
       return
     }
-    const predicciones = [...picks.entries()].map(([partido_id, resultado]) => ({
-      partido_id,
-      resultado,
-    }))
+    const predicciones = [...picks.entries()].map(([partido_id, resultado]) => {
+      const sc = scores.get(partido_id)
+      return {
+        partido_id,
+        resultado,
+        goles_local: sc?.gl ?? null,
+        goles_visitante: sc?.gv ?? null,
+      }
+    })
     const bracket = [...bracketWinners.entries()].map(([key, ganador_equipo_id]) => {
       const [ronda, slotStr] = key.split(':')
       return {
@@ -239,6 +279,8 @@ export function PrediccionesWizard({
         },
       })
       if (res.ok) {
+        setLocalEnviada(true)
+        setEditMode(false)
         setToast({
           type: 'ok',
           msg: `Porra enviada · ${res.guardadas} pronósticos guardados${res.bloqueadas > 0 ? ` (${res.bloqueadas} cerrados)` : ''}`,
@@ -258,6 +300,36 @@ export function PrediccionesWizard({
 
   return (
     <>
+      {/* Already submitted banner */}
+      {localEnviada && !editMode && (
+        <div className="px-4 pt-4 pb-2">
+          <div
+            className="rounded-2xl px-4 py-4 flex items-start justify-between gap-3"
+            style={{ background: 'linear-gradient(135deg, #004d40 0%, #00897b 100%)' }}
+          >
+            <div>
+              <div className="flex items-center gap-1.5 mb-1">
+                <Check size={14} color="white" />
+                <span className="text-[11px] font-black uppercase tracking-widest text-white opacity-80">Porra enviada</span>
+              </div>
+              <p className="text-white font-black text-base leading-tight">¡Ya has enviado tu porra!</p>
+              <p className="text-[11px] text-white opacity-70 mt-0.5">Puedes cambiarla hasta que empiece el torneo.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setEditMode(true)}
+              className="shrink-0 flex items-center gap-1.5 bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-[11px] font-bold px-3 py-2 rounded-xl transition active:scale-95"
+            >
+              <Pencil size={12} />
+              Cambiar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Wizard (hidden when submitted and not editing) */}
+      {(!localEnviada || editMode) && (
+        <>
       {/* Stepper — FIFA style, border only for active */}
       <div className="px-4 pt-4">
         <div
@@ -344,7 +416,7 @@ export function PrediccionesWizard({
 
       {/* Step content */}
       {step === 1 && (
-        <PredictionForm partidos={partidos} picks={picks} onPicksChange={setPicks} />
+        <PredictionForm partidos={partidos} picks={picks} scores={scores} onScoresChange={setScores} />
       )}
 
       {step === 2 && (
@@ -404,6 +476,7 @@ export function PrediccionesWizard({
           onGuanteOroChange={setGuanteOroId}
           onJovenChange={setJovenId}
           onBestXIChange={setBestXI}
+          showBracket={SHOW_BRACKET}
         />
       )}
 
@@ -458,6 +531,8 @@ export function PrediccionesWizard({
           )}
         </div>
       </div>
+        </>
+      )}
     </>
   )
 }

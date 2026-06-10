@@ -14,9 +14,22 @@ export type PartidoUI = {
   visitante: { nombre: string; codigo_bandera: string }
 }
 
+export type ScorePick = {
+  gl: number | null
+  gv: number | null
+}
+
 export type PrediccionExistente = {
   partido_id: number
   resultado: Resultado
+  goles_local: number | null
+  goles_visitante: number | null
+}
+
+export function resultadoFromScore(gl: number, gv: number): Resultado {
+  if (gl > gv) return 'L'
+  if (gl < gv) return 'V'
+  return 'X'
 }
 
 function FlagImg({ codigo, nombre, size = 36 }: { codigo: string; nombre: string; size?: number }) {
@@ -34,34 +47,65 @@ function FlagImg({ codigo, nombre, size = 36 }: { codigo: string; nombre: string
   )
 }
 
-function ResultButton({
+function ResultPanel({
   active,
-  disabled,
-  onClick,
+  dimmed,
   children,
   title,
 }: {
   active: boolean
-  disabled?: boolean
-  onClick: () => void
+  dimmed: boolean
   children: React.ReactNode
   title: string
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
+    <div
       title={title}
-      className={`flex-1 h-9 rounded-lg text-xs font-black tracking-wide transition-all active:scale-95 disabled:cursor-not-allowed ${
+      className={`flex-1 h-9 rounded-lg text-xs font-black tracking-wide flex items-center justify-center select-none transition-all ${
         active
           ? 'text-white shadow-md'
-          : 'text-gray-500 bg-white border border-gray-200 hover:border-gray-300 disabled:opacity-40'
-      }`}
+          : 'text-gray-400 bg-white border border-gray-200'
+      } ${dimmed && !active ? 'opacity-50' : ''}`}
       style={active ? { background: '#004d40', borderColor: '#004d40' } : undefined}
+      aria-hidden="true"
     >
       {children}
-    </button>
+    </div>
+  )
+}
+
+function ScoreInput({
+  value,
+  onChange,
+  disabled,
+  label,
+}: {
+  value: number | null
+  onChange: (v: number | null) => void
+  disabled: boolean
+  label: string
+}) {
+  return (
+    <input
+      type="number"
+      inputMode="numeric"
+      min={0}
+      max={99}
+      step={1}
+      disabled={disabled}
+      value={value ?? ''}
+      onChange={(e) => {
+        const raw = e.target.value
+        if (raw === '') return onChange(null)
+        const n = parseInt(raw, 10)
+        if (Number.isNaN(n)) return onChange(null)
+        if (n < 0 || n > 99) return
+        onChange(n)
+      }}
+      placeholder="–"
+      aria-label={label}
+      className="w-10 h-9 text-center text-base font-black rounded-lg bg-white border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed tabular-nums"
+    />
   )
 }
 
@@ -78,15 +122,17 @@ function formatHora(iso: string): string {
 export function PredictionForm({
   partidos,
   picks,
-  onPicksChange,
+  scores,
+  onScoresChange,
 }: {
   partidos: PartidoUI[]
   picks: Map<number, Resultado>
-  onPicksChange: (m: Map<number, Resultado>) => void
+  scores: Map<number, ScorePick>
+  onScoresChange: (m: Map<number, ScorePick>) => void
 }) {
   const nowMs = Date.now()
 
-  const { completas, bloqueadas, editables } = useMemo(() => {
+  const { completas, editables } = useMemo(() => {
     let comp = 0, bloq = 0, edit = 0
     for (const p of partidos) {
       const started = new Date(p.fecha).getTime() <= nowMs
@@ -132,11 +178,13 @@ export function PredictionForm({
     return m
   }, [grouped, groupKeys, picks, nowMs])
 
-  const setPick = (id: number, r: Resultado) => {
-    const next = new Map(picks)
-    if (next.get(id) === r) next.delete(id)
-    else next.set(id, r)
-    onPicksChange(next)
+  const setScore = (id: number, which: 'gl' | 'gv', value: number | null) => {
+    const next = new Map(scores)
+    const prev = next.get(id) ?? { gl: null, gv: null }
+    const updated: ScorePick = { ...prev, [which]: value }
+    if (updated.gl === null && updated.gv === null) next.delete(id)
+    else next.set(id, updated)
+    onScoresChange(next)
   }
 
   return (
@@ -197,14 +245,16 @@ export function PredictionForm({
                     <div className="space-y-2">
                       {byJ.get(j)!.map((p) => {
                         const pick = picks.get(p.id)
+                        const sc = scores.get(p.id) ?? { gl: null, gv: null }
                         const started = new Date(p.fecha).getTime() <= nowMs
+                        const hasResult = pick != null
 
                         return (
                           <div
                             key={p.id}
                             className={`bg-white rounded-2xl shadow-sm px-3.5 py-3 transition ${
                               started ? 'opacity-60' : ''
-                            } ${pick && !started ? 'ring-1 ring-green-100' : ''}`}
+                            } ${hasResult && !started ? 'ring-1 ring-green-100' : ''}`}
                           >
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-[10px] text-gray-400">{formatHora(p.fecha)}</span>
@@ -212,7 +262,7 @@ export function PredictionForm({
                                 <span className="flex items-center gap-1 text-[10px] font-bold text-gray-400 uppercase tracking-wide">
                                   <Lock size={10} /> Cerrado
                                 </span>
-                              ) : pick ? (
+                              ) : hasResult ? (
                                 <span
                                   className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide"
                                   style={{ color: '#004d40' }}
@@ -237,7 +287,21 @@ export function PredictionForm({
                                   {p.local.nombre}
                                 </span>
                               </div>
-                              <span className="text-[10px] font-bold text-gray-300 px-1">VS</span>
+                              <div className="flex items-center gap-1">
+                                <ScoreInput
+                                  value={sc.gl}
+                                  onChange={(v) => setScore(p.id, 'gl', v)}
+                                  disabled={started}
+                                  label={`Goles ${p.local.nombre}`}
+                                />
+                                <span className="text-[11px] font-black text-gray-300">–</span>
+                                <ScoreInput
+                                  value={sc.gv}
+                                  onChange={(v) => setScore(p.id, 'gv', v)}
+                                  disabled={started}
+                                  label={`Goles ${p.visitante.nombre}`}
+                                />
+                              </div>
                               <div className="flex items-center gap-2 min-w-0 justify-end">
                                 <span
                                   className={`text-[13px] font-semibold leading-tight truncate text-right ${
@@ -251,30 +315,27 @@ export function PredictionForm({
                             </div>
 
                             <div className="flex items-center gap-1.5">
-                              <ResultButton
+                              <ResultPanel
                                 active={pick === 'L'}
-                                disabled={started}
-                                onClick={() => setPick(p.id, 'L')}
+                                dimmed={!hasResult}
                                 title={`Gana ${p.local.nombre}`}
                               >
                                 1
-                              </ResultButton>
-                              <ResultButton
+                              </ResultPanel>
+                              <ResultPanel
                                 active={pick === 'X'}
-                                disabled={started}
-                                onClick={() => setPick(p.id, 'X')}
+                                dimmed={!hasResult}
                                 title="Empate"
                               >
                                 X
-                              </ResultButton>
-                              <ResultButton
+                              </ResultPanel>
+                              <ResultPanel
                                 active={pick === 'V'}
-                                disabled={started}
-                                onClick={() => setPick(p.id, 'V')}
+                                dimmed={!hasResult}
                                 title={`Gana ${p.visitante.nombre}`}
                               >
                                 2
-                              </ResultButton>
+                              </ResultPanel>
                             </div>
                           </div>
                         )
@@ -290,3 +351,4 @@ export function PredictionForm({
     </>
   )
 }
+

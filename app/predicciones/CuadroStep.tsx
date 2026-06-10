@@ -393,6 +393,7 @@ export function CuadroStep({
   onGuanteOroChange,
   onJovenChange,
   onBestXIChange,
+  showBracket = true,
 }: {
   equipos: EquipoLite[]
   jugadores: Jugador[]
@@ -412,6 +413,7 @@ export function CuadroStep({
   onGuanteOroChange: (id: number | null) => void
   onJovenChange: (id: number | null) => void
   onBestXIChange: (xi: BestXI) => void
+  showBracket?: boolean
 }) {
   const equipoById = useMemo(() => new Map(equipos.map((e) => [e.id, e])), [equipos])
 
@@ -651,6 +653,7 @@ export function CuadroStep({
 
   return (
     <div className="pb-2">
+      {showBracket && (<>
       {walkMode && showConfetti && champion && <Confetti />}
       {/* Modo de visualización: paso a paso vs cuadro completo */}
       {r32Ready && (
@@ -1045,6 +1048,7 @@ export function CuadroStep({
           </div>
         </div>
       )}
+      </>)}
 
       {/* Extras */}
       <div className="px-4 pt-5 space-y-3">
@@ -1053,7 +1057,7 @@ export function CuadroStep({
             className="text-[11px] font-black px-2.5 py-1 rounded-md uppercase tracking-widest text-white"
             style={{ background: '#004d40' }}
           >
-            Premios individuales
+            Individual Awards
           </span>
           <div className="flex-1 h-px bg-gray-200" />
         </div>

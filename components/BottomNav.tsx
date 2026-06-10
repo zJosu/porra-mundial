@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Trophy, Target, ListOrdered, Swords, Users, UserCircle, LogOut, ShieldCheck, X } from 'lucide-react'
+import { Trophy, Target, ListOrdered, Swords, Users, UserCircle, LogOut, ShieldCheck, X, KeyRound } from 'lucide-react'
 import { useState } from 'react'
 import { signOut } from '@/app/actions/auth'
 
@@ -113,6 +113,19 @@ export function BottomNav({ userEmail, isAdmin }: { userEmail?: string; isAdmin?
             </Link>
           </div>
         )}
+
+        {/* Cambiar contraseña */}
+        <div className="px-4 pb-2">
+          <Link
+            href="/perfil/cambiar-password"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all hover:bg-[#1e1e1e]"
+            style={{color:'#888'}}
+          >
+            <KeyRound size={18} strokeWidth={1.8} />
+            Cambiar contraseña
+          </Link>
+        </div>
 
         {/* Logout */}
         <div className="px-4 pb-6">

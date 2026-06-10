@@ -4,10 +4,10 @@ import { useState } from 'react'
 import { createBrowserClient } from '@supabase/ssr'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-import { Mail, Lock, ArrowRight, Eye, EyeOff, UserPlus, Copy, Check, ArrowLeft } from 'lucide-react'
+import { Mail, Lock, ArrowRight, Eye, EyeOff, UserPlus, Copy, Check, ArrowLeft, Send } from 'lucide-react'
 import { createAccount } from '@/app/actions/auth'
 
-type View = 'login' | 'register' | 'success'
+type View = 'login' | 'register' | 'success' | 'forgot' | 'forgot-sent'
 
 export default function LoginPage() {
   const [view, setView] = useState<View>('login')
@@ -24,6 +24,23 @@ export default function LoginPage() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
   )
+
+  const handleForgot = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/auth/callback?type=recovery`,
+    })
+    setLoading(false)
+    if (error) {
+      if (error.message.toLowerCase().includes('rate')) {
+        setError('Demasiados intentos. Espera unos minutos antes de volver a probar.')
+      } else {
+        setError('No se pudo enviar el email. Inténtalo de nuevo.')
+      }
+    } else setView('forgot-sent')
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -173,6 +190,15 @@ export default function LoginPage() {
               <UserPlus size={15} />
               ¿No tienes cuenta? Créala aquí
             </button>
+
+            <button
+              type="button"
+              onClick={() => { setView('forgot'); setError('') }}
+              className="text-xs text-center transition-colors"
+              style={{ color: '#555' }}
+            >
+              ¿Olvidaste tu contraseña?
+            </button>
           </form>
         )}
 
@@ -221,6 +247,68 @@ export default function LoginPage() {
               {loading ? 'Creando cuenta...' : <><UserPlus size={15} /><span>Crear cuenta</span></>}
             </button>
           </form>
+        )}
+
+        {/* --- FORGOT --- */}
+        {view === 'forgot' && (
+          <form onSubmit={handleForgot} className="flex flex-col gap-3">
+            <button
+              type="button"
+              onClick={() => { setView('login'); setError('') }}
+              className="flex items-center gap-1.5 text-xs mb-1 transition-colors"
+              style={{ color: '#666' }}
+            >
+              <ArrowLeft size={13} /> Volver
+            </button>
+            <h2 className="text-base font-bold text-white mb-1">Recuperar contraseña</h2>
+            <p className="text-xs leading-relaxed mb-2" style={{ color: '#888' }}>
+              Pon tu email y te enviaremos un enlace para cambiar la contraseña.
+            </p>
+            <div className="relative">
+              <Mail size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: '#666' }} />
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tu@email.com"
+                className="w-full rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-[#555] focus:outline-none transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
+              />
+            </div>
+            {error && <p className="text-red-400 text-xs px-1">{error}</p>}
+            <button
+              type="submit"
+              disabled={loading || !email}
+              className="flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-bold text-sm transition-all disabled:opacity-40"
+              style={{ background: '#C9A84C', color: '#0a0a0a' }}
+            >
+              {loading ? 'Enviando...' : <><Send size={15} /><span>Enviar enlace</span></>}
+            </button>
+          </form>
+        )}
+
+        {/* --- FORGOT SENT --- */}
+        {view === 'forgot-sent' && (
+          <div className="flex flex-col items-center gap-4 text-center">
+            <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,166,81,0.15)' }}>
+              <Send size={22} style={{ color: '#00A651' }} />
+            </div>
+            <div>
+              <h2 className="text-base font-bold text-white mb-1">¡Email enviado!</h2>
+              <p className="text-xs leading-relaxed" style={{ color: '#888' }}>
+                Revisa tu bandeja de entrada (y la carpeta de <strong style={{color:'#C9A84C'}}>spam</strong>) y haz clic en el enlace para cambiar tu contraseña.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setView('login')}
+              className="flex items-center gap-2 py-3 px-6 rounded-xl font-bold text-sm w-full justify-center transition-all"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)', color: '#aaa' }}
+            >
+              <ArrowLeft size={15} /> Volver al login
+            </button>
+          </div>
         )}
 
         {/* --- SUCCESS --- */}
