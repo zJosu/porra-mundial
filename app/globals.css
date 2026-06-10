@@ -29,6 +29,19 @@ body {
   color: var(--foreground);
 }
 
+/*
+ * iOS auto-zoom fix: Safari hace zoom automático cuando un <input> o <select>
+ * tiene font-size < 16px. Forzar 16px en móvil evita ese zoom involuntario.
+ * En desktop no cambia nada porque los breakpoints lo sobreescriben.
+ */
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
 /* Display font for hero titles */
 h1 {
   font-family: var(--font-bebas), Impact, 'Arial Black', sans-serif;

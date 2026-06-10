@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { BottomNav } from "@/components/BottomNav";
@@ -20,6 +20,13 @@ const bebasNeue = Bebas_Neue({
 export const metadata: Metadata = {
   title: "Porra World Cup 2026",
   description: "Pool Manager para el Mundial de Fútbol 2026 · USA · Canadá · México",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  // No maximumScale → usuario puede hacer zoom a más; sin user-scalable=no → no bloqueamos
 };
 
 export default async function RootLayout({
