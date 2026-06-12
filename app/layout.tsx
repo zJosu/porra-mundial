@@ -5,6 +5,7 @@ import { BottomNav } from "@/components/BottomNav";
 import { SideNav } from "@/components/SideNav";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
+import { isAdminEmail } from "@/utils/supabase/admin";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,7 @@ export default async function RootLayout({
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   const { data: { user } } = await supabase.auth.getUser()
-  const isAdmin = user?.email === (process.env.ADMIN_EMAIL ?? '')
+  const isAdmin = isAdminEmail(user?.email)
 
   return (
     <html lang="es" className={`${geist.variable} ${bebasNeue.variable} h-full antialiased`}>

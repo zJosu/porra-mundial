@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { X } from 'lucide-react'
 import type { Jugador } from './PlayerSelect'
+import { sortByPriority } from '@/app/lib/player-priority'
 
 export type BestXISlot =
   | 'GK'
@@ -90,9 +91,10 @@ export function BestXIBuilder({
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     const posFilter = activeSlot ? SLOT_POSICION[activeSlot] : null
-    const base = posFilter
+    const baseRaw = posFilter
       ? jugadores.filter((j) => j.posicion === posFilter)
       : jugadores
+    const base = sortByPriority(baseRaw, posFilter)
     if (!q) return posFilter ? base : base.slice(0, 40)
     return base.filter((j) => {
       const full = `${j.nombre} ${j.apellidos ?? ''}`

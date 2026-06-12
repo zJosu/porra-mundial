@@ -8,3 +8,13 @@ export function createAdminClient() {
     { auth: { autoRefreshToken: false, persistSession: false } }
   )
 }
+
+/** Returns true if the given email has admin access. */
+export function isAdminEmail(email: string | null | undefined): boolean {
+  if (!email) return false
+  const list = (process.env.ADMIN_EMAILS ?? process.env.ADMIN_EMAIL ?? '')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean)
+  return list.includes(email.toLowerCase())
+}

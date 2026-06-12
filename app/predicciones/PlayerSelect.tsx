@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Search, X, ChevronDown, Trophy } from 'lucide-react'
+import { sortByPriority } from '@/app/lib/player-priority'
 
 export type Jugador = {
   id: number
@@ -98,11 +99,14 @@ export function PlayerSelect({
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    const base =
+    const baseRaw =
       posicionFilter && posicionFilter.length > 0
         ? jugadores.filter((j) => j.posicion != null && posicionFilter.includes(j.posicion))
         : jugadores
     const hasFilter = posicionFilter && posicionFilter.length > 0
+    const posFilter =
+      posicionFilter && posicionFilter.length === 1 ? posicionFilter[0] : null
+    const base = sortByPriority(baseRaw, posFilter)
     if (!q) return hasFilter ? base : base.slice(0, 50)
     const matches: Jugador[] = []
     for (const j of base) {

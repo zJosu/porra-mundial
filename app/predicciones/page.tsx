@@ -69,7 +69,7 @@ export default async function PrediccionesPage() {
       .range(750, 1499),
     supabase
       .from('predicciones_bracket')
-      .select('ronda, slot, ganador_equipo_id')
+      .select('ronda, slot, ganador_equipo_id, goles_local, goles_visitante')
       .eq('usuario_id', user.id),
     supabase
       .from('predicciones_extras')
@@ -140,6 +140,8 @@ export default async function PrediccionesPage() {
     ronda: b.ronda as 'R32' | 'R16' | 'QF' | 'SF' | 'F',
     slot: b.slot as number,
     ganador_equipo_id: b.ganador_equipo_id as number,
+    goles_local: (b.goles_local as number | null) ?? null,
+    goles_visitante: (b.goles_visitante as number | null) ?? null,
   }))
 
   const extrasSaved = {

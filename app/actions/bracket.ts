@@ -7,6 +7,8 @@ export type BracketInput = {
   ronda: 'R32' | 'R16' | 'QF' | 'SF' | 'P3' | 'F'
   slot: number
   ganador_equipo_id: number
+  goles_local?: number | null
+  goles_visitante?: number | null
 }
 
 export type ExtrasInput = {
@@ -37,6 +39,8 @@ export async function saveBracket(
       ronda: b.ronda,
       slot: b.slot,
       ganador_equipo_id: b.ganador_equipo_id,
+      goles_local: b.goles_local ?? null,
+      goles_visitante: b.goles_visitante ?? null,
     }))
     const ins = await supabase.from('predicciones_bracket').insert(rows)
     if (ins.error) return { ok: false, error: ins.error.message }

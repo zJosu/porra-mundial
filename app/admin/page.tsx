@@ -4,14 +4,14 @@ import { redirect } from 'next/navigation'
 import { listParticipants } from '@/app/actions/admin'
 import { AddParticipantForm } from './AddParticipantForm'
 import { ShieldCheck, Users } from 'lucide-react'
+import { isAdminEmail } from '@/utils/supabase/admin'
 
 export default async function AdminPage() {
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
   const { data: { user } } = await supabase.auth.getUser()
 
-  const adminEmail = process.env.ADMIN_EMAIL ?? ''
-  if (!user || user.email !== adminEmail) redirect('/')
+  if (!user || !isAdminEmail(user.email)) redirect('/')
 
   const participants = await listParticipants()
 

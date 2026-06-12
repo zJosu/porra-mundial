@@ -31,6 +31,7 @@ export type { BestXI }
 type ClasifSnap = { grupo: string; equipo_id: number; posicion: number }
 type TercerosSnap = { equipo_id: number; posicion: number }
 export type BracketWinners = Map<string, number>
+export type BracketScores = Map<string, { gl: number; gv: number }>
 
 type Match = {
   slot: number
@@ -41,11 +42,10 @@ type Match = {
 }
 
 // ---- geometry ----
-// Each round has a "box" that's vertically aligned with the right pair from the previous round.
-// Box height doubles each round (+gap). Card height stays 52 px.
-const CARD_H = 56
+// Card height per round (final/p3 a bit taller for visual hierarchy)
+const CARD_H = 72
 const GAP = 18
-const COL_W = 138
+const COL_W = 156
 const CENTER_W = 200
 // Box heights per round (left/right half).
 const BOX_H = {
@@ -112,6 +112,8 @@ function MatchCard({
   ronda,
   winnerId,
   onPick,
+  score,
+  onScoreChange,
   equipos,
   variant = 'default',
   isActive = false,
@@ -121,6 +123,8 @@ function MatchCard({
   ronda: Round
   winnerId: number | null
   onPick: (teamId: number) => void
+  score: { gl: number; gv: number } | null
+  onScoreChange: (gl: number | null, gv: number | null) => void
   equipos: Map<number, EquipoLite>
   variant?: 'default' | 'final' | 'p3'
   isActive?: boolean
@@ -133,51 +137,88 @@ function MatchCard({
   const isFinal = variant === 'final'
   const isP3 = variant === 'p3'
 
+  const gl = score?.gl ?? null
+  const gv = score?.gv ?? null
+
+  const handleScore = (nextGl: number | null, nextGv: number | null) => {
+    onScoreChange(nextGl, nextGv)
+    if (nextGl != null && nextGv != null && match.teamA != null && match.teamB != null && nextGl !== nextGv) {
+      const inferred = nextGl > nextGv ? match.teamA : match.teamB
+      if (inferred !== winnerId) onPick(inferred)
+    }
+  }
+
+  const ScoreInput = ({ value, onChange, ariaLabel }: { value: number | null; onChange: (v: number | null) => void; ariaLabel: string }) => (
+    <input
+      type="number"
+      inputMode="numeric"
+      min={0}
+      max={20}
+      aria-label={ariaLabel}
+      value={value ?? ''}
+      onClick={(e) => e.stopPropagation()}
+      onChange={(e) => {
+        const raw = e.target.value
+        if (raw === '') return onChange(null)
+        const n = parseInt(raw, 10)
+        if (Number.isFinite(n) && n >= 0 && n <= 20) onChange(n)
+      }}
+      disabled={!bothSet}
+      className="w-9 h-7 rounded-md text-center text-[12px] font-black tabular-nums text-slate-900 border border-slate-200 bg-white disabled:bg-slate-50 disabled:text-slate-300 focus:outline-none focus:ring-2 focus:ring-[#FFD100] focus:border-transparent"
+    />
+  )
+
   const Row = ({
     team,
     teamId,
     placeholder,
     selected,
+    goals,
+    onGoalsChange,
+    side,
   }: {
     team: EquipoLite | null
     teamId: number | null
     placeholder: string
     selected: boolean
+    goals: number | null
+    onGoalsChange: (n: number | null) => void
+    side: 'A' | 'B'
   }) => {
     const selectedBg = isFinal ? GOLD : isP3 ? '#cd7f32' : GREEN
     const selectedText = isFinal || isP3 ? NAVY : '#fff'
     return (
-      <button
-        type="button"
-        disabled={!team}
-        onClick={() => teamId != null && onPick(teamId)}
-        className={`flex-1 min-w-0 flex items-center gap-1.5 px-2 transition-all duration-150 disabled:cursor-not-allowed ${
-          selected
-            ? 'font-black'
-            : team
-              ? 'text-slate-800 hover:bg-slate-50'
-              : 'text-slate-400'
+      <div
+        className={`flex-1 min-w-0 flex items-center gap-1.5 px-2 transition-all duration-150 ${
+          selected ? 'font-black' : team ? 'text-slate-800' : 'text-slate-400'
         }`}
-        style={
-          selected
-            ? { background: selectedBg, color: selectedText }
-            : undefined
-        }
+        style={selected ? { background: selectedBg, color: selectedText } : undefined}
       >
-        {team ? (
-          <>
-            <FlagImg codigo={team.codigo_bandera} nombre={team.nombre} />
-            <span className="text-[11px] font-bold truncate">{team.nombre}</span>
-          </>
-        ) : (
-          <>
-            <div className="w-[16px] h-[11px] rounded-[2px] bg-slate-100" />
-            <span className="text-[9.5px] italic truncate text-slate-400">
-              {placeholder}
-            </span>
-          </>
-        )}
-      </button>
+        <button
+          type="button"
+          disabled={!team}
+          onClick={() => teamId != null && onPick(teamId)}
+          className="flex-1 min-w-0 flex items-center gap-1.5 text-left disabled:cursor-not-allowed py-1 hover:opacity-90"
+          title={team ? `Marcar como ganador: ${team.nombre}` : undefined}
+        >
+          {team ? (
+            <>
+              <FlagImg codigo={team.codigo_bandera} nombre={team.nombre} />
+              <span className="text-[11px] font-bold truncate">{team.nombre}</span>
+            </>
+          ) : (
+            <>
+              <div className="w-[16px] h-[11px] rounded-[2px] bg-slate-100" />
+              <span className="text-[9.5px] italic truncate text-slate-400">{placeholder}</span>
+            </>
+          )}
+        </button>
+        <ScoreInput
+          value={goals}
+          ariaLabel={`Goles ${side}`}
+          onChange={(n) => onGoalsChange(n)}
+        />
+      </div>
     )
   }
 
@@ -214,6 +255,9 @@ function MatchCard({
         teamId={match.teamA}
         placeholder={match.labelA}
         selected={winnerId != null && winnerId === match.teamA}
+        goals={gl}
+        onGoalsChange={(n) => handleScore(n, gv)}
+        side="A"
       />
       <div className="h-px" style={{ background: 'rgba(15,23,42,0.08)' }} />
       <Row
@@ -221,6 +265,9 @@ function MatchCard({
         teamId={match.teamB}
         placeholder={match.labelB}
         selected={winnerId != null && winnerId === match.teamB}
+        goals={gv}
+        onGoalsChange={(n) => handleScore(gl, n)}
+        side="B"
       />
     </div>
     </div>
@@ -315,6 +362,8 @@ function RoundColumn({
   boxH,
   winners,
   onPick,
+  scores,
+  onScoreChange,
   equipos,
   label,
   activeKey,
@@ -325,6 +374,8 @@ function RoundColumn({
   boxH: number
   winners: BracketWinners
   onPick: (slot: number, teamId: number) => void
+  scores: BracketScores
+  onScoreChange: (slot: number, gl: number | null, gv: number | null) => void
   equipos: Map<number, EquipoLite>
   label?: string
   activeKey: string | null
@@ -348,6 +399,8 @@ function RoundColumn({
               ronda={ronda}
               winnerId={winners.get(key) ?? null}
               onPick={(teamId) => onPick(m.slot, teamId)}
+              score={scores.get(key) ?? null}
+              onScoreChange={(gl, gv) => onScoreChange(m.slot, gl, gv)}
               equipos={equipos}
               isActive={isActive}
               isDimmed={isDimmed}
@@ -381,6 +434,8 @@ export function CuadroStep({
   terceros,
   winners,
   onWinnersChange,
+  scores,
+  onScoresChange,
   campeonId,
   pichichiId,
   mvpId,
@@ -401,6 +456,8 @@ export function CuadroStep({
   terceros: TercerosSnap[]
   winners: BracketWinners
   onWinnersChange: (next: BracketWinners) => void
+  scores: BracketScores
+  onScoresChange: (next: BracketScores) => void
   campeonId: number | null
   pichichiId: number | null
   mvpId: number | null
@@ -524,19 +581,32 @@ export function CuadroStep({
   useEffect(() => {
     if (walkMode) return
     let changed = false
+    let scoresChanged = false
     const next = new Map(winners)
+    const nextScores = new Map(scores)
     for (const r of ROUND_ORDER) {
       for (const m of rounds[r]) {
         const key = `${r}:${m.slot}`
         const w = next.get(key)
-        if (w == null) continue
+        if (w == null) {
+          if (nextScores.has(key)) {
+            nextScores.delete(key)
+            scoresChanged = true
+          }
+          continue
+        }
         if (w !== m.teamA && w !== m.teamB) {
           next.delete(key)
           changed = true
+          if (nextScores.has(key)) {
+            nextScores.delete(key)
+            scoresChanged = true
+          }
         }
       }
     }
     if (changed) onWinnersChange(next)
+    if (scoresChanged) onScoresChange(nextScores)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rounds, walkMode])
 
@@ -572,15 +642,28 @@ export function CuadroStep({
       // se descartan todos los ganadores posteriores y el cursor avanza al siguiente.
       const idx = stepIdxOf(ronda, slot)
       if (idx >= 0) {
+        const nextScores = new Map(scores)
+        let scoresChanged = false
         for (let i = idx + 1; i < WALK_TOTAL; i++) {
-          next.delete(matchKey(WALK_STEPS[i].round, WALK_STEPS[i].slot))
+          const k = matchKey(WALK_STEPS[i].round, WALK_STEPS[i].slot)
+          next.delete(k)
+          if (nextScores.delete(k)) scoresChanged = true
         }
         onWinnersChange(next)
+        if (scoresChanged) onScoresChange(nextScores)
         setStepIdx(idx + 1)
         return
       }
     }
     onWinnersChange(next)
+  }
+
+  const setScore = (ronda: Round, slot: number, gl: number | null, gv: number | null) => {
+    const next = new Map(scores)
+    const key = matchKey(ronda, slot)
+    if (gl == null && gv == null) next.delete(key)
+    else next.set(key, { gl: gl ?? 0, gv: gv ?? 0 })
+    onScoresChange(next)
   }
 
   // Split halves
@@ -786,6 +869,8 @@ export function CuadroStep({
                 boxH={BOX_H.R32}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R32', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('R32', slot, gl, gv)}
                 equipos={equipoById}
                 label="R32"
                 activeKey={activeKey}
@@ -798,6 +883,8 @@ export function CuadroStep({
                 boxH={BOX_H.R16}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R16', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('R16', slot, gl, gv)}
                 equipos={equipoById}
                 label="Octavos"
                 activeKey={activeKey}
@@ -810,6 +897,8 @@ export function CuadroStep({
                 boxH={BOX_H.QF}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('QF', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('QF', slot, gl, gv)}
                 equipos={equipoById}
                 label="Cuartos"
                 activeKey={activeKey}
@@ -826,6 +915,8 @@ export function CuadroStep({
                       ronda="SF"
                       winnerId={displayWinners.get(`SF:${leftSF.slot}`) ?? null}
                       onPick={(teamId) => setWinner('SF', leftSF.slot, teamId)}
+                      score={scores.get(`SF:${leftSF.slot}`) ?? null}
+                      onScoreChange={(gl, gv) => setScore('SF', leftSF.slot, gl, gv)}
                       equipos={equipoById}
                       isActive={activeKey === matchKey('SF', leftSF.slot)}
                       isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', leftSF.slot)}
@@ -860,6 +951,8 @@ export function CuadroStep({
                       ronda="F"
                       winnerId={finalWinnerId}
                       onPick={(teamId) => setWinner('F', finalMatch.slot, teamId)}
+                      score={scores.get(`F:${finalMatch.slot}`) ?? null}
+                      onScoreChange={(gl, gv) => setScore('F', finalMatch.slot, gl, gv)}
                       equipos={equipoById}
                       variant="final"
                       isActive={activeKey === matchKey('F', finalMatch.slot)}
@@ -909,6 +1002,8 @@ export function CuadroStep({
                         ronda="P3"
                         winnerId={p3WinnerId}
                         onPick={(teamId) => setWinner('P3', p3Match.slot, teamId)}
+                        score={scores.get(`P3:${p3Match.slot}`) ?? null}
+                        onScoreChange={(gl, gv) => setScore('P3', p3Match.slot, gl, gv)}
                         equipos={equipoById}
                         variant="p3"
                         isActive={activeKey === matchKey('P3', p3Match.slot)}
@@ -929,6 +1024,8 @@ export function CuadroStep({
                       ronda="SF"
                       winnerId={displayWinners.get(`SF:${rightSF.slot}`) ?? null}
                       onPick={(teamId) => setWinner('SF', rightSF.slot, teamId)}
+                      score={scores.get(`SF:${rightSF.slot}`) ?? null}
+                      onScoreChange={(gl, gv) => setScore('SF', rightSF.slot, gl, gv)}
                       equipos={equipoById}
                       isActive={activeKey === matchKey('SF', rightSF.slot)}
                       isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', rightSF.slot)}
@@ -943,6 +1040,8 @@ export function CuadroStep({
                 boxH={BOX_H.QF}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('QF', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('QF', slot, gl, gv)}
                 equipos={equipoById}
                 label="Cuartos"
                 activeKey={activeKey}
@@ -955,6 +1054,8 @@ export function CuadroStep({
                 boxH={BOX_H.R16}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R16', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('R16', slot, gl, gv)}
                 equipos={equipoById}
                 label="Octavos"
                 activeKey={activeKey}
@@ -967,6 +1068,8 @@ export function CuadroStep({
                 boxH={BOX_H.R32}
                 winners={displayWinners}
                 onPick={(slot, teamId) => setWinner('R32', slot, teamId)}
+                scores={scores}
+                onScoreChange={(slot, gl, gv) => setScore('R32', slot, gl, gv)}
                 equipos={equipoById}
                 label="R32"
                 activeKey={activeKey}

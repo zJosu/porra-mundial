@@ -38,7 +38,13 @@ const STEPS: { n: Step; label: string; sub: string }[] = [
 
 type ClasifSnap = { grupo: string; equipo_id: number; posicion: number }
 type TercerosSnap = { equipo_id: number; posicion: number }
-type BracketSaved = { ronda: Round; slot: number; ganador_equipo_id: number }
+type BracketSaved = {
+  ronda: Round
+  slot: number
+  ganador_equipo_id: number
+  goles_local: number | null
+  goles_visitante: number | null
+}
 type ExtrasSaved = {
   campeon_equipo_id: number | null
   pichichi_jugador_id: number | null
@@ -54,6 +60,7 @@ type CacheState = {
   clasif: ClasifSnap[]
   terceros: TercerosSnap[]
   bracket: [string, number][]
+  bracketScores: [string, { gl: number; gv: number }][]
   extras: {
     campeon_equipo_id: number | null
     pichichi_jugador_id: number | null
@@ -127,6 +134,17 @@ export function PrediccionesWizard({
   const [bracketWinners, setBracketWinners] = useState<BracketWinners>(
     () => new Map(bracketSaved.map((b) => [`${b.ronda}:${b.slot}`, b.ganador_equipo_id])),
   )
+  const [bracketScores, setBracketScores] = useState<Map<string, { gl: number; gv: number }>>(
+    () => {
+      const m = new Map<string, { gl: number; gv: number }>()
+      for (const b of bracketSaved) {
+        if (b.goles_local != null && b.goles_visitante != null) {
+          m.set(`${b.ronda}:${b.slot}`, { gl: b.goles_local, gv: b.goles_visitante })
+        }
+      }
+      return m
+    },
+  )
   const [campeonId, setCampeonId] = useState<number | null>(extrasSaved.campeon_equipo_id)
   const [pichichiId, setPichichiId] = useState<number | null>(extrasSaved.pichichi_jugador_id)
   const [mvpId, setMvpId] = useState<number | null>(extrasSaved.mvp_jugador_id)
@@ -153,6 +171,7 @@ export function PrediccionesWizard({
           if (Array.isArray(parsed.clasif)) setClasifSnap(parsed.clasif)
           if (Array.isArray(parsed.terceros)) setTercerosSnap(parsed.terceros)
           if (Array.isArray(parsed.bracket)) setBracketWinners(new Map(parsed.bracket))
+          if (Array.isArray(parsed.bracketScores)) setBracketScores(new Map(parsed.bracketScores))
           if (parsed.extras) {
             if (parsed.extras.campeon_equipo_id !== undefined)
               setCampeonId(parsed.extras.campeon_equipo_id)
@@ -185,6 +204,7 @@ export function PrediccionesWizard({
       clasif: clasifSnap,
       terceros: tercerosSnap,
       bracket: [...bracketWinners.entries()],
+      bracketScores: [...bracketScores.entries()],
       extras: {
         campeon_equipo_id: campeonId,
         pichichi_jugador_id: pichichiId,
@@ -202,7 +222,7 @@ export function PrediccionesWizard({
     } catch {
       // quota exceeded etc.
     }
-  }, [hydrated, picks, scores, clasifSnap, tercerosSnap, bracketWinners, campeonId, pichichiId, mvpId, guanteOroId, jovenId, bestXI, cacheKey])
+  }, [hydrated, picks, scores, clasifSnap, tercerosSnap, bracketWinners, bracketScores, campeonId, pichichiId, mvpId, guanteOroId, jovenId, bestXI, cacheKey])
 
   const totalGroupMatches = partidos.length
   const completedPicks = useMemo(() => {
@@ -257,10 +277,13 @@ export function PrediccionesWizard({
     })
     const bracket = [...bracketWinners.entries()].map(([key, ganador_equipo_id]) => {
       const [ronda, slotStr] = key.split(':')
+      const sc = bracketScores.get(key)
       return {
         ronda: ronda as Round,
         slot: parseInt(slotStr, 10),
         ganador_equipo_id,
+        goles_local: sc?.gl ?? null,
+        goles_visitante: sc?.gv ?? null,
       }
     })
     startTransition(async () => {
@@ -318,7 +341,7 @@ export function PrediccionesWizard({
             <button
               type="button"
               onClick={() => setEditMode(true)}
-              className="shrink-0 flex items-center gap-1.5 bg-white bg-opacity-20 hover:bg-opacity-30 text-white text-[11px] font-bold px-3 py-2 rounded-xl transition active:scale-95"
+              className="shrink-0 flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white text-[11px] font-bold px-3 py-2 rounded-xl transition active:scale-95"
             >
               <Pencil size={12} />
               Cambiar
@@ -464,6 +487,8 @@ export function PrediccionesWizard({
           terceros={tercerosSnap}
           winners={bracketWinners}
           onWinnersChange={setBracketWinners}
+          scores={bracketScores}
+          onScoresChange={setBracketScores}
           campeonId={campeonId}
           pichichiId={pichichiId}
           mvpId={mvpId}

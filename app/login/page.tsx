@@ -130,7 +130,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="nombre@apellido"
                 className="w-full rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-[#555] focus:outline-none transition-colors"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
               />
@@ -148,7 +148,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="tu jugador del mundial"
+                placeholder="contraseña"
                 className="w-full rounded-xl pl-10 pr-11 py-3 text-sm text-white placeholder-[#555] focus:outline-none transition-colors"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
               />
@@ -230,7 +230,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="nombre@apellido"
                 className="w-full rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-[#555] focus:outline-none transition-colors"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
               />
@@ -271,7 +271,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="nombre@apellido"
                 className="w-full rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-[#555] focus:outline-none transition-colors"
                 style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}
               />
