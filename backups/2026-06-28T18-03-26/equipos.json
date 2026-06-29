@@ -1,0 +1,338 @@
+[
+  {
+    "id": 1,
+    "nombre": "México",
+    "codigo_bandera": "mx",
+    "grupo": "A",
+    "confederacion": "CONCACAF"
+  },
+  {
+    "id": 2,
+    "nombre": "Sudáfrica",
+    "codigo_bandera": "za",
+    "grupo": "A",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 3,
+    "nombre": "Corea del Sur",
+    "codigo_bandera": "kr",
+    "grupo": "A",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 4,
+    "nombre": "República Checa",
+    "codigo_bandera": "cz",
+    "grupo": "A",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 5,
+    "nombre": "Canadá",
+    "codigo_bandera": "ca",
+    "grupo": "B",
+    "confederacion": "CONCACAF"
+  },
+  {
+    "id": 6,
+    "nombre": "Bosnia y Herzegovina",
+    "codigo_bandera": "ba",
+    "grupo": "B",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 7,
+    "nombre": "Qatar",
+    "codigo_bandera": "qa",
+    "grupo": "B",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 8,
+    "nombre": "Suiza",
+    "codigo_bandera": "ch",
+    "grupo": "B",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 9,
+    "nombre": "Brasil",
+    "codigo_bandera": "br",
+    "grupo": "C",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 10,
+    "nombre": "Marruecos",
+    "codigo_bandera": "ma",
+    "grupo": "C",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 11,
+    "nombre": "Haití",
+    "codigo_bandera": "ht",
+    "grupo": "C",
+    "confederacion": "CONCACAF"
+  },
+  {
+    "id": 12,
+    "nombre": "Escocia",
+    "codigo_bandera": "gb-sct",
+    "grupo": "C",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 13,
+    "nombre": "Estados Unidos",
+    "codigo_bandera": "us",
+    "grupo": "D",
+    "confederacion": "CONCACAF"
+  },
+  {
+    "id": 14,
+    "nombre": "Paraguay",
+    "codigo_bandera": "py",
+    "grupo": "D",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 15,
+    "nombre": "Australia",
+    "codigo_bandera": "au",
+    "grupo": "D",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 16,
+    "nombre": "Turquía",
+    "codigo_bandera": "tr",
+    "grupo": "D",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 17,
+    "nombre": "Alemania",
+    "codigo_bandera": "de",
+    "grupo": "E",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 18,
+    "nombre": "Curazao",
+    "codigo_bandera": "cw",
+    "grupo": "E",
+    "confederacion": "CONCACAF"
+  },
+  {
+    "id": 19,
+    "nombre": "Costa de Marfil",
+    "codigo_bandera": "ci",
+    "grupo": "E",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 20,
+    "nombre": "Ecuador",
+    "codigo_bandera": "ec",
+    "grupo": "E",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 21,
+    "nombre": "Países Bajos",
+    "codigo_bandera": "nl",
+    "grupo": "F",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 22,
+    "nombre": "Japón",
+    "codigo_bandera": "jp",
+    "grupo": "F",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 23,
+    "nombre": "Suecia",
+    "codigo_bandera": "se",
+    "grupo": "F",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 24,
+    "nombre": "Túnez",
+    "codigo_bandera": "tn",
+    "grupo": "F",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 25,
+    "nombre": "Bélgica",
+    "codigo_bandera": "be",
+    "grupo": "G",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 26,
+    "nombre": "Egipto",
+    "codigo_bandera": "eg",
+    "grupo": "G",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 27,
+    "nombre": "Irán",
+    "codigo_bandera": "ir",
+    "grupo": "G",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 28,
+    "nombre": "Nueva Zelanda",
+    "codigo_bandera": "nz",
+    "grupo": "G",
+    "confederacion": "OFC"
+  },
+  {
+    "id": 29,
+    "nombre": "España",
+    "codigo_bandera": "es",
+    "grupo": "H",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 30,
+    "nombre": "Cabo Verde",
+    "codigo_bandera": "cv",
+    "grupo": "H",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 31,
+    "nombre": "Arabia Saudí",
+    "codigo_bandera": "sa",
+    "grupo": "H",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 32,
+    "nombre": "Uruguay",
+    "codigo_bandera": "uy",
+    "grupo": "H",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 33,
+    "nombre": "Francia",
+    "codigo_bandera": "fr",
+    "grupo": "I",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 34,
+    "nombre": "Senegal",
+    "codigo_bandera": "sn",
+    "grupo": "I",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 35,
+    "nombre": "Irak",
+    "codigo_bandera": "iq",
+    "grupo": "I",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 36,
+    "nombre": "Noruega",
+    "codigo_bandera": "no",
+    "grupo": "I",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 37,
+    "nombre": "Argentina",
+    "codigo_bandera": "ar",
+    "grupo": "J",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 38,
+    "nombre": "Argelia",
+    "codigo_bandera": "dz",
+    "grupo": "J",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 39,
+    "nombre": "Austria",
+    "codigo_bandera": "at",
+    "grupo": "J",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 40,
+    "nombre": "Jordania",
+    "codigo_bandera": "jo",
+    "grupo": "J",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 41,
+    "nombre": "Portugal",
+    "codigo_bandera": "pt",
+    "grupo": "K",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 42,
+    "nombre": "RD Congo",
+    "codigo_bandera": "cd",
+    "grupo": "K",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 43,
+    "nombre": "Uzbekistán",
+    "codigo_bandera": "uz",
+    "grupo": "K",
+    "confederacion": "AFC"
+  },
+  {
+    "id": 44,
+    "nombre": "Colombia",
+    "codigo_bandera": "co",
+    "grupo": "K",
+    "confederacion": "CONMEBOL"
+  },
+  {
+    "id": 45,
+    "nombre": "Inglaterra",
+    "codigo_bandera": "gb-eng",
+    "grupo": "L",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 46,
+    "nombre": "Croacia",
+    "codigo_bandera": "hr",
+    "grupo": "L",
+    "confederacion": "UEFA"
+  },
+  {
+    "id": 47,
+    "nombre": "Ghana",
+    "codigo_bandera": "gh",
+    "grupo": "L",
+    "confederacion": "CAF"
+  },
+  {
+    "id": 48,
+    "nombre": "Panamá",
+    "codigo_bandera": "pa",
+    "grupo": "L",
+    "confederacion": "CONCACAF"
+  }
+]

@@ -1,0 +1,2306 @@
+[
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "E",
+    "equipo_id": 17,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "E",
+    "equipo_id": 20,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "E",
+    "equipo_id": 18,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "E",
+    "equipo_id": 19,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "H",
+    "equipo_id": 29,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "H",
+    "equipo_id": 31,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "H",
+    "equipo_id": 32,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "H",
+    "equipo_id": 30,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "J",
+    "equipo_id": 37,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "J",
+    "equipo_id": 39,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "J",
+    "equipo_id": 38,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "J",
+    "equipo_id": 40,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "D",
+    "equipo_id": 16,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "D",
+    "equipo_id": 13,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "D",
+    "equipo_id": 14,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "D",
+    "equipo_id": 15,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "G",
+    "equipo_id": 25,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "G",
+    "equipo_id": 27,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "G",
+    "equipo_id": 28,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "G",
+    "equipo_id": 26,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "B",
+    "equipo_id": 8,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "B",
+    "equipo_id": 5,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "B",
+    "equipo_id": 6,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "B",
+    "equipo_id": 7,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "C",
+    "equipo_id": 10,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "C",
+    "equipo_id": 9,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "C",
+    "equipo_id": 12,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "C",
+    "equipo_id": 11,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "K",
+    "equipo_id": 41,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "K",
+    "equipo_id": 44,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "K",
+    "equipo_id": 42,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "K",
+    "equipo_id": 43,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "A",
+    "equipo_id": 1,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "A",
+    "equipo_id": 4,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "A",
+    "equipo_id": 2,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "A",
+    "equipo_id": 3,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "L",
+    "equipo_id": 45,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "L",
+    "equipo_id": 46,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "L",
+    "equipo_id": 47,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "L",
+    "equipo_id": 48,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "I",
+    "equipo_id": 33,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "I",
+    "equipo_id": 36,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "I",
+    "equipo_id": 34,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "I",
+    "equipo_id": 35,
+    "posicion": 4
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "F",
+    "equipo_id": 22,
+    "posicion": 1
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "F",
+    "equipo_id": 21,
+    "posicion": 2
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "F",
+    "equipo_id": 23,
+    "posicion": 3
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "grupo": "F",
+    "equipo_id": 24,
+    "posicion": 4
+  }
+]

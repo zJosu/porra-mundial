@@ -1,9 +1,9 @@
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { Swords } from 'lucide-react'
-import { matchPoints, signoFromGoles, awardsPoints, classificationGroupPoints } from './scoring'
+import { matchPoints, signoFromGoles, awardsPoints, classificationGroupPoints, bracketPoints } from './scoring'
 import { XI_SLOTS } from './xi-slots'
-import { isAdminEmail } from '@/utils/supabase/admin'
+import { isAdminEmail, createAdminClient } from '@/utils/supabase/admin'
 import { UserPredictionsSelect } from '@/components/UserPredictionsSelect'
 import {
   ResultadosClient,
@@ -100,6 +100,9 @@ export default async function ResultadosPage({
     { data: misPredsRaw },
     { data: misExtrasRaw },
     { data: misClasifRaw },
+    { data: misBracketRaw },
+    { data: realBracketRaw },
+    { data: equiposRaw },
   ] = await Promise.all([
     supabase
       .from('partidos')
@@ -132,6 +135,11 @@ export default async function ResultadosPage({
     viewedUserId
       ? supabase.from('clasificaciones_grupos').select('grupo, equipo_id, posicion').eq('usuario_id', viewedUserId)
       : Promise.resolve({ data: null }),
+    viewedUserId
+      ? createAdminClient().from('predicciones_bracket').select('ronda, slot, ganador_equipo_id').eq('usuario_id', viewedUserId)
+      : Promise.resolve({ data: null }),
+    createAdminClient().from('resultados_bracket').select('ronda, slot, ganador_equipo_id'),
+    supabase.from('equipos').select('id, nombre, codigo_bandera').order('nombre'),
   ])
 
   const partidos = (partidosRaw ?? []) as unknown as PartidoRow[]
@@ -350,6 +358,82 @@ export default async function ResultadosPage({
 
   const hayPicks = !!user && (predsByMatch.size > 0 || mine != null || clasifPicks.length > 0)
 
+  // ── Phase 4: knockout bracket ─────────────────────────────────────────────
+  type BracketRow = { ronda: string; slot: number; ganador_equipo_id: number }
+  const userBracket = new Map<string, number>()
+  for (const r of (misBracketRaw ?? []) as BracketRow[]) {
+    userBracket.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
+  const realBracket = new Map<string, number>()
+  for (const r of (realBracketRaw ?? []) as BracketRow[]) {
+    realBracket.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
+  // Fallback: use campeon_equipo_id from resultados_oficiales as Final winner
+  if (!realBracket.has('F:1') && off?.campeon_equipo_id) {
+    realBracket.set('F:1', off.campeon_equipo_id)
+  }
+  const kPts = bracketPoints(userBracket, realBracket)
+
+  // Convert bracket to plain object for ResultadosClient prop
+  const bracketWinnersObj: Record<string, number> = {}
+  for (const [k, v] of userBracket) bracketWinnersObj[k] = v
+  const realBracketObj: Record<string, number> = {}
+  for (const [k, v] of realBracket) realBracketObj[k] = v
+  const equiposForBracket = (equiposRaw ?? []) as { id: number; nombre: string; codigo_bandera: string }[]
+
+  // ── KO exact score predictions ────────────────────────────────────────────
+  type KOScorePred = { ronda: string; slot: number; goles_local: number; goles_visitante: number }
+  const { data: myKOScoresRaw } = viewedUserId
+    ? await createAdminClient().from('predicciones_marcadores_ko')
+        .select('ronda, slot, goles_local, goles_visitante')
+        .eq('usuario_id', viewedUserId)
+    : { data: null }
+
+  const koPartidos = partidos.filter((p) => p.grupo == null && p.fase != null)
+  const koResultsByKey = new Map<string, { gl: number; gv: number; local: typeof koPartidos[0]['equipo_local']; visitante: typeof koPartidos[0]['equipo_visitante'] }>()
+  for (const p of koPartidos) {
+    if (p.goles_local_oficial != null && p.goles_visitante_oficial != null) {
+      koResultsByKey.set(`${p.fase}:${p.jornada}`, {
+        gl: p.goles_local_oficial, gv: p.goles_visitante_oficial,
+        local: p.equipo_local, visitante: p.equipo_visitante,
+      })
+    }
+  }
+
+  const koPredsByKey = new Map<string, { gl: number; gv: number }>()
+  for (const pred of (myKOScoresRaw ?? []) as KOScorePred[]) {
+    koPredsByKey.set(`${pred.ronda}:${pred.slot}`, { gl: pred.goles_local, gv: pred.goles_visitante })
+  }
+
+  let koExactPts = 0
+  for (const [key, off2] of koResultsByKey) {
+    const pred = koPredsByKey.get(key)
+    if (pred && pred.gl === off2.gl && pred.gv === off2.gv) koExactPts++
+  }
+
+  const puntosKnockout = kPts.total + koExactPts
+
+  // Build KO match results list for display
+  const koMatchResults = [...koResultsByKey.entries()].map(([key, res]) => {
+    const pred = koPredsByKey.get(key)
+    const pts = pred && pred.gl === res.gl && pred.gv === res.gv ? 1 : pred ? 0 : null
+    const matchScore = kPts.matches.find((m) => `${m.ronda}:${m.slot}` === key)
+    const bracketUserWinnerId = userBracket.get(key) ?? null
+    const bracketRealWinnerId = realBracket.get(key) ?? null
+    return {
+      key, gl: res.gl, gv: res.gv,
+      localId: res.local?.id ?? 0,
+      localNombre: res.local?.nombre ?? '?', localBandera: res.local?.codigo_bandera ?? '',
+      visitanteId: res.visitante?.id ?? 0,
+      visitanteNombre: res.visitante?.nombre ?? '?', visitanteBandera: res.visitante?.codigo_bandera ?? '',
+      userGl: pred?.gl ?? null, userGv: pred?.gv ?? null, pts,
+      bracketUserWinnerId,
+      bracketRealWinnerId,
+      bracketBase: matchScore?.base ?? 0,
+      bracketExact: matchScore?.exact ?? 0,
+    }
+  }).sort((a, b) => a.key.localeCompare(b.key))
+
   return (
     <div className="min-h-full pb-24">
       <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
@@ -391,7 +475,7 @@ export default async function ResultadosPage({
           grupos={grupos}
           clasifGroups={clasifGroups}
           awards={awards}
-          phasePoints={{ grupos: puntosPartidos, clasif: puntosClasif, awards: aPts.total, knockout: 0 }}
+          phasePoints={{ grupos: puntosPartidos, clasif: puntosClasif, awards: aPts.total, knockout: puntosKnockout }}
           matchBreakdown={matchBreakdown}
           clasifBreakdown={clasifBreakdown}
           hayPicks={hayPicks}
@@ -400,6 +484,11 @@ export default async function ResultadosPage({
           adminData={adminData}
           viewingSelf={viewingSelf}
           viewedName={viewedName}
+          bracketWinners={bracketWinnersObj}
+          equiposForBracket={equiposForBracket}
+          realBracket={realBracketObj}
+          koMatchResults={koMatchResults}
+          koBreakdown={{ base: kPts.base, exact: kPts.exact, champion: kPts.champion, exactScores: koExactPts }}
         />
       )}
     </div>

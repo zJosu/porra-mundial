@@ -23,17 +23,13 @@ import type { EquipoInfo, PartidoInfo, Resultado } from './standings'
 import { submitPorraCompleta } from '@/app/actions/submit'
 import type { Round } from './bracket'
 
-// Feature flag: bracket (knockout cuadro) hidden until activated.
-// Cuando se quiera activar, poner SHOW_BRACKET = true y restaurar el botón
-// del cuadro en el stepper + requisito en phase3Complete.
-const SHOW_BRACKET = false
-
-type Step = 1 | 2 | 3
+type Step = 1 | 2 | 3 | 4
 
 const STEPS: { n: Step; label: string; sub: string }[] = [
   { n: 1, label: 'Group Stage', sub: 'Fase 1' },
   { n: 2, label: 'Clasification', sub: 'Fase 2' },
   { n: 3, label: 'Individual Awards', sub: 'Fase 3' },
+  { n: 4, label: 'Knockout Stage', sub: 'Fase 4' },
 ]
 
 type ClasifSnap = { grupo: string; equipo_id: number; posicion: number }
@@ -236,10 +232,10 @@ export function PrediccionesWizard({
     clasifSnap.length === 48 && tercerosSnap.length === 12
 
   // Phase 3 (Individual Awards): pichichi + mvp + guante + joven required.
-  // Best XI and bracket NOT required while SHOW_BRACKET = false.
-  const phase3Complete = SHOW_BRACKET
-    ? bracketWinners.size === 32 && campeonId != null && pichichiId != null && mvpId != null
-    : pichichiId != null && mvpId != null && guanteOroId != null && jovenId != null
+  const phase3Complete = pichichiId != null && mvpId != null && guanteOroId != null && jovenId != null
+
+  // Phase 4 (Knockout Stage): all 32 bracket matches filled.
+  const phase4Complete = bracketWinners.size === 32
 
   // --- Submit ---
   const [pending, startTransition] = useTransition()
@@ -250,7 +246,7 @@ export function PrediccionesWizard({
     return () => clearTimeout(t)
   }, [toast])
 
-  const canSubmit = phase1Complete && phase2Complete && phase3Complete
+  const canSubmit = phase1Complete && phase2Complete && phase3Complete && phase4Complete
 
   const handleSubmit = () => {
     if (!canSubmit) {
@@ -260,9 +256,9 @@ export function PrediccionesWizard({
           ? `Faltan ${totalGroupMatches - completedPicks} pronósticos`
           : !phase2Complete
             ? 'Completa la clasificación en Fase 2'
-            : SHOW_BRACKET
-              ? 'Completa el cuadro, pichichi y MVP en Fase 3'
-              : 'Completa los premios individuales en Fase 3',
+            : !phase3Complete
+              ? 'Completa los premios individuales en Fase 3'
+              : 'Completa el cuadro eliminatorio en Fase 4',
       })
       return
     }
@@ -364,7 +360,8 @@ export function PrediccionesWizard({
             const isDone =
               (s.n === 1 && phase1Complete) ||
               (s.n === 2 && phase2Complete) ||
-              (s.n === 3 && phase3Complete)
+              (s.n === 3 && phase3Complete) ||
+              (s.n === 4 && phase4Complete)
             return (
               <>
                 <button
@@ -475,7 +472,7 @@ export function PrediccionesWizard({
         />
       )}
 
-      {step === 3 && (
+      {(step === 3 || step === 4) && (
         <CuadroStep
           equipos={equipos.map((e) => ({
             id: e.id,
@@ -501,7 +498,8 @@ export function PrediccionesWizard({
           onGuanteOroChange={setGuanteOroId}
           onJovenChange={setJovenId}
           onBestXIChange={setBestXI}
-          showBracket={SHOW_BRACKET}
+          showBracket={step === 4}
+          showAwards={step === 3}
         />
       )}
 
@@ -532,10 +530,10 @@ export function PrediccionesWizard({
             <div />
           )}
           <div className="flex-1" />
-          {step < 3 ? (
+          {step < 4 ? (
             <button
               type="button"
-              onClick={() => changeStep(Math.min(3, step + 1) as Step)}
+              onClick={() => changeStep(Math.min(4, step + 1) as Step)}
               className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs font-bold text-white transition active:scale-95"
               style={{ background: '#004d40' }}
             >

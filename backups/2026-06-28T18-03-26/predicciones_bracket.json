@@ -1,0 +1,866 @@
+[
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 1,
+    "ganador_equipo_id": 17,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 2,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 3,
+    "ganador_equipo_id": 5,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 4,
+    "ganador_equipo_id": 21,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 5,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 6,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 7,
+    "ganador_equipo_id": 13,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 8,
+    "ganador_equipo_id": 25,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 9,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 10,
+    "ganador_equipo_id": 36,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 11,
+    "ganador_equipo_id": 20,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 12,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 13,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 14,
+    "ganador_equipo_id": 26,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 15,
+    "ganador_equipo_id": 8,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 16,
+    "ganador_equipo_id": 44,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 2,
+    "ganador_equipo_id": 21,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 3,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 4,
+    "ganador_equipo_id": 25,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 5,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 6,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 7,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R16",
+    "slot": 8,
+    "ganador_equipo_id": 8,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "QF",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "QF",
+    "slot": 2,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "QF",
+    "slot": 3,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "QF",
+    "slot": 4,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "SF",
+    "slot": 1,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "SF",
+    "slot": 2,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "P3",
+    "slot": 1,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "F",
+    "slot": 1,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:42:06.52094+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 1,
+    "ganador_equipo_id": 17,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 2,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 3,
+    "ganador_equipo_id": 5,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 4,
+    "ganador_equipo_id": 21,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 5,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 6,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 7,
+    "ganador_equipo_id": 13,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 8,
+    "ganador_equipo_id": 34,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 9,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 10,
+    "ganador_equipo_id": 36,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 11,
+    "ganador_equipo_id": 20,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 12,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 13,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 14,
+    "ganador_equipo_id": 26,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 15,
+    "ganador_equipo_id": 8,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 16,
+    "ganador_equipo_id": 44,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 2,
+    "ganador_equipo_id": 21,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 3,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 4,
+    "ganador_equipo_id": 34,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 5,
+    "ganador_equipo_id": 9,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 6,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 7,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R16",
+    "slot": 8,
+    "ganador_equipo_id": 44,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "QF",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "QF",
+    "slot": 2,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "QF",
+    "slot": 3,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "QF",
+    "slot": 4,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "SF",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "SF",
+    "slot": 2,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "P3",
+    "slot": 1,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "F",
+    "slot": 1,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:49:28.62356+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 1,
+    "ganador_equipo_id": 17,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 2,
+    "ganador_equipo_id": 33,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 3,
+    "ganador_equipo_id": 5,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 4,
+    "ganador_equipo_id": 10,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 5,
+    "ganador_equipo_id": 41,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 6,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 7,
+    "ganador_equipo_id": 13,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 8,
+    "ganador_equipo_id": 34,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 9,
+    "ganador_equipo_id": 22,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 10,
+    "ganador_equipo_id": 36,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 11,
+    "ganador_equipo_id": 20,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 12,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 13,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 14,
+    "ganador_equipo_id": 26,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 15,
+    "ganador_equipo_id": 8,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 16,
+    "ganador_equipo_id": 44,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 1,
+    "ganador_equipo_id": 17,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 2,
+    "ganador_equipo_id": 10,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 3,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 4,
+    "ganador_equipo_id": 34,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 5,
+    "ganador_equipo_id": 36,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 6,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 7,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R16",
+    "slot": 8,
+    "ganador_equipo_id": 44,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "QF",
+    "slot": 1,
+    "ganador_equipo_id": 17,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "QF",
+    "slot": 2,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "QF",
+    "slot": 3,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "QF",
+    "slot": 4,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "SF",
+    "slot": 1,
+    "ganador_equipo_id": 29,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "SF",
+    "slot": 2,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "P3",
+    "slot": 1,
+    "ganador_equipo_id": 45,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "F",
+    "slot": 1,
+    "ganador_equipo_id": 37,
+    "updated_at": "2026-06-28T17:51:06.83035+00:00",
+    "goles_local": null,
+    "goles_visitante": null
+  }
+]

@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Trophy, Target, Star, Shirt, Sparkles, Check, X as XIcon, Lock, Info, Shield, Pencil, Save, Search } from 'lucide-react'
+import { Trophy, Target, Star, Shirt, Sparkles, Check, X as XIcon, Lock, Info, Shield, Pencil, Save, Search, LayoutGrid } from 'lucide-react'
+import { CuadroStep, type BracketWinners, type BracketScores } from '../predicciones/CuadroStep'
 import type { PhasePoints } from './scoring'
 import { XI_SLOTS, type XISlot } from './xi-slots'
 import { saveOfficialAwards, saveOfficialBestXI } from '@/app/actions/admin'
@@ -475,22 +476,21 @@ function ReglasPanel() {
           ]}
           total="Máx: 79 pts" />
 
-        <RuleSection num="4" title="Fase Eliminatoria" subtitle="Exacto o 1X2 · solo cuenta si has acertado los equipos del cruce"
+        <RuleSection num="4" title="Knockout Stage" subtitle="32 equipos · fase eliminatoria"
           rows={[
-            { label: 'R32 · 1/16 — exacto / 1X2', pts: '+3 / +1', accent: '#94a3b8' },
-            { label: 'Octavos — exacto / 1X2', pts: '+6 / +2', accent: '#FFD100' },
-            { label: 'Cuartos — exacto / 1X2', pts: '+9 / +3', accent: '#FFD100' },
-            { label: 'Semis — exacto / 1X2', pts: '+12 / +4', accent: '#C9A84C' },
-            { label: 'Final — exacto / 1X2', pts: '+15 / +5', accent: '#00A651' },
-            { label: 'Campeón (bonus)', pts: '+20', accent: '#00A651' },
-            { label: 'Subcampeón (bonus)', pts: '+10', accent: '#C9A84C' },
-            { label: 'Tercer puesto (bonus)', pts: '+5', accent: '#94a3b8' },
+            { label: 'Equipo que pasa (1/16 a semis, 30 partidos)', pts: '+1', accent: '#94a3b8' },
+            { label: 'Octavos exacto (cruce correcto)', pts: '+1', accent: '#FFD100' },
+            { label: 'Cuartos exacto (cruce correcto)', pts: '+2', accent: '#FFD100' },
+            { label: 'Semis exacto (cruce correcto)', pts: '+4', accent: '#C9A84C' },
+            { label: 'Campeón', pts: '+8', accent: '#00A651' },
+            { label: 'Final exacta (ambos finalistas acertados)', pts: '+8', accent: '#00A651' },
+            { label: 'Marcador exacto · por partido (31 en total)', pts: '+1', accent: '#7c3aed' },
           ]}
-          total="Máx: 186 pts" />
+          total="Máx: 101 pts" />
 
         <div className="bg-slate-50 rounded-2xl px-4 py-3 flex items-center justify-between">
           <span className="text-sm font-bold text-gray-700">Total máximo</span>
-          <span className="text-lg font-black" style={{ color: '#004d40' }}>557 pts</span>
+          <span className="text-lg font-black" style={{ color: '#004d40' }}>472 pts</span>
         </div>
       </div>
     </div>
@@ -1354,6 +1354,11 @@ export function ResultadosClient({
   adminData,
   viewingSelf = true,
   viewedName = 'Tu',
+  bracketWinners,
+  equiposForBracket,
+  realBracket,
+  koMatchResults,
+  koBreakdown,
 }: {
   partidos: PartidoUI[]
   grupos: GrupoUI[]
@@ -1368,8 +1373,22 @@ export function ResultadosClient({
   adminData?: AdminPremiosData
   viewingSelf?: boolean
   viewedName?: string
+  bracketWinners?: Record<string, number>
+  equiposForBracket?: { id: number; nombre: string; codigo_bandera: string }[]
+  realBracket?: Record<string, number>
+  koMatchResults?: {
+    key: string; gl: number; gv: number
+    localId: number; localNombre: string; localBandera: string
+    visitanteId: number; visitanteNombre: string; visitanteBandera: string
+    userGl: number | null; userGv: number | null; pts: number | null
+    bracketUserWinnerId: number | null
+    bracketRealWinnerId: number | null
+    bracketBase: number
+    bracketExact: number
+  }[]
+  koBreakdown?: { base: number; exact: number; champion: number; exactScores: number }
 }) {
-  const [tab, setTab] = useState<'grupos' | 'clasif' | 'premios' | 'reglas'>('grupos')
+  const [tab, setTab] = useState<'grupos' | 'clasif' | 'premios' | 'reglas' | 'cuadro'>('grupos')
 
   const predLabel = viewingSelf ? 'Tu predicción' : `Predicción de ${viewedName}`
   const noPredLabel = viewingSelf ? 'Sin pronóstico' : `${viewedName} no pronosticó`
@@ -1401,8 +1420,9 @@ export function ResultadosClient({
 
   const TABS = [
     { k: 'grupos' as const, label: 'Partidos' },
-    { k: 'clasif' as const, label: 'Clasificación' },
+    { k: 'clasif' as const, label: 'Clasif.' },
     { k: 'premios' as const, label: 'Premios' },
+    { k: 'cuadro' as const, label: 'Cuadro' },
     { k: 'reglas' as const, label: '', icon: Info },
   ]
 
@@ -1420,20 +1440,25 @@ export function ResultadosClient({
             }}
           >
             {/* Equation row */}
-            <div className="flex items-center justify-center gap-2">
-              {/* addend 1 */}
+            <div className="flex items-center justify-center gap-2 flex-wrap">
+              {/* addend 1: grupos */}
               <span className="text-2xl font-black tabular-nums" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                {phasePoints.grupos + phasePoints.knockout}
+                {phasePoints.grupos}
               </span>
               <span className="text-base font-bold" style={{ color: 'rgba(201,168,76,0.5)' }}>+</span>
-              {/* addend 2 */}
+              {/* addend 2: clasif */}
               <span className="text-2xl font-black tabular-nums" style={{ color: 'rgba(255,255,255,0.55)' }}>
                 {phasePoints.clasif}
               </span>
               <span className="text-base font-bold" style={{ color: 'rgba(201,168,76,0.5)' }}>+</span>
-              {/* addend 3 */}
+              {/* addend 3: premios */}
               <span className="text-2xl font-black tabular-nums" style={{ color: 'rgba(255,255,255,0.55)' }}>
                 {phasePoints.awards}
+              </span>
+              <span className="text-base font-bold" style={{ color: 'rgba(201,168,76,0.5)' }}>+</span>
+              {/* addend 4: cuadro (bracket + exact KO) */}
+              <span className="text-2xl font-black tabular-nums" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                {phasePoints.knockout}
               </span>
               {/* equals + total */}
               <span className="text-xl font-bold mx-1" style={{ color: '#C9A84C' }}>=</span>
@@ -1607,6 +1632,167 @@ export function ResultadosClient({
 
       {/* ── Tab: Tabla de puntos ── */}
       {tab === 'reglas' && <ReglasPanel />}
+
+      {/* ── Tab: Cuadro ── */}
+      {tab === 'cuadro' && (
+        <div className="py-4">
+          {/* Breakdown */}
+          <div className="px-4 mb-4">
+            <BreakdownCard
+              phase="Cuadro"
+              total={phasePoints.knockout}
+              rows={[
+                { label: 'Ganadores acertados (cuadro)', count: koBreakdown ? koBreakdown.base : 0, perItem: 1, pts: koBreakdown?.base ?? 0, accent: '#004d40' },
+                { label: 'Bonus equipos exactos', count: koBreakdown ? koBreakdown.exact : 0, perItem: 1, pts: koBreakdown?.exact ?? 0, accent: '#FFD100' },
+                { label: 'Campeón acertado ×+8', count: koBreakdown?.champion ? 1 : 0, perItem: 8, pts: koBreakdown?.champion ?? 0, accent: '#C9A84C' },
+                { label: 'Marcadores exactos KO ×+1', count: koBreakdown?.exactScores ?? 0, perItem: 1, pts: koBreakdown?.exactScores ?? 0, accent: '#00A651' },
+              ]}
+            />
+          </div>
+
+          {/* Real bracket — simple round-by-round card */}
+          {realBracket && equiposForBracket && Object.keys(realBracket).length > 0 && (() => {
+            const equipoById = new Map(equiposForBracket.map((e) => [e.id, e]))
+            const ROUND_ORDER_DISPLAY = ['R32', 'R16', 'QF', 'SF', 'P3', 'F']
+            const ROUND_LABEL_DISPLAY: Record<string, string> = { R32: 'Dieciseisavos', R16: 'Octavos', QF: 'Cuartos', SF: 'Semis', P3: '3.er puesto', F: 'Campeón' }
+            return (
+              <div className="px-4 mb-4">
+                <div className="bg-white rounded-2xl shadow-sm px-4 py-3">
+                  <p className="text-[9px] font-black uppercase tracking-widest text-gray-400 mb-3">Cuadro real · avances</p>
+                  {ROUND_ORDER_DISPLAY.map((round) => {
+                    const entries = Object.entries(realBracket)
+                      .filter(([k]) => k.startsWith(round + ':'))
+                      .sort(([a], [b]) => Number(a.split(':')[1]) - Number(b.split(':')[1]))
+                    if (entries.length === 0) return null
+                    return (
+                      <div key={round} className="mb-2.5 last:mb-0">
+                        <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">{ROUND_LABEL_DISPLAY[round] ?? round}</p>
+                        <div className="space-y-1">
+                          {entries.map(([key, teamId]) => {
+                            const team = equipoById.get(teamId)
+                            return team ? (
+                              <div key={key} className="flex items-center gap-2">
+                                <FlagImg codigo={team.codigo_bandera} nombre={team.nombre} size={14} />
+                                <span className="text-[12px] font-bold text-gray-800">{team.nombre}</span>
+                                <span className="ml-auto text-[9px] font-black text-emerald-600">AVANZA</span>
+                              </div>
+                            ) : null
+                          })}
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })()}
+
+          {/* KO match results: bracket winner + exact score per match */}
+          {koMatchResults && koMatchResults.length > 0 && (
+            <div className="px-4 pb-4 space-y-2">
+              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Partidos KO</p>
+              {koMatchResults.map((m) => {
+                const bracketPts = m.bracketBase + m.bracketExact
+                const hasBracketData = m.bracketRealWinnerId != null
+                const userPickedLocal = m.bracketUserWinnerId === m.localId
+                const userPickedVisitante = m.bracketUserWinnerId === m.visitanteId
+                const userPickNombre = userPickedLocal ? m.localNombre : userPickedVisitante ? m.visitanteNombre : null
+                const userPickBandera = userPickedLocal ? m.localBandera : userPickedVisitante ? m.visitanteBandera : null
+                return (
+                  <div key={m.key} className="bg-white rounded-xl shadow-sm px-3 py-2.5 space-y-2">
+                    {/* Official result */}
+                    <div className="flex items-center gap-1.5">
+                      <FlagImg codigo={m.localBandera} nombre={m.localNombre} size={13} />
+                      <span className="text-[11px] font-bold text-gray-700 truncate">{m.localNombre}</span>
+                      <span className="text-[11px] font-black text-gray-900 tabular-nums mx-1">{m.gl}–{m.gv}</span>
+                      <span className="text-[11px] font-bold text-gray-700 truncate">{m.visitanteNombre}</span>
+                      <FlagImg codigo={m.visitanteBandera} nombre={m.visitanteNombre} size={13} />
+                    </div>
+                    {/* Bracket winner row */}
+                    {hasBracketData && (
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <span className="text-[9px] font-black uppercase tracking-widest text-gray-400 shrink-0">Pasa</span>
+                          {userPickNombre && userPickBandera ? (
+                            <div className="flex items-center gap-1">
+                              <FlagImg codigo={userPickBandera} nombre={userPickNombre} size={11} />
+                              <span className="text-[10px] font-bold text-gray-600 truncate">{userPickNombre}</span>
+                            </div>
+                          ) : (
+                            <span className="text-[10px] italic text-gray-300">sin pick</span>
+                          )}
+                        </div>
+                        <span
+                          className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
+                          style={{ background: bracketPts > 0 ? '#004d40' : '#e5e7eb', color: bracketPts > 0 ? 'white' : '#9ca3af' }}
+                        >
+                          {bracketPts > 0 ? `+${bracketPts}` : '0'}
+                        </span>
+                      </div>
+                    )}
+                    {/* Exact score row */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-gray-400 shrink-0">Marcador</span>
+                        {m.userGl != null ? (
+                          <span className="text-[10px] font-bold text-gray-600 tabular-nums">{m.userGl}–{m.userGv}</span>
+                        ) : (
+                          <span className="text-[10px] italic text-gray-300">sin pick</span>
+                        )}
+                      </div>
+                      {m.pts != null && (
+                        <span
+                          className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
+                          style={{ background: m.pts === 1 ? '#00A651' : '#e5e7eb', color: m.pts === 1 ? 'white' : '#9ca3af' }}
+                        >
+                          {m.pts === 1 ? '+1' : '0'}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {/* User's predicted bracket */}
+          {bracketWinners && equiposForBracket && Object.keys(bracketWinners).length > 0 ? (
+            <>
+              <div className="px-4 mb-1 mt-2">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Tu cuadro</p>
+              </div>
+              <CuadroStep
+                equipos={equiposForBracket}
+                jugadores={[]}
+                clasif={[]}
+                terceros={[]}
+                winners={new Map(Object.entries(bracketWinners).map(([k, v]) => [k, v])) as BracketWinners}
+                onWinnersChange={() => {}}
+                scores={new Map() as BracketScores}
+                onScoresChange={() => {}}
+                showScores={false}
+                campeonId={null}
+                pichichiId={null}
+                mvpId={null}
+                guanteOroId={null}
+                jovenId={null}
+                bestXI={{}}
+                onCampeonChange={() => {}}
+                onPichichiChange={() => {}}
+                onMvpChange={() => {}}
+                onGuanteOroChange={() => {}}
+                onJovenChange={() => {}}
+                onBestXIChange={() => {}}
+                showBracket={true}
+                showAwards={false}
+                readOnly={true}
+              />
+            </>
+          ) : (
+            <p className="text-center text-sm text-gray-400 py-6">No hay cuadro enviado.</p>
+          )}
+        </div>
+      )}
 
       <div className="h-8" />
     </>

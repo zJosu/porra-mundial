@@ -1,11 +1,14 @@
 import { ListOrdered, Trophy, Target } from 'lucide-react'
 import { createClient } from '@/utils/supabase/server'
+import { createAdminClient } from '@/utils/supabase/admin'
 import { cookies } from 'next/headers'
-import { matchPoints, awardsPoints, classificationGroupPoints, signoFromGoles } from '@/app/resultados/scoring'
+import { matchPoints, awardsPoints, classificationGroupPoints, signoFromGoles, bracketPoints } from '@/app/resultados/scoring'
 
 type PartidoRow = {
   id: number
   grupo: string | null
+  fase: string | null
+  jornada: number
   equipo_local_id: number
   equipo_visitante_id: number
   goles_local_oficial: number | null
@@ -24,6 +27,7 @@ type PrediccionRow = {
 
 type ExtrasRow = {
   usuario_id: string
+  campeon_equipo_id: number | null
   pichichi_jugador_id: number | null
   mvp_jugador_id: number | null
   guante_oro_jugador_id: number | null
@@ -43,7 +47,7 @@ type Fila = {
   id: string
   nombre: string
   total: number
-  desglose: { partidos: number; clasif: number; premios: number; aciertosExactos: number; acertados1x2: number }
+  desglose: { partidos: number; clasif: number; premios: number; cuadro: number; aciertosExactos: number; acertados1x2: number }
 }
 
 const MEDAL: Record<number, string> = { 1: '🥇', 2: '🥈', 3: '🥉' }
@@ -61,17 +65,19 @@ export default async function ClasificacionPage() {
     { data: partidosData },
     { data: oficialData },
     { data: clasifPicksData },
+    { data: bracketData },
+    { data: realBracketData },
+    { data: koScoresData },
   ] = await Promise.all([
     supabase.from('usuarios').select('id, nombre'),
-    supabase.from('predicciones_extras').select('usuario_id, pichichi_jugador_id, mvp_jugador_id, guante_oro_jugador_id, joven_jugador_id'),
+    supabase.from('predicciones_extras').select('usuario_id, campeon_equipo_id, pichichi_jugador_id, mvp_jugador_id, guante_oro_jugador_id, joven_jugador_id'),
     supabase.from('predicciones').select('usuario_id, partido_id, resultado, goles_local, goles_visitante').limit(10000),
-    supabase.from('partidos').select('id, grupo, equipo_local_id, equipo_visitante_id, goles_local_oficial, goles_visitante_oficial').limit(1000),
-    supabase
-      .from('resultados_oficiales')
-      .select('pichichi_jugador_id, mvp_jugador_id, guante_oro_jugador_id, joven_jugador_id')
-      .eq('id', 1)
-      .maybeSingle(),
+    supabase.from('partidos').select('id, grupo, fase, jornada, equipo_local_id, equipo_visitante_id, goles_local_oficial, goles_visitante_oficial').limit(1000),
+    supabase.from('resultados_oficiales').select('pichichi_jugador_id, mvp_jugador_id, guante_oro_jugador_id, joven_jugador_id').eq('id', 1).maybeSingle(),
     supabase.from('clasificaciones_grupos').select('usuario_id, grupo, equipo_id, posicion').limit(5000),
+    createAdminClient().from('predicciones_bracket').select('usuario_id, ronda, slot, ganador_equipo_id'),
+    createAdminClient().from('resultados_bracket').select('ronda, slot, ganador_equipo_id'),
+    createAdminClient().from('predicciones_marcadores_ko').select('usuario_id, ronda, slot, goles_local, goles_visitante'),
   ])
 
   const usuarios = (usuariosData ?? []) as UsuarioRow[]
@@ -81,8 +87,33 @@ export default async function ClasificacionPage() {
   const oficial = (oficialData ?? null) as OficialRow | null
   const clasifPicks = (clasifPicksData ?? []) as ClasifPickRow[]
 
+  // Bracket data
+  type BracketRow = { usuario_id?: string; ronda: string; slot: number; ganador_equipo_id: number }
+  const realBracket = new Map<string, number>()
+  for (const r of (realBracketData ?? []) as BracketRow[]) realBracket.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+
+  const bracketByUser = new Map<string, Map<string, number>>()
+  for (const r of (bracketData ?? []) as BracketRow[]) {
+    if (!r.usuario_id) continue
+    if (!bracketByUser.has(r.usuario_id)) bracketByUser.set(r.usuario_id, new Map())
+    bracketByUser.get(r.usuario_id)!.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
+
+  // KO exact score data
+  type KOScoreRow = { usuario_id: string; ronda: string; slot: number; goles_local: number; goles_visitante: number }
+  const koResultsByKey = new Map<string, { gl: number; gv: number }>()
+  for (const p of partidos.filter(p => p.grupo == null && p.fase)) {
+    if (p.goles_local_oficial != null && p.goles_visitante_oficial != null)
+      koResultsByKey.set(`${p.fase}:${p.jornada}`, { gl: p.goles_local_oficial, gv: p.goles_visitante_oficial })
+  }
+  const koScoresByUser = new Map<string, Map<string, { gl: number; gv: number }>>()
+  for (const r of (koScoresData ?? []) as KOScoreRow[]) {
+    if (!koScoresByUser.has(r.usuario_id)) koScoresByUser.set(r.usuario_id, new Map())
+    koScoresByUser.get(r.usuario_id)!.set(`${r.ronda}:${r.slot}`, { gl: r.goles_local, gv: r.goles_visitante })
+  }
+
   const submittedIds = new Set(
-    extras.filter((e) => e.pichichi_jugador_id != null).map((e) => e.usuario_id),
+    extras.filter((e) => e.campeon_equipo_id != null || e.pichichi_jugador_id != null).map((e) => e.usuario_id),
   )
 
   // Compute actual group standings for Phase 2
@@ -171,17 +202,23 @@ export default async function ClasificacionPage() {
       const clasifRes = classificationGroupPoints(userClasifPicks, actualOrder, closedGroups)
       const puntosClasif = clasifRes.reduce((s, r) => s + r.pts, 0)
 
+      // Phase 4: bracket
+      const userBracket = bracketByUser.get(u.id) ?? new Map<string, number>()
+      const kPts = bracketPoints(userBracket, realBracket)
+      // Phase 4: KO exact scores
+      const userKOScores = koScoresByUser.get(u.id) ?? new Map<string, { gl: number; gv: number }>()
+      let koExact = 0
+      for (const [key, res] of koResultsByKey) {
+        const pred = userKOScores.get(key)
+        if (pred && pred.gl === res.gl && pred.gv === res.gv) koExact++
+      }
+      const puntosCuadro = kPts.total + koExact
+
       return {
         id: u.id,
         nombre: u.nombre,
-        total: puntosPartidos + puntosClasif + aw.total,
-        desglose: {
-          partidos: puntosPartidos,
-          clasif: puntosClasif,
-          premios: aw.total,
-          aciertosExactos,
-          acertados1x2,
-        },
+        total: puntosPartidos + puntosClasif + aw.total + puntosCuadro,
+        desglose: { partidos: puntosPartidos, clasif: puntosClasif, premios: aw.total, cuadro: puntosCuadro, aciertosExactos, acertados1x2 },
       }
     })
 
@@ -286,6 +323,12 @@ export default async function ClasificacionPage() {
                           <>
                             <span className="opacity-60">·</span>
                             <span style={{ color: '#b58a1f' }}>+{p.desglose.premios} premios</span>
+                          </>
+                        )}
+                        {p.desglose.cuadro > 0 && (
+                          <>
+                            <span className="opacity-60">·</span>
+                            <span style={{ color: '#7c3aed' }}>+{p.desglose.cuadro} cuadro</span>
                           </>
                         )}
                       </div>

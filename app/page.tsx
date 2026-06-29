@@ -1,4 +1,5 @@
 import { createClient } from '@/utils/supabase/server'
+import { createAdminClient } from '@/utils/supabase/admin'
 import { cookies } from 'next/headers'
 import { Globe, MapPin, Clock, ChevronRight, ChevronLeft, CalendarDays } from 'lucide-react'
 import Link from 'next/link'
@@ -8,14 +9,22 @@ import { isAdminEmail } from '@/utils/supabase/admin'
 type Partido = {
   id: number
   fecha: string
-  grupo: string
-  jornada: number
-  sede: string
+  grupo: string | null
+  jornada: number        // for knockout: stores bracket_slot (1–16 for R32, etc.)
+  sede: string | null
   estado: string
-  equipo_local: { nombre: string; codigo_bandera: string }
-  equipo_visitante: { nombre: string; codigo_bandera: string }
+  fase: string | null   // 'R32' | 'R16' | 'QF' | 'SF' | 'P3' | 'F'
+  equipo_local_id: number
+  equipo_visitante_id: number
+  equipo_local: { nombre: string; codigo_bandera: string } | null
+  equipo_visitante: { nombre: string; codigo_bandera: string } | null
   goles_local_oficial: number | null
   goles_visitante_oficial: number | null
+}
+
+const FASE_LABEL: Record<string, string> = {
+  R32: 'Dieciseisavos', R16: 'Octavos', QF: 'Cuartos',
+  SF: 'Semifinales', P3: '3.er puesto', F: 'Final',
 }
 
 type UserPred = {
@@ -46,17 +55,17 @@ function computePoints(
   return pred.resultado === signoFromGoles(actualL, actualV) ? 1 : 0
 }
 
-function FlagImg({ codigo, nombre }: { codigo: string; nombre: string }) {
+function FlagImg({ codigo, nombre, size = 20 }: { codigo: string; nombre: string; size?: number }) {
   const src = `https://flagcdn.com/w40/${codigo.toLowerCase()}.png`
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={nombre}
-      width={40}
-      height={27}
-      className="rounded object-cover"
-      style={{ width: 40, height: 27 }}
+      width={size}
+      height={Math.round(size * 0.67)}
+      className="rounded object-cover shrink-0"
+      style={{ width: size, height: Math.round(size * 0.67) }}
     />
   )
 }
@@ -127,23 +136,24 @@ export default async function Page({
     { data: extrasRow },
     { data: usuariosData },
     { data: extrasAllData },
+    { data: koPredsTodosRaw },
   ] = await Promise.all([
     supabase
       .from('partidos')
       .select(`
-        id, fecha, grupo, jornada, sede, estado,
+        id, fecha, grupo, jornada, sede, estado, fase,
         goles_local_oficial, goles_visitante_oficial,
+        equipo_local_id, equipo_visitante_id,
         equipo_local:equipo_local_id(nombre, codigo_bandera),
         equipo_visitante:equipo_visitante_id(nombre, codigo_bandera)
       `)
-      .not('grupo', 'is', null)
       .order('fecha', { ascending: true })
       .order('id', { ascending: true })
       .limit(1000),
     user
       ? supabase
           .from('predicciones_extras')
-          .select('pichichi_jugador_id')
+          .select('campeon_equipo_id, pichichi_jugador_id')
           .eq('usuario_id', user.id)
           .maybeSingle()
       : Promise.resolve({ data: null }),
@@ -151,14 +161,39 @@ export default async function Page({
       ? supabase.from('usuarios').select('id, nombre').order('nombre')
       : Promise.resolve({ data: null }),
     user
-      ? supabase.from('predicciones_extras').select('usuario_id, pichichi_jugador_id')
+      ? supabase.from('predicciones_extras').select('usuario_id, campeon_equipo_id, pichichi_jugador_id')
       : Promise.resolve({ data: null }),
+    supabase.from('predicciones_marcadores_ko').select('usuario_id, ronda, slot, goles_local, goles_visitante'),
   ])
+
+  // Fetch ALL users' KO predictions using admin client (bypasses RLS)
+  // They are only revealed on the home page once the official result is entered
+  const adminSupabase = createAdminClient()
+  const [{ data: koPredsTodosAdmin }, { data: realBracketRaw }, { data: bracketAllRaw }] = await Promise.all([
+    adminSupabase.from('predicciones_marcadores_ko').select('usuario_id, ronda, slot, goles_local, goles_visitante'),
+    adminSupabase.from('resultados_bracket').select('ronda, slot, ganador_equipo_id'),
+    adminSupabase.from('predicciones_bracket').select('usuario_id, ronda, slot, ganador_equipo_id'),
+  ])
+  const koPredsTodos = koPredsTodosAdmin ?? koPredsTodosRaw ?? []
+
+  // Real bracket winners by key
+  type BracketResultRow = { ronda: string; slot: number; ganador_equipo_id: number }
+  const bracketRealByKey = new Map<string, number>()
+  for (const r of (realBracketRaw ?? []) as BracketResultRow[]) {
+    bracketRealByKey.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
+  // All users' bracket picks by userId → key
+  type BracketPickRow = { usuario_id: string; ronda: string; slot: number; ganador_equipo_id: number }
+  const bracketByUserByKey = new Map<string, Map<string, number>>()
+  for (const r of (bracketAllRaw ?? []) as BracketPickRow[]) {
+    if (!bracketByUserByKey.has(r.usuario_id)) bracketByUserByKey.set(r.usuario_id, new Map())
+    bracketByUserByKey.get(r.usuario_id)!.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
 
   // Usuarios que han enviado porra
   const submittedIds = new Set(
-    ((extrasAllData ?? []) as { usuario_id: string; pichichi_jugador_id: number | null }[])
-      .filter((e) => e.pichichi_jugador_id != null)
+    ((extrasAllData ?? []) as { usuario_id: string; campeon_equipo_id: number | null; pichichi_jugador_id: number | null }[])
+      .filter((e) => e.campeon_equipo_id != null || e.pichichi_jugador_id != null)
       .map((e) => e.usuario_id),
   )
   const submittedUsers = ((usuariosData ?? []) as { id: string; nombre: string }[])
@@ -201,7 +236,29 @@ export default async function Page({
     }
   }
 
-  const porraEnviada = !!extrasRow?.pichichi_jugador_id
+  const porraEnviada = !!(extrasRow?.campeon_equipo_id ?? extrasRow?.pichichi_jugador_id)
+
+  // KO exact score predictions for all users
+  type KOPredEntry = { userId: string; nombre: string; gl: number; gv: number }
+  const allKoPredsByKey = new Map<string, KOPredEntry[]>()
+  for (const r of koPredsTodos as { usuario_id: string; ronda: string; slot: number; goles_local: number; goles_visitante: number }[]) {
+    const key = `${r.ronda}:${r.slot}`
+    if (!allKoPredsByKey.has(key)) allKoPredsByKey.set(key, [])
+    allKoPredsByKey.get(key)!.push({
+      userId: r.usuario_id,
+      nombre: nombreById.get(r.usuario_id) ?? r.usuario_id,
+      gl: r.goles_local,
+      gv: r.goles_visitante,
+    })
+  }
+  // Sort: own user first, then alphabetical
+  for (const entries of allKoPredsByKey.values()) {
+    entries.sort((a, b) => {
+      if (user && a.userId === user.id) return -1
+      if (user && b.userId === user.id) return 1
+      return a.nombre.localeCompare(b.nombre)
+    })
+  }
 
   const all = ((partidos as unknown as Partido[]) ?? [])
   const byDay = new Map<string, Partido[]>()
@@ -211,6 +268,7 @@ export default async function Page({
     byDay.get(k)!.push(p)
   }
   const days = [...byDay.keys()].sort()
+  const nowDate = new Date()
 
   const requestedDay = params.day && byDay.has(params.day) ? params.day : null
   const currentDay = requestedDay ?? pickDefaultDay(days)
@@ -224,10 +282,16 @@ export default async function Page({
   let daySubtotal = 0
   let daySubtotalShown = false
   for (const m of dayMatches) {
-    const pts = computePoints(m.goles_local_oficial, m.goles_visitante_oficial, myPredsByMatch.get(m.id))
-    if (pts != null) {
-      daySubtotal += pts
-      daySubtotalShown = true
+    if (m.grupo != null) {
+      const pts = computePoints(m.goles_local_oficial, m.goles_visitante_oficial, myPredsByMatch.get(m.id))
+      if (pts != null) { daySubtotal += pts; daySubtotalShown = true }
+    } else if (m.fase != null && user) {
+      const key = `${m.fase}:${m.jornada}`
+      const mine = allKoPredsByKey.get(key)?.find((e) => e.userId === user.id)
+      if (mine && m.goles_local_oficial != null && m.goles_visitante_oficial != null) {
+        const pts = mine.gl === m.goles_local_oficial && mine.gv === m.goles_visitante_oficial ? 1 : 0
+        daySubtotal += pts; daySubtotalShown = true
+      }
     }
   }
 
@@ -303,29 +367,45 @@ export default async function Page({
       {currentDay && (
         <div className="px-4 py-4 space-y-2.5">
           {dayMatches.map((p) => {
-            const myPred = myPredsByMatch.get(p.id)
-            const myPuntos = computePoints(p.goles_local_oficial, p.goles_visitante_oficial, myPred)
-            const allEntries = allPredsByMatch.get(p.id) ?? []
+            const isKO = p.grupo == null && p.fase != null
             const played = p.goles_local_oficial != null && p.goles_visitante_oficial != null
+            const started = new Date(p.fecha) <= nowDate
+            // Group stage
+            const myPred = !isKO ? myPredsByMatch.get(p.id) : undefined
+            const myPuntos = !isKO ? computePoints(p.goles_local_oficial, p.goles_visitante_oficial, myPred) : null
+            const allEntries = !isKO ? (allPredsByMatch.get(p.id) ?? []) : []
+            // Knockout
+            const koKey = isKO ? `${p.fase}:${p.jornada}` : ''
+            const allKOEntries = isKO ? (allKoPredsByKey.get(koKey) ?? []) : []
+            const myKOPred = isKO ? allKOEntries.find((e) => e.userId === user?.id) : undefined
+            const myKOPuntos = isKO && myKOPred && played
+              ? (myKOPred.gl === p.goles_local_oficial && myKOPred.gv === p.goles_visitante_oficial ? 1 : 0)
+              : null
+            const local = p.equipo_local
+            const visitante = p.equipo_visitante
+            if (!local || !visitante) return null
             return (
               <div
                 key={p.id}
                 className="bg-white rounded-2xl shadow-sm px-4 py-3.5"
               >
                 <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide text-white" style={{background:'#004d40'}}>
-                    Grupo {p.grupo} · J{p.jornada}
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide text-white" style={{background: isKO ? '#1d4ed8' : '#004d40'}}>
+                    {isKO ? (FASE_LABEL[p.fase!] ?? p.fase) : `Grupo ${p.grupo} · J${p.jornada}`}
                   </span>
                   <div className="flex items-center gap-1.5">
-                    {myPuntos != null && (
+                    {(myPuntos != null || myKOPuntos != null) && (
                       <span
                         className="text-[10px] font-black px-1.5 py-0.5 rounded-full tabular-nums"
-                        style={{
-                          background: myPuntos === 3 ? '#00A651' : myPuntos === 1 ? '#FFD100' : '#e5e7eb',
-                          color: myPuntos === 1 ? '#7a5b00' : myPuntos === 3 ? 'white' : '#9ca3af',
-                        }}
+                        style={(() => {
+                          const p = myPuntos ?? myKOPuntos ?? 0
+                          return {
+                            background: p >= 3 ? '#00A651' : p === 1 ? '#FFD100' : '#e5e7eb',
+                            color: p >= 3 ? 'white' : p === 1 ? '#7a5b00' : '#9ca3af',
+                          }
+                        })()}
                       >
-                        {myPuntos === 0 ? '0' : `+${myPuntos}`}
+                        {(myPuntos ?? myKOPuntos ?? 0) === 0 ? '0' : `+${myPuntos ?? myKOPuntos}`}
                       </span>
                     )}
                     <span className="flex items-center gap-1 text-[10px] text-gray-400">
@@ -337,9 +417,9 @@ export default async function Page({
 
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex flex-col items-center gap-1 w-[38%]">
-                    <FlagImg codigo={p.equipo_local.codigo_bandera} nombre={p.equipo_local.nombre} />
+                    <FlagImg codigo={local.codigo_bandera} nombre={local.nombre} />
                     <span className="text-[11px] font-semibold text-gray-800 text-center leading-tight">
-                      {p.equipo_local.nombre}
+                      {local.nombre}
                     </span>
                   </div>
 
@@ -354,44 +434,82 @@ export default async function Page({
                   </div>
 
                   <div className="flex flex-col items-center gap-1 w-[38%]">
-                    <FlagImg codigo={p.equipo_visitante.codigo_bandera} nombre={p.equipo_visitante.nombre} />
+                    <FlagImg codigo={visitante.codigo_bandera} nombre={visitante.nombre} />
                     <span className="text-[11px] font-semibold text-gray-800 text-center leading-tight">
-                      {p.equipo_visitante.nombre}
+                      {visitante.nombre}
                     </span>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center gap-1 mt-2.5">
-                  <MapPin size={10} className="text-gray-300 shrink-0" />
-                  <span className="text-[10px] text-gray-400 truncate">{p.sede}</span>
-                </div>
+                {p.sede && (
+                  <div className="flex items-center justify-center gap-1 mt-2.5">
+                    <MapPin size={10} className="text-gray-300 shrink-0" />
+                    <span className="text-[10px] text-gray-400 truncate">{p.sede}</span>
+                  </div>
+                )}
 
-                {/* Predicciones de todos */}
-                {allEntries.length > 0 && (
+                {/* Predicciones de todos — group stage */}
+                {!isKO && allEntries.length > 0 && (
                   <div className="mt-2 pt-2 border-t border-gray-100 space-y-1">
                     {allEntries.map(({ userId, nombre, pred }) => {
                       const pts = computePoints(p.goles_local_oficial, p.goles_visitante_oficial, pred)
                       const isMe = userId === user?.id
                       return (
                         <div key={userId} className="flex items-center gap-2">
-                          <span
-                            className="text-[10px] font-bold truncate flex-1"
-                            style={{ color: isMe ? '#004d40' : '#6b7280' }}
-                          >
+                          <span className="text-[10px] font-bold truncate flex-1" style={{ color: isMe ? '#004d40' : '#6b7280' }}>
                             {isMe ? 'tú' : nombre}
                           </span>
                           <span className="text-[10px] font-bold tabular-nums text-gray-600 shrink-0">
                             {pred.goles_local ?? '–'}–{pred.goles_visitante ?? '–'}
                           </span>
                           {pts != null && (
-                            <span
-                              className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
-                              style={{
-                                background: pts === 3 ? '#00A651' : pts === 1 ? '#FFD100' : '#e5e7eb',
-                                color: pts === 3 ? 'white' : pts === 1 ? '#7a5b00' : '#9ca3af',
-                              }}
-                            >
+                            <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
+                              style={{ background: pts === 3 ? '#00A651' : pts === 1 ? '#FFD100' : '#e5e7eb', color: pts === 3 ? 'white' : pts === 1 ? '#7a5b00' : '#9ca3af' }}>
                               {pts === 0 ? '0' : `+${pts}`}
+                            </span>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+
+                {/* Predicciones de todos — knockout exact scores + bracket winner */}
+                {isKO && allKOEntries.length > 0 && (
+                  <div className="mt-2 pt-2 border-t border-gray-100 space-y-1">
+                    {allKOEntries.filter(e => started || e.userId === user?.id).map(({ userId, nombre, gl, gv }) => {
+                      const isMe = userId === user?.id
+                      const exactPts = played ? (gl === p.goles_local_oficial && gv === p.goles_visitante_oficial ? 1 : 0) : null
+                      const userBracketPick = bracketByUserByKey.get(userId)?.get(koKey) ?? null
+                      const realWinner = bracketRealByKey.get(koKey) ?? null
+                      const bracketPts = realWinner != null ? (userBracketPick === realWinner ? 1 : 0) : null
+                      const bracketPickLocal = userBracketPick === p.equipo_local_id
+                      const bracketPickVisit = userBracketPick === p.equipo_visitante_id
+                      const bracketNombre = bracketPickLocal ? local.nombre : bracketPickVisit ? visitante.nombre : null
+                      const bracketBandera = bracketPickLocal ? local.codigo_bandera : bracketPickVisit ? visitante.codigo_bandera : null
+                      return (
+                        <div key={userId} className="flex items-center gap-1.5">
+                          <span className="text-[10px] font-bold truncate flex-1 min-w-0" style={{ color: isMe ? '#004d40' : '#6b7280' }}>
+                            {isMe ? 'tú' : nombre}
+                          </span>
+                          {/* bracket pick */}
+                          {bracketNombre && bracketBandera && (
+                            <div className="flex items-center gap-1 shrink-0">
+                              <FlagImg codigo={bracketBandera} nombre={bracketNombre} size={10} />
+                              {bracketPts != null && (
+                                <span className="text-[9px] font-black px-1 py-0.5 rounded-full tabular-nums"
+                                  style={{ background: bracketPts > 0 ? '#1d4ed8' : '#e5e7eb', color: bracketPts > 0 ? 'white' : '#9ca3af' }}>
+                                  {bracketPts > 0 ? '+1' : '0'}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                          {/* exact score */}
+                          <span className="text-[10px] font-bold tabular-nums text-gray-500 shrink-0">{gl}–{gv}</span>
+                          {exactPts != null && (
+                            <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
+                              style={{ background: exactPts === 1 ? '#00A651' : '#e5e7eb', color: exactPts === 1 ? 'white' : '#9ca3af' }}>
+                              {exactPts === 0 ? '0' : '+1'}
                             </span>
                           )}
                         </div>
@@ -432,8 +550,24 @@ export default async function Page({
                         Guardar
                       </button>
                     </div>
+                    {isKO && (
+                      <div className="mt-2 flex items-center gap-2">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 shrink-0">Pasa</span>
+                        <select
+                          name="ganador_id"
+                          defaultValue=""
+                          className="flex-1 rounded-lg border border-gray-200 px-2 py-1 text-xs font-medium text-gray-800 bg-white"
+                        >
+                          <option value="">Auto (por marcador)</option>
+                          <option value={p.equipo_local_id}>{local.nombre}</option>
+                          <option value={p.equipo_visitante_id}>{visitante.nombre}</option>
+                        </select>
+                      </div>
+                    )}
                     <p className="mt-1 text-[10px] text-gray-400">
-                      Al guardar se actualiza para todos y se recalculan puntos automáticamente.
+                      {isKO
+                        ? 'En caso de empate (ET/penaltis), selecciona quién pasa.'
+                        : 'Al guardar se actualiza para todos y se recalculan puntos automáticamente.'}
                     </p>
                   </form>
                 )}

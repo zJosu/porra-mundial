@@ -118,6 +118,7 @@ function MatchCard({
   variant = 'default',
   isActive = false,
   isDimmed = false,
+  showScores = true,
 }: {
   match: Match
   ronda: Round
@@ -129,6 +130,7 @@ function MatchCard({
   variant?: 'default' | 'final' | 'p3'
   isActive?: boolean
   isDimmed?: boolean
+  showScores?: boolean
 }) {
   const bothSet = match.teamA != null && match.teamB != null
   const teamA = match.teamA != null ? equipos.get(match.teamA) ?? null : null
@@ -213,11 +215,13 @@ function MatchCard({
             </>
           )}
         </button>
-        <ScoreInput
-          value={goals}
-          ariaLabel={`Goles ${side}`}
-          onChange={(n) => onGoalsChange(n)}
-        />
+        {showScores && (
+          <ScoreInput
+            value={goals}
+            ariaLabel={`Goles ${side}`}
+            onChange={(n) => onGoalsChange(n)}
+          />
+        )}
       </div>
     )
   }
@@ -368,6 +372,7 @@ function RoundColumn({
   label,
   activeKey,
   walkMode,
+  showScores = true,
 }: {
   matches: Match[]
   ronda: Round
@@ -380,6 +385,7 @@ function RoundColumn({
   label?: string
   activeKey: string | null
   walkMode: boolean
+  showScores?: boolean
 }) {
   return (
     <div className="flex flex-col" style={{ width: COL_W }}>
@@ -404,6 +410,7 @@ function RoundColumn({
               equipos={equipos}
               isActive={isActive}
               isDimmed={isDimmed}
+              showScores={showScores}
             />
           </div>
         )
@@ -436,6 +443,7 @@ export function CuadroStep({
   onWinnersChange,
   scores,
   onScoresChange,
+  showScores = true,
   campeonId,
   pichichiId,
   mvpId,
@@ -449,6 +457,8 @@ export function CuadroStep({
   onJovenChange,
   onBestXIChange,
   showBracket = true,
+  showAwards = true,
+  readOnly = false,
 }: {
   equipos: EquipoLite[]
   jugadores: Jugador[]
@@ -458,6 +468,7 @@ export function CuadroStep({
   onWinnersChange: (next: BracketWinners) => void
   scores: BracketScores
   onScoresChange: (next: BracketScores) => void
+  showScores?: boolean
   campeonId: number | null
   pichichiId: number | null
   mvpId: number | null
@@ -471,11 +482,13 @@ export function CuadroStep({
   onJovenChange: (id: number | null) => void
   onBestXIChange: (xi: BestXI) => void
   showBracket?: boolean
+  showAwards?: boolean
+  readOnly?: boolean
 }) {
   const equipoById = useMemo(() => new Map(equipos.map((e) => [e.id, e])), [equipos])
 
   // ---- Walk-through (paso a paso) ----
-  const [mode, setMode] = useState<'walk' | 'full'>('walk')
+  const [mode, setMode] = useState<'walk' | 'full'>(readOnly ? 'full' : 'walk')
   // stepIdx = índice del PRÓXIMO partido pendiente; va de 0 a WALK_TOTAL (incluido = terminado)
   const initialStep = useMemo(() => {
     // Coloca el cursor en el primer partido sin ganador (por orden lineal)
@@ -632,7 +645,7 @@ export function CuadroStep({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalWinnerId])
 
-  const r32Ready = clasif.length === 48 && terceros.length === 12
+  const r32Ready = rounds.R32.every((m) => m.teamA != null && m.teamB != null)
 
   const setWinner = (ronda: Round, slot: number, teamId: number) => {
     const next = new Map(winners)
@@ -739,7 +752,7 @@ export function CuadroStep({
       {showBracket && (<>
       {walkMode && showConfetti && champion && <Confetti />}
       {/* Modo de visualización: paso a paso vs cuadro completo */}
-      {r32Ready && (
+      {r32Ready && !readOnly && (
         <div className="px-4 pt-3 flex items-center gap-2 flex-wrap">
           <div
             className="inline-flex p-0.5 rounded-full bg-slate-100 border border-slate-200 text-[10px] font-black uppercase tracking-[0.16em]"
@@ -875,6 +888,7 @@ export function CuadroStep({
                 label="R32"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
               <Connectors count={4} boxH={BOX_H.R16} prevBoxH={BOX_H.R32} side="left" />
               <RoundColumn
@@ -889,6 +903,7 @@ export function CuadroStep({
                 label="Octavos"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
               <Connectors count={2} boxH={BOX_H.QF} prevBoxH={BOX_H.R16} side="left" />
               <RoundColumn
@@ -903,6 +918,7 @@ export function CuadroStep({
                 label="Cuartos"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
               <Connectors count={1} boxH={BOX_H.SF} prevBoxH={BOX_H.QF} side="left" />
               {/* Left SF */}
@@ -920,6 +936,7 @@ export function CuadroStep({
                       equipos={equipoById}
                       isActive={activeKey === matchKey('SF', leftSF.slot)}
                       isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', leftSF.slot)}
+                      showScores={showScores}
                     />
                   )}
                 </div>
@@ -957,6 +974,7 @@ export function CuadroStep({
                       variant="final"
                       isActive={activeKey === matchKey('F', finalMatch.slot)}
                       isDimmed={walkMode && activeKey != null && activeKey !== matchKey('F', finalMatch.slot)}
+                      showScores={showScores}
                     />
                   </div>
                 )}
@@ -1008,6 +1026,7 @@ export function CuadroStep({
                         variant="p3"
                         isActive={activeKey === matchKey('P3', p3Match.slot)}
                         isDimmed={walkMode && activeKey != null && activeKey !== matchKey('P3', p3Match.slot)}
+                        showScores={showScores}
                       />
                     </div>
                   )}
@@ -1029,6 +1048,7 @@ export function CuadroStep({
                       equipos={equipoById}
                       isActive={activeKey === matchKey('SF', rightSF.slot)}
                       isDimmed={walkMode && activeKey != null && activeKey !== matchKey('SF', rightSF.slot)}
+                      showScores={showScores}
                     />
                   )}
                 </div>
@@ -1046,6 +1066,7 @@ export function CuadroStep({
                 label="Cuartos"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
               <Connectors count={2} boxH={BOX_H.QF} prevBoxH={BOX_H.R16} side="right" />
               <RoundColumn
@@ -1060,6 +1081,7 @@ export function CuadroStep({
                 label="Octavos"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
               <Connectors count={4} boxH={BOX_H.R16} prevBoxH={BOX_H.R32} side="right" />
               <RoundColumn
@@ -1074,6 +1096,7 @@ export function CuadroStep({
                 label="R32"
                 activeKey={activeKey}
                 walkMode={walkMode}
+                showScores={showScores}
               />
             </div>
           </div>
@@ -1153,6 +1176,7 @@ export function CuadroStep({
       )}
       </>)}
 
+      {showAwards && (<>
       {/* Extras */}
       <div className="px-4 pt-5 space-y-3">
         <div className="flex items-center gap-2">
@@ -1235,6 +1259,7 @@ export function CuadroStep({
           equipos={equipoById}
         />
       </div>
+      </>)}
     </div>
   )
 }

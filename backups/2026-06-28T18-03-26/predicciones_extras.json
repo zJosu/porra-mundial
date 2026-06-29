@@ -1,0 +1,154 @@
+[
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "campeon_equipo_id": null,
+    "pichichi_jugador_id": 1279,
+    "mvp_jugador_id": 1279,
+    "updated_at": "2026-06-10T20:53:39.542+00:00",
+    "guante_oro_jugador_id": 1153,
+    "joven_jugador_id": 1171,
+    "best_xi": {
+      "DC": 1279,
+      "ED": 1171,
+      "EI": 1378,
+      "GK": 1153,
+      "LD": 652,
+      "LI": 1474,
+      "DF1": 1267,
+      "DF2": 1471,
+      "MC1": 1482,
+      "MC2": 1165,
+      "MC3": 1603
+    }
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "campeon_equipo_id": null,
+    "pichichi_jugador_id": 1175,
+    "mvp_jugador_id": 1171,
+    "updated_at": "2026-06-10T21:03:11.346+00:00",
+    "guante_oro_jugador_id": 1257,
+    "joven_jugador_id": 1171,
+    "best_xi": {
+      "DC": 1175,
+      "ED": 1171,
+      "EI": 1279,
+      "GK": 1257,
+      "LD": 1589,
+      "LI": 952,
+      "DF1": 1267,
+      "DF2": 1366,
+      "MC1": 1166,
+      "MC2": 1482,
+      "MC3": 830
+    }
+  },
+  {
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "campeon_equipo_id": null,
+    "pichichi_jugador_id": 1378,
+    "mvp_jugador_id": 1378,
+    "updated_at": "2026-06-11T01:38:24.185+00:00",
+    "guante_oro_jugador_id": 1360,
+    "joven_jugador_id": 1171,
+    "best_xi": {
+      "DC": 1378,
+      "ED": 1171,
+      "EI": 1175,
+      "GK": 1360,
+      "LD": 1162,
+      "LI": 1156,
+      "DF1": 1368,
+      "DF2": 1267,
+      "MC1": 1374,
+      "MC2": 1165,
+      "MC3": 1166
+    }
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "campeon_equipo_id": null,
+    "pichichi_jugador_id": 1175,
+    "mvp_jugador_id": 1171,
+    "updated_at": "2026-06-11T09:45:46.83+00:00",
+    "guante_oro_jugador_id": 1257,
+    "joven_jugador_id": 1171,
+    "best_xi": {
+      "DC": 1175,
+      "ED": 1171,
+      "EI": 1279,
+      "GK": 1257,
+      "LD": 1162,
+      "LI": 1474,
+      "DF1": 1267,
+      "DF2": 1157,
+      "MC1": 1166,
+      "MC2": 1482,
+      "MC3": 1483
+    }
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "campeon_equipo_id": null,
+    "pichichi_jugador_id": 646,
+    "mvp_jugador_id": 646,
+    "updated_at": "2026-06-11T17:15:41.669+00:00",
+    "guante_oro_jugador_id": 841,
+    "joven_jugador_id": 1277,
+    "best_xi": {
+      "DC": 1378,
+      "ED": 1280,
+      "EI": 646,
+      "GK": 841,
+      "LD": 652,
+      "LI": 1474,
+      "DF1": 921,
+      "DF2": 1471,
+      "MC1": 1598,
+      "MC2": 928,
+      "MC3": 1166
+    }
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "campeon_equipo_id": 33,
+    "pichichi_jugador_id": null,
+    "mvp_jugador_id": null,
+    "updated_at": "2026-06-28T17:49:28.69+00:00",
+    "guante_oro_jugador_id": null,
+    "joven_jugador_id": null,
+    "best_xi": {}
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "campeon_equipo_id": 37,
+    "pichichi_jugador_id": 1175,
+    "mvp_jugador_id": 1279,
+    "updated_at": "2026-06-28T17:51:06.882+00:00",
+    "guante_oro_jugador_id": 1586,
+    "joven_jugador_id": 1171,
+    "best_xi": {
+      "DC": 640,
+      "ED": 1171,
+      "EI": 1279,
+      "GK": 1586,
+      "LD": 1156,
+      "LI": 1474,
+      "DF1": 1592,
+      "DF2": 847,
+      "MC1": 1482,
+      "MC2": 1166,
+      "MC3": 851
+    }
+  },
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "campeon_equipo_id": 41,
+    "pichichi_jugador_id": 1279,
+    "mvp_jugador_id": null,
+    "updated_at": "2026-06-28T17:42:06.601+00:00",
+    "guante_oro_jugador_id": null,
+    "joven_jugador_id": null,
+    "best_xi": {}
+  }
+]

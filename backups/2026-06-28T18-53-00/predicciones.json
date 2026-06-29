@@ -1,0 +1,5186 @@
+[
+  {
+    "id": "38a1686f-2683-4602-bdf4-1ac4f6cd1998",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "13c1723c-5d8d-4eb8-8ee7-98075d522786",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e1d7ce9b-cb23-4f67-be15-1f023ae952e8",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "92fef6dc-0f2b-4ce2-b38a-a5fa3ee5d403",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4e4b97d0-e583-4fe7-9ae3-43c457e2d2ad",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3294ea84-991e-496e-91fc-43fe2f799df2",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "c3ee1a62-f1f1-4b76-b15a-21088ca3da48",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "45c9664b-0049-401e-8e9a-b8c43e820763",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "86ffb7ee-dad2-497e-9701-f88fe02d7455",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f659c139-7945-4664-b455-58d20849b440",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "59aaa424-5192-407c-afa7-f0a27c4db3b1",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b3f5a9f7-4e4f-40e8-866c-0181ae46ebda",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "646b8f34-470d-4698-846d-ce99f87069c8",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3344b2bf-1419-421b-a89c-a3a6ba6f74f0",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "01a4f039-a524-4af1-8eed-45ea9efbc612",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d36a79ff-7590-4d98-8200-9b02c427b248",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4220a990-a5bb-4c6f-b521-2766cd60ba84",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "772facd4-b85b-4903-abd6-d40f8109cf9e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f7f32179-1981-4e47-a80c-8c2ff0928fa7",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4bbdeb81-6f08-4907-89ba-6d4c90ddfd3d",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "49d8b358-aa93-435e-badf-9a477598fe4b",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "c59b0e82-3d4c-4f95-b124-b0eae7b1823d",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "027f42e0-605f-4c55-9c3a-768cabde7a16",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "99417b89-b59a-41c8-ba50-dd2a3325074e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "183e8ab5-e668-42fc-a17d-9f221b9ed05e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "235d9560-7b84-4c47-b0f8-894f59e00b9d",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8a575c01-eb69-4d9c-8529-d0619e950767",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "805b9a4d-14bc-4830-a7a1-6863eccb800e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "adc72f64-86b8-4d50-b93c-9c581fecaef5",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d25ef95d-558c-4d2c-9b83-32232beccdda",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "389bc9f0-5e60-46e6-b2cf-797a39d7f9a3",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "0c9362e5-2776-4d9b-98c0-dd8d6cfeac4a",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "95220501-6808-4753-811c-8509dcb0f3e1",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "66225b10-fbd8-464b-b52f-4527e595e483",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2b201a0e-2173-4ecd-b6de-be6baada45ca",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "666619d4-f4c5-4425-a42b-1ebe564bf32f",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a71b913e-3dd1-48cc-bdc4-71db7c76fc97",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "db1878c6-3072-4e69-b94e-7b3d10decafb",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "0cf5a0aa-70b4-448d-af50-899d665ab955",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "576acaa7-90ed-4a3d-940d-b1768ad113ac",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a4c2e095-2f70-4636-8e91-de3f4342cfee",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "471dfbd9-14ac-41b1-ae51-3378ebed66ac",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b0ade3ac-4e77-4b49-87c1-5918659d5395",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6ffe584e-ae28-449f-9503-20946b33dd42",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "81e68769-f9ab-419b-b71f-8a59ec424f8e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "bc40ea57-dcab-4c8b-9cbc-75c63a605b57",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "21ada57d-3d79-457d-8b58-5d0805bdea59",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2d53ad58-07ab-4d83-8f02-a4777d2b80fd",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5d377c64-dfd7-4452-b9da-d25dbd022292",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "62ecf899-bd06-4e7d-a589-00a372c3dcfb",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "9e205027-306a-44d1-91d5-c7755a7a18c2",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a1b45012-4f18-43bc-8ff1-2ec495195f02",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "e311c471-cefa-45a2-8833-afd895b5438a",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9405342e-9e3e-4d00-b09f-b5713195e3c1",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "adb13d50-46dc-4645-bf30-e8a2a1e3ee59",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d2cf1de0-fa09-49f1-9f77-822cdd2b7002",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a08ba3d7-9c6d-45d5-a308-651fce7da2c9",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3fcccfe7-b4de-4f40-9f33-9998047dd8bf",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "64191afd-2895-4a8f-b12c-53f2a2f0d51e",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "cba6178b-7cb7-4fab-a763-f4dac54f904c",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cc356ab9-2c06-4bdc-9a63-31e0252ea590",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e29f3ce8-2884-404e-a6d1-eb244bdb0d0a",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "5a8aac02-10e5-481b-a90c-036167df13e9",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1f0d2661-48ca-4908-904a-9bb1da894f6f",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "81aed006-058d-4d7e-93ea-8488d45506b2",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8186a98f-7aa5-48f9-8ee4-f2c826844c56",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "558367f5-c0c1-4568-8348-455281d11329",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f5829e49-213e-4035-968e-f6aa83fb7470",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "aad6ed42-ea7b-41a2-822d-7750be6e8189",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "2cfab8d6-17e8-4cef-96b2-d97fb071a8d0",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "293ad433-8f9a-47cc-8867-7f33e6f329b9",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a9a74a3b-300d-4fdd-8cd3-55a9a3fde090",
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "967f871d-e6de-4c21-8ddd-63d3b26ceb50",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "78544299-7f16-4659-826c-491e7c38e6af",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a89f9f6d-5da7-4e31-9fee-2c6149a497ed",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "4b537147-466b-42a1-aa0d-fee3d68b9feb",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "f792535c-d0b8-4670-8ff0-85040f67a203",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "211e92f4-ad96-41ce-b979-a055b49358b7",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "2475e877-dc77-484f-8c83-ba405a83e53c",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "791e8148-2bf0-4681-8fe2-84b223c1d54e",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "6011dec8-e571-4bb7-88c5-90765eca5a64",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9dbeb6d0-7251-4395-baa5-683661eb58a0",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "ee1d13e5-b1ec-4824-8039-6992d187760e",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7695b5e8-da67-4127-8601-04027e723a31",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d645bebf-dbed-4561-9a49-af75cbdd70d1",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8bfa5703-5af9-4b88-9de6-609c9efeeb6f",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "64b17246-e932-4ef7-89aa-3ff6aac48248",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d43ebe05-a458-40b8-a41e-76ac0f4feebb",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "00fe8167-957e-480d-9bf8-327633f76fde",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "560df9a4-61ab-4cfe-bbe0-367c03c39a08",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "de597704-07f3-4233-9ec7-94a33098872e",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2c5e50d2-0afd-4c83-8b7f-5241c8948431",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "a8156f40-8c0e-4fe1-b01b-2e8d472cea86",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7016fa8d-71bf-4d8f-b64a-3ccef1be16c7",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c32bc2fa-7e47-4b8b-9d97-31bc3af11a4c",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "f69975f7-becd-4778-aec0-d1ad56b54fe0",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ab4e192a-489f-4e48-be09-d906d20955aa",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d7d0abc8-3c95-4615-a7ab-9d80e1e25f6e",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "faf85e10-4a33-424a-93e2-f4c6a003b63f",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b554fb7c-caea-497e-b0bb-e1caf923f976",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "03b941c0-c8a7-4e72-b701-563e2b7e4322",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "177d4e2b-c9db-4575-aa28-70769060ff3f",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "92475908-0bfe-425d-9021-ae1c5cc32f94",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "fad117e9-b3f4-497e-b2c0-be53aa578745",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d1292f45-f6a4-4640-9dd1-493a4b31d61b",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "fe8e3aec-8a35-458a-8cd6-f272aac740fc",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "899403e2-a0f2-4280-a31c-d056347f9642",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "bc618094-38f4-475c-b6e8-f0f05634493b",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "c74e2a60-3b3c-4bb8-a51b-d1ab9f8d1948",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9f976c39-2455-46c2-8698-6874d6764732",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4f79e859-96de-404f-a4f6-be29e9f851bb",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c404433b-5b2c-4c10-8044-2908e4f625cb",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "eab05d85-181f-458d-83b3-8e3746b8a1b8",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "0035cca4-fbf2-4918-8137-100d2f69d901",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6babf494-06cb-4b1e-bf9a-180a1c97a2dd",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4d105e80-0fbe-45de-baae-0a0a3c8311a1",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "6e09c2f4-5c73-4006-8bda-45c60aeb732c",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "21595160-6ba5-4e6c-8661-48feb20180c6",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "772e0723-5337-49d3-af84-1c21111cc64b",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "00dbbe92-33f3-4034-ab57-ee449302b005",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e2baa1bf-392d-4f67-8113-605139a09367",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f8949014-f3c4-477f-a1c3-b0a84b78452a",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 4
+  },
+  {
+    "id": "1eef5510-a7e3-43c9-bc15-3727c5edc99b",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "47e41f43-7fac-403b-ad07-c768e1105a6f",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "df41f7a5-6621-4b12-9f81-ea79eff2597d",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "9c88e42a-edb0-40ac-8e6e-14e557c88e9d",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1b162543-fa3d-4936-877c-c09eb77efd11",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "baa13875-b378-471a-a093-0e848b6894ef",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f9e7c252-f2a3-4fd4-8379-4279e4a37b89",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "30c75cf7-a60d-4219-b422-373d80fbad4c",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "68d4eeb1-fa87-4e53-af3e-1d2cdfd07610",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3eb5c9bf-9663-48c6-aac8-1b608a736db6",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7c97c63b-54df-41a1-bc0d-f0b2f1e1f04a",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "cb374a66-1427-42ed-ab5e-51448c715890",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "e7335443-ba39-4d09-a5a6-3c8d8698e4d7",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 1
+  },
+  {
+    "id": "74f44dac-db04-43e3-a0b0-d567246749d5",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "e5795acb-7319-4f2d-b38c-0b7e4c4d08a0",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "bcf3e5e4-8e18-4caa-91cc-5c1b98419412",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "894f944e-a282-4473-b81c-842a239e613f",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "26d64196-8aed-4d3c-80d3-7c0a441c646e",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8e3b7e2f-98c7-4807-ab2f-44c03f6aab1c",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b5d4823e-1cef-468b-a691-f91d0b028ac7",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1d569cbe-d3bb-4519-bc5a-5fe1a6e2f64b",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "366c52b6-f13d-4349-817c-4854e2d6c4ff",
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "2a78ddda-14c6-422c-b592-ff2f000f7dd7",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d9f8a01a-67b9-4911-a77f-73df07ed2740",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "edd336ae-22e6-4254-9090-db1d0f2a886d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3134e8fa-45b3-4d13-8f0f-387c8917b02e",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "e9ccc799-5c66-427b-b56f-69306fe98ca5",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ae4d5d8c-90b3-4e44-bf47-7c12850c7b2d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "ac81d3ab-03b2-4cbc-ae84-e54945b9e306",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d9dcaae0-36fd-4910-9a1b-338c1d91a541",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3e832c3b-9fcd-4dc0-ad4d-a4807506560c",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "321090ef-25eb-42d9-9eb0-3f6fc6ff98f4",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "8c480b13-b886-4a79-99ed-4b18b747e893",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "32630e80-0904-4d8a-aeea-b532a9cd4833",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ffadc701-0660-4d30-8bec-ff4292d8099f",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fcc03af5-eda9-446b-92bc-8cb44e590ac3",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "320159c5-9f8c-4a3c-9216-0d53783f9072",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a82c3055-7609-4c87-8e4b-6adcaa3ae62a",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "8781a202-abc9-4db2-bd23-bbbea49ab329",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "81794325-6ba7-4f6b-b843-314351f3c772",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "51b0aaa0-2430-47b3-b10d-97e8ae1cd56b",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "c9723f40-32ac-4c5b-800d-c6b5b20c5148",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "35a304dd-5900-4926-a1b6-8306e60ee556",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "c23ec155-50bb-468e-802a-dd125e6b5f65",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "32dc0fb4-9957-4594-a060-46f0c413cd39",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "9760cb14-9e33-47c5-bd8a-8ad2fa350941",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "007e580b-5dec-4daf-8105-0300d2f8c79c",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6161e4a3-db78-470d-a059-eebf5a0419ee",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "a6bf03e5-90d8-483c-938a-9143594dbead",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e1420486-48a4-49e0-b0b5-04095883a251",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "22617fff-23f0-4807-8ab4-e7e979b9f420",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ca686fc4-f194-44da-bad1-8cad5c2ade67",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "bf06a88a-7d56-4f99-9fe5-0f52256a7f78",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "6457a265-82bf-413c-94c8-6712b34d1114",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "516a317e-713b-4c66-84f2-2b512ce2d9ea",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "f8f18da1-e6b7-46bb-99b8-fb72a3dd6f5c",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4d4ad747-f9a2-413d-b5b5-279402e137f9",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "628d44be-66ec-4ecc-a652-6eca8f04ba07",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 0,
+    "goles_visitante": 0
+  },
+  {
+    "id": "99581012-f94c-4b4c-b7b6-4adb551d1cc2",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "f4b76ade-1210-431e-a7d3-62205b9fbff5",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "331198ae-26fb-403e-8f15-4ab029ed945f",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "01bc400d-8692-436c-888f-1f7eb06d79c2",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "5e8c7336-90f6-4fe6-b99d-28a142cb408d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "bd365aa4-4549-435b-8b04-4ffc950273d3",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1ce6fedb-7f0e-40b6-b868-7b2901b5278f",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 6,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ce5dc94a-60d0-4f38-bb4c-2a9e4fb4dda6",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "b45d17b6-ec93-4be0-87ae-da4bddee522f",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "39693e62-bc83-4a4a-bd92-9210e20dbd23",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 4
+  },
+  {
+    "id": "5f671def-d88e-406e-88c8-18f3bcf5e37e",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "2fcefa7d-db41-444d-830a-75a017e5f9de",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "2157afa5-4705-4dc9-8529-b65e349fe1cb",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "aa26f0d8-4193-4ace-a457-9f06aedc510d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "8f76bcca-e0a8-4da9-b03f-c1508c3f8cc2",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8a79eb47-3555-4756-b4cc-36c271f2a5c6",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e8929a6f-461c-47d8-9400-1599bb9125b1",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b82ba96b-b9bd-4ceb-a079-54867a8ee7ae",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5e76f039-6bb1-401f-8b80-659331f99dd4",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9b421399-c26b-49bf-ba1e-308db1c1f551",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fbb8d128-6a8e-4ac7-a07a-4484b6c6facf",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a03963b5-dcb5-4b84-976f-17b4cbd44847",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "13c4f18e-f92f-43b7-8f06-8dbb31bf9760",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "652a2b5e-6fda-4418-b18a-c095843929fa",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2bb22064-2b27-46ae-ba80-90fc0f8f1e8b",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d965a892-aacb-464a-998a-b5c167756703",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "34d777b0-22d7-4190-867f-a97eeda1b27e",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "6e2c38bb-7246-4931-93b1-da552c31e536",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b88386a5-b587-44fc-a322-07a7b6fd4da3",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1c46ba34-b430-4716-8768-d20d90604e3d",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ceee1ab2-1f1c-4444-9738-f32ffd58d765",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "3d6c2999-9236-46c9-8dc4-e1fbd377f7e8",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "0ed4ff0b-f56d-48a1-acf6-d69a1c93d4cc",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3216133e-e3f9-438f-b746-8a00d8d751c1",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "eb8a8aa9-ed86-40c4-81d2-5429c59270bb",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "df626728-8877-4a20-96aa-a92d7959392c",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "624ad887-d7cc-49e8-ad4d-bf11f6d79fdc",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "51b9cd31-c04c-4c19-b4d5-6b506d60ffe1",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b726705d-3d6c-494b-8fb0-af318c068e0f",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "75007ec8-340d-46c2-a95c-2f863243eb7b",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "deb1ab90-c3a2-4418-9f23-0d48412823b4",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "de1379af-0ba6-4acd-9f8f-deb4035683e8",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "88c58c02-590a-454f-8a27-23543ac9473e",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ac3198c6-edf4-4ef2-8990-7fd8068df7a6",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "f54dacd1-20ca-4200-9025-00a382e6d4a0",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1ef45951-589e-4c72-bc65-b260c665d786",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "46489933-e187-48c2-9327-798e5c6f2188",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d8317728-34bd-4919-b34a-fcadb38a2e01",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ef4207fa-1b8d-43f9-b236-1f08f2dc5ac5",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1184b5b7-5e70-47a3-bc63-b688c5fe8aac",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "cd7e2f03-52a6-4e2a-a8f0-03499b04d76d",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5f363173-0cff-4126-b613-f7785578144e",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "02814497-9bcc-4fae-ac26-f90fec1c6d84",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ff83b4b8-94b9-448e-8324-e67ac775c5c4",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e53bf31f-4e21-442c-9efc-892b50a29128",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c11ae285-d12e-4ce8-8736-c88030c1c0ce",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ba281c73-a636-4630-ac37-4ffbb5f19c77",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cc427c89-fa92-46db-897d-8114ca6ba4da",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b4eaf8f6-a188-497a-ae4c-091dfeeafe28",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "74780ab8-68d4-4de1-b2a7-6dc5e1919dff",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d08ac805-daab-42d9-9de9-0761f2955911",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "1481369d-52b4-4c41-b2f7-40c740f4a59a",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "6407cc65-4441-4b70-b38e-b66dcdb01e8a",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a7f36783-075b-4e14-ab84-1d34ee869b64",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "cd55fe46-2529-47ae-b6d1-e06528ccb7e9",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4a3a1db5-f3dd-4786-8981-9c948108ab9f",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4fda90d2-7341-48c1-89bb-349e2c4c4e16",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "fe712c0e-e82e-4c52-bfca-8c1ea7efc56d",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "579adeae-f78d-4bb6-a1ec-2857d11e415e",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "81b57862-6044-4e15-80ac-2bfb1d811670",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "51722d26-c28c-4c41-a07c-0f6bfd5eb2e1",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9991577b-c407-4204-8921-c7f9775b62d6",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "52515225-5e2f-4bb9-af9d-13ff377cf183",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1a97267c-efb9-438d-871e-c9432da6ab91",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c9dd40fd-3882-41af-ab85-96e340c409dd",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1f4c92ab-019d-4848-b4bf-a0a7aad9d7c6",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d69fbc3c-1a9a-48c8-a59d-f9a54062d009",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "8e8d653c-207a-40ab-ad30-9ad122db9793",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "2eebc531-4811-40bc-b949-a4bfa39b7e97",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "269417df-8118-43be-ac08-a3ed5de76cf0",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "768c0893-6424-4abb-bf4b-7ce75a0cfa0d",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "76329502-78aa-4f19-9135-a8d2840ec8e4",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "73cc7216-de15-4a4f-ad8a-06efcb644217",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "3da0cf70-d159-4f9d-8f26-89ac95125e80",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "11df2e91-f568-4693-9c22-42417b8c705a",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f5774c55-9f5e-4118-8877-574f2d6d9ea8",
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "82d6b162-2426-4a65-bd17-0ea0a51ba9d7",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d598026e-943c-4cb1-9916-ccebb7c44bc9",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "0b324a2f-f0a1-465c-8706-59e1b15b5716",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "8f7a9ec6-fdaf-431f-8def-fa3ac9e2dc49",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ede011c4-8e1d-464a-98a6-7839e7d4e385",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e17a78ee-b058-447e-8a91-3897b0c73916",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "c34c604a-dff9-479d-8b38-f3cc5acde0e7",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 3
+  },
+  {
+    "id": "f57fcfed-36d7-4e33-a849-0570826a6248",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "bf12821b-90fc-4be0-a56a-8c1ec7af5d96",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e49bfb8a-534a-43be-b7cb-87588dee4612",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "0603580e-9ceb-41ed-87ca-16c7c6869411",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "feaee72c-c008-4817-a56f-ccc4205bebdf",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4fcd61a9-98f0-46d2-99eb-41734bdc9fd9",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b7e01223-4f10-4514-b24d-ce5f024287ab",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d6ab8c04-0958-4731-bd0b-b9dd158ecbe1",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "41beebc4-bbdf-4683-ae39-fee43ed11dc0",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "aa8dfc21-12ad-4953-8f2f-15b21bf20ff9",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "54228c5f-68b5-43bb-8193-aa54cfa397aa",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "18cdc574-df65-413c-9f02-07f64d3e8b95",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "39ea3034-cda4-440c-ad23-d292cdf59a8a",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "f3ed2226-bb72-4c14-91a9-e32bb4e60370",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "9f790a0e-edb7-46a5-be72-d46fa2e661d9",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "2f5d978b-5447-4cda-a399-84fc13a748f9",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3ea38c16-6b02-419b-9ba4-7148f1ac9324",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "418c2831-7eb1-47ad-9290-dbcaaee46fef",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "78562290-4e92-4059-a7cf-b0453742a396",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fda6689b-5ed6-4090-8fcf-76db4b8c784a",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b8ceff62-3ac8-4643-926f-41f9cedbb5aa",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3a53279e-7868-4e54-849e-938646c0ab84",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3aa11428-3e90-44e3-b00f-0543783be26d",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d81c5214-3fef-429d-a4ea-7d3984450257",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7baca9f6-5f50-4bfb-945d-6453d2ba195e",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2396625b-0ca4-47a0-8f81-fe536f1e66d4",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "22d40615-3c95-430e-9b2f-46c8915f86da",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "bcb8e6b3-dfde-49b0-8851-ae0fffd7a105",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ba78562e-6759-4bfb-82e0-12d5e4a11cf3",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "51e90eff-a2b1-47e5-806e-98ee6d3f6117",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f541b1b2-c86b-4118-a1ac-c1a8837b93c5",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 0,
+    "goles_visitante": 0
+  },
+  {
+    "id": "26515563-358d-43d9-add4-c5bb36a4f7f3",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "6e4d0ced-441f-4bdd-800a-374775dca54e",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "7ff96ae8-8101-4bd1-80d9-5327e8e99a49",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "5b0bd5ce-1486-445b-a0bf-bd31a3b5d6c1",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c39fb450-af03-4be8-b6a5-396eb69526c6",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ce791894-37ad-4729-8f06-7d702013684b",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3386201e-6ea3-4935-936c-7365b5b70684",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "b74ea856-4a04-484e-ae79-aa3add89414a",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "5c723f2e-9896-426e-acc0-7fa72e2ebcbe",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "33759491-4d51-45d2-b807-7cf03a915a83",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4974a675-cca3-44d7-8465-a8cad4a88a3c",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "3d93c167-7778-41e2-a918-9c79bde784b4",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "a76c6a60-4ef1-4d0e-a493-711d53aa204e",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "afdd138a-65e9-408b-b735-36b8edb8fd97",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "88db4269-1903-4f43-a01e-f2bb70ee2644",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3c75a0a9-4bd1-40bd-abf4-73e8f15cf03a",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "75de2ac9-e0e5-4b0a-bc1b-0429eb4719de",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "85ae9aae-745d-404f-8115-b7bc710a74de",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2bc6bdf1-6a6b-4c38-bc07-df0f4f2f4543",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "caab72ee-ec68-4ea7-a2af-93d450b7981f",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "43ebbe2b-ac95-4eb1-acee-ecaaa081bcc3",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "673673c4-07d9-401b-9e54-a374de1b51e6",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "336f0aa6-d9c8-4cc6-bf3f-5883c32ad116",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "042ca3ce-c573-45c4-95c4-05ed42c92d28",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 4
+  },
+  {
+    "id": "4024af45-0120-47d9-83cf-689d9251778d",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "beca0edc-5a86-4398-a01a-60b383198dc4",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 4
+  },
+  {
+    "id": "024bc238-3442-4eee-a4de-aa7aff8d1d9b",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "825dd78c-f5f3-4f40-b400-59a57d1799d7",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 0,
+    "goles_visitante": 0
+  },
+  {
+    "id": "b6e76810-ca46-4aa5-aafe-85e00cfeca5c",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9d900baa-4d4d-4013-9342-254e7d0c0137",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "05ad58f7-0ebd-4955-995f-ab635aded221",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3ea20af6-0f74-483b-8465-63b130945378",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "85a6f9ab-d6da-478b-bda0-2c86f70a0603",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ca271f91-0579-46c0-b27c-542a81bd8bea",
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "8b6e071d-7a07-4c25-a92e-a7ab0a019b9d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "adb6fff6-2cdc-4c97-881b-21119e6425ae",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "292fd7ac-66ba-4205-bb44-1e9673aca83b",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d83d268e-1ac3-4dc4-b968-1377f4ae0332",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a9601ceb-5754-4aa7-b6ab-d7afaffd236c",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "8a1020a2-99c0-43f7-b4a5-85e5c720da33",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fbd32d4c-fbdb-4802-a258-bae8d483e8dc",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "948c752b-4177-4a41-9e7f-d494737c5322",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5ed00906-0dc8-4c41-8efb-a7f44abae8c2",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d558c8c4-33aa-4e75-9c84-89aceef54d0d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 2
+  },
+  {
+    "id": "dba6c4a6-4a77-4faa-9129-65ed9a06fe9d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "036c85cf-451e-4255-9dd3-97932a3511cf",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 2,
+    "goles_visitante": 4
+  },
+  {
+    "id": "60be77bb-dc7b-4a81-97ab-91470cdb0f75",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "024bd3ac-a6aa-42e5-9bdc-81ae4230b23d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ad6aad39-4958-4da0-956f-a8095d5afeb7",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d2a481d5-7748-4f38-bfb0-b3c10ae464b6",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7a1ff238-095a-4e14-83b7-041cc01080ec",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ac0a5f56-7941-4961-9b7f-417c72f08128",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "8e6b6c96-4b6d-4d84-b6c5-70e0a97dd3fe",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "91e0fe53-6d75-4293-951c-9e89aeee1f9d",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "83677de7-00cd-44ae-97cc-85f8742f3ec5",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "bc0bd318-3268-4711-9365-239c14325114",
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2f1b1471-6f55-4ff2-a5e1-aa32f3826f9f",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d998f6ae-2063-4475-8990-ab58e9895c9d",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f29e97ae-56d7-4fbd-a6fa-77743eeac488",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b419cba4-4036-4432-9957-a28e37bf0ee1",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "fae7b91a-d75c-40eb-bfbf-4fd881afc32f",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "93bf428b-cf76-4fac-af33-8f42e4ef0d3c",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fd14b2b2-5c33-437c-8220-4595f9228153",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "48e7717e-b1cd-4805-baef-3856b577f3b5",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "0b82fddd-38e9-49eb-be82-4ec3d971ead4",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d4dea165-ae8f-4743-b698-c11b0482de2c",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "457bf4db-b7ba-421b-811f-de2d7931f69f",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "68b67d70-e887-4054-afac-28b226d0c49f",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "0d1b72b0-0b3b-4911-8d22-575ae3668fa5",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "82d69949-eb66-4b13-a894-89ad87dff76e",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "5e66f36c-58c4-4313-9a80-52f022bb1d18",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b2fe6f1c-d9dc-4158-9214-538401e28885",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "daf3f707-88d4-488a-86a2-6e9c0302f078",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "ccbf2a57-c64b-4119-98f5-507863dc03ff",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b6a31402-d8c7-40be-94a7-bf3e37cfe0b5",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7ce0731a-a448-4560-a392-fe837d8d884d",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 2,
+    "goles_visitante": 2
+  },
+  {
+    "id": "bff0078c-9d90-4884-a144-64a0b8a12d19",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ff22bac2-6edd-436b-95b1-027727062543",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ce37c423-dca4-43f8-baa4-7126f61ac4e7",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "3babc217-dbc9-43b1-84c0-dca97715386e",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 6,
+    "goles_visitante": 1
+  },
+  {
+    "id": "537c21c4-be4d-41e8-8853-de2f607ebed5",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7583c1f2-fa8a-4841-8c41-9733cf533625",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "96537580-55e1-4629-ac7a-d6968a19613d",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "642767cb-73bc-4e7c-ac08-9893579669e9",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "dd446d75-9585-4d58-b3b7-fcc9401638a3",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "d3e939f5-fdd2-452e-9957-9336e7b20a3a",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "58ed01b0-c176-4f04-b3d6-774f0de6969a",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "34db77f6-eb31-4e40-b428-cd117a7f6e9d",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "9ee8aa28-1b73-4bb5-b377-6f41f4c4c57e",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5898b81a-1edd-4d05-83d2-b894865fcc9d",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "7f33b121-6a41-46ab-9bbd-7ae0ee9d5e41",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5bed3f0c-20f8-4a15-b3b6-681f337b4bdb",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "996fa162-6aac-4e7d-83c2-e52e74981c32",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "eb98b1ba-2688-4ae7-a0c1-e8b5a2657d14",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "9ffeda97-17f0-48f5-8788-324c28a2deac",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a426e676-c7bb-4bfc-8ae2-a05cf0a144c5",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4cdd803b-6644-433a-8707-71748462a1ef",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a0d8da84-f165-4534-a487-b7ca70ed76de",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "c97b2a78-3b35-47c0-8dd4-84666b405c05",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "6e89ffd3-58d9-423b-91ad-5536a91cf34e",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b13d7080-f7e6-4b78-8fbb-9fc57deb8f92",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a2a88a6b-ee94-4b3c-9cf8-301d511d690b",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "ab415615-2503-4d58-bd6b-3f138c65c2bf",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "6cbd6746-92fd-4795-96f5-836633f47b6b",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "21baa206-8439-46a2-892c-b6413ef3e52b",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "2bc18653-5df0-45b8-872c-a60cd24a990c",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "73653002-2db0-4b05-a672-5c15ec5f0780",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "d7d12db3-0149-49f7-b6c5-2a6730b0315e",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d6254ead-246a-4f96-b171-edae2edb5097",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "e2d8081d-e117-4006-9395-8683f3580f72",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "34bbf51f-2d28-4c75-b7d9-ae15f9e6f45f",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "890f0af5-6003-4ad0-a537-dbc6586551ab",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "36817259-ab14-4adc-9dc4-a94b778b6c24",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "bf4b3522-f6ad-4278-9e59-2aa980cde7f1",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1ac116b0-32c9-44ad-9b14-2431a99f05f7",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "e34a3a1d-9369-4369-a3aa-22b78f2f2eb6",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "75d0833f-441a-49f4-8bcd-a9c635a20f36",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6c05620a-578e-4cc2-afb6-4a1576d09c47",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "02b9c7ed-d193-4f0f-8681-9867b4deef45",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 2
+  },
+  {
+    "id": "cfd2c3a5-fc34-4473-a04d-5cfb544d918e",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "744397e9-2793-4b95-8658-51728a951caa",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "397bc8d6-d38e-4b38-9c38-675133db6dfc",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d40e365d-8696-4925-b5ad-727542b8c3fe",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d6120226-e158-4b56-94e3-eaa5b0657cbe",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "47bdcfc8-a897-4103-8424-06b2c3c5eb4b",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "939852d6-4fed-4076-9e68-127994058610",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7b75d9b1-6fbb-4b88-b209-dc18f1d8321c",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f41acfb0-fc3c-496c-89c7-d1832530e4a0",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "c2f51f7e-b093-4259-a2d0-0c675830fe7f",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "0f96a4f6-3525-4203-949a-aea669159990",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "fdaa563c-73c8-4ecb-a4ad-71ac036f7e5a",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3838c9f7-84cb-40ee-92bf-304377037564",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "c64e3349-4f76-468c-ae05-778775db2115",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "71c421a2-ee54-4134-a0cc-25040a3329b9",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "72d694ef-742b-4c74-b946-19f60523e2dd",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "8c6ebc50-4c7d-4317-af15-bd600553c211",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "faa34ec9-a4f8-4527-aa54-617233392c9f",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1e7b95e6-9884-47c1-a006-eb04bbef01bc",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9e2fe36e-864f-4d7e-abfe-636e3c3047b5",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d54dda68-45cb-4248-9976-47a410cf020b",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 0
+  },
+  {
+    "id": "7978bb11-8f7d-4964-aef5-c711a26941b2",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "51b2d274-1d1b-45e5-8042-ee33d1fb5b21",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "50e72c08-e82d-40d5-aeca-7509e5e7b452",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "6d9fc6d3-4aa5-408d-b3d9-62c7c4d0aef6",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f7fd45fc-f9f2-4582-a72f-77f624316903",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "bad69128-a3fc-4dbc-bf46-813132c39189",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e620fc18-2d57-4d41-8ffe-dbe61f5b0035",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "7beabf99-9cf7-4e06-a831-1049761ca76c",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "97df8b88-587c-4b6e-abb6-a6cbbb8753d6",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "056f7b20-2c4d-483e-ac13-1e68d30226f9",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1762b5d4-6b48-4593-827b-5a8fa397831c",
+    "usuario_id": "301bf8f9-5ebb-4e26-8e3f-ff87c0fb8caa",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4fa5b96c-846c-45c6-8616-42dce458319e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "5fbc2768-a85b-4808-850f-b567a625184f",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "bc64f989-01b0-477b-a33e-fedc8ec21f92",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "ff1241c5-b1f1-4857-b487-e8039b38170a",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "5c6e20b5-25d5-4306-85e4-d71f8fb7b3b3",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8c08784f-6b5c-4274-b742-6be37dfd0739",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "3a06c7dd-493b-4d36-972c-08d3d18f0e1b",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1bee1a81-9e89-4ee4-9758-876bcce85faf",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "852455ca-e25b-45cf-896c-4bcc15180a03",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1445da65-3983-4f63-bc72-a8d24496027d",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "869f09ed-e24b-4005-873e-da393e753216",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "e41c8ecd-47d1-4e7e-84a0-b29c165cd0ae",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "9be7715d-20da-4c3e-b758-14b06b1e0c83",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "b18192f9-89a1-4ce7-a36f-45bc224aedfd",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "91f2d609-2575-439d-9e8c-b2c2983c6d51",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c278b9e6-ffb9-4766-bbac-2244688cee99",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "06a9aa32-f652-483a-9b1e-dd482a9cbe5b",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "be888f58-6bd8-4a0b-9e07-81ccf1e73c7f",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "67416fa6-14c5-44ac-8bc6-2a9f33f5908c",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6122f8b8-1d5b-4c97-9aca-18259e599052",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "74ae7a60-f8fc-4ec5-b938-ffd73a8af730",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "94f24947-262d-45e8-8002-1a0711f7b020",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "597e6001-fc53-42cb-bea8-af6ad2289b8e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "147ba55d-b9ce-46ca-8f22-32f20c6a0fd1",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "eb4f58cb-80c2-4a52-be4b-7fe3619074a0",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c783ddd9-422a-4efa-90d1-f3964f96e19e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9b1bba56-c402-4b2b-a874-c4b6bc2d43bd",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "c8a704b1-1f97-4496-b64c-aa257cff7984",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 3
+  },
+  {
+    "id": "41ce08d2-2ee3-49e1-86dd-f680245394d2",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f75f7558-bb6e-4a6f-b8d8-76253a2bbc30",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "b215c093-6fa9-4a2a-8a1a-f9ce54d39097",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4ffa31dc-388b-4880-b679-8220d95c389c",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "d42ca659-93a0-45e1-af7f-b734ead9c188",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cb8e0adb-9fb3-40f2-8558-3b7b50c0989f",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c6388e1e-eb9f-4a03-8e53-f69aa8a2ffc0",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "5d9ebfb8-76e6-44a0-818e-d87c648d8738",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cafbd05a-f5b3-4ae4-8756-eeae7821b890",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "df2ca84c-df8a-4a73-ac5d-d5b7ce22459e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e69b118e-d138-4cea-b720-8b1e5e0d7962",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6494c8ff-0f4f-495a-9043-bb7fd743106d",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4d8396ed-8afe-4849-b1f0-324de9b6a445",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "9b72537d-5396-4e7a-8e94-4ef93aadceac",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c4a1b0a5-7187-4a53-bc54-3e9484e5a1a9",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "73dd0681-6f0e-4abe-9e05-8407be4ddaf4",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "5632a91e-3f94-46ab-aba6-6ac900d4171d",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cb3e397f-bf18-434e-87a9-fba54ba8bbf9",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "88966618-4471-4bcb-a7ef-f2846f55a401",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "3e42ce4f-4e61-4014-a675-1b90e3d6ffb1",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "8e3dd409-d066-44ad-b5e5-6113ac24d456",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1bfd57f8-b8df-4a56-9932-230ca45c476a",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 50,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fb1c1f27-2a34-4408-a719-5b6ebb7e0fc7",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 51,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "f35bdfcb-5186-460d-bebc-348f6f465b3f",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 52,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "a7e4ed62-6c28-4745-a35e-461e1de6f68c",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 54,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6fd0d24b-f21e-499c-a9e7-67371470f0c2",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 53,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "7a674197-9e49-40a3-a289-82220eb9fc40",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 55,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "5477bcb4-4f9d-47dd-9442-80d6c47aa449",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 56,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e923961d-4e8c-4865-b619-0b20d5aec5cf",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 57,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "f5d10cb6-3c55-48f6-a6de-ac3319d97716",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 58,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6410861e-9e2a-4b47-9e8a-7ea39ce32466",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 60,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8ddc2278-28be-4a3f-bb82-4cde7d2e25fb",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 59,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "60be21bc-c9f8-4460-9563-3268ae26df13",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 61,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cad250e4-b093-4bbe-8fc6-54508c32a926",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 62,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "ff587d50-e7a8-4f0b-b232-a6686482587b",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 63,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "b8dea6a1-b2fb-4026-85d6-eea814979de4",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 64,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "d4195df6-6ed5-44c2-87bc-a1566c563365",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 65,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a071a05e-e92a-4a2f-93c2-e73dd5162f6e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 66,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9fbf532e-dc53-4818-9929-9da68840a2eb",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 67,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "0c072281-d5a2-4f11-9b2f-33f0a66fa979",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 68,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "75607caa-293a-4011-a8ee-6a547b6aa85f",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 69,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1a516d24-94d2-4e05-b1a0-e072a36307b6",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 70,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "2a8269a7-d763-46cb-8dca-fa925b350393",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 72,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4d286828-08f1-4513-880a-a1523123a31e",
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "partido_id": 71,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a0a4d094-44cc-4a95-8bda-035d272aa126",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 1,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "8719f464-c750-4d57-9cb2-704d1f6d35e3",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 2,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "600fc766-6b1d-4035-abed-9da550a05106",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 4,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "4964edba-e0ba-4e61-bb18-4f88ca68156c",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 3,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "7b4b4a8a-66c2-493e-b5a8-3f86aa31d072",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 5,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2258a7ba-1079-4c35-b077-bb1219e0ccbd",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 6,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c1e9e824-dce5-4d4c-a22f-a4e335fd3233",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 7,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a9300f7b-f0b1-4c7e-8b92-47f0be081665",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 8,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "91c8591e-a32c-4337-aea9-1ab5e76f0770",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 9,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "dbf96d66-1f9f-4008-98d2-df0c1a593c2f",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 10,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "e9d48933-74b7-45d8-b03f-8168a3ae53b0",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 11,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "f14a7547-dcea-440a-80da-a88c4c88bc02",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 12,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "88bce9eb-ef06-401e-825f-ca405310b107",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 13,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "bb12590d-fb1e-41dd-9f2c-8a5f3cf7e5fa",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 14,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "024436eb-6ef6-4174-abb6-03264e64bce1",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 16,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 2
+  },
+  {
+    "id": "bf6b04a2-1d4f-400a-8721-3274a98e9c96",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 15,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a27ac41e-c923-4a96-8882-01b6e6399b49",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 17,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "54900d0e-8078-41ee-a93b-7bb6c27c95cf",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 18,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "e496bd74-dcc6-45d0-86e0-4b17a525af5b",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 19,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "a7568d85-3f56-4130-8ad5-84b32b7721d3",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 20,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "13854c61-d376-40cd-bdfc-204c524ce7ba",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 22,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "fe40d044-302b-486c-b01e-008605e0e2cb",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 21,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2db8de79-9859-49ab-be4f-2ded20f0adf3",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 24,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "93f6e730-8a71-4304-b20e-56a02a4db33a",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 23,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "810b58a6-4d64-452b-a86d-e1bbaaea35e9",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 25,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 5,
+    "goles_visitante": 0
+  },
+  {
+    "id": "8345b7a4-0da4-4672-a5de-9efbb2655f5e",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 26,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 3
+  },
+  {
+    "id": "9ce6b3e6-5f29-438e-a970-58d202f9ba96",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 27,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "b5d9349d-cec1-4f8c-a2bb-ac7196842b4e",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 28,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "1ae05833-74fc-4049-bfde-2d18f8337de6",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 29,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "9d4b1271-5d78-4c9d-bccc-0f4998a82a5b",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 30,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "cb66121e-432e-4799-a7c2-7a64bb59e2b8",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 32,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "1f1c1529-eea6-4b1c-9991-18855e87544b",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 31,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "9e3af043-b9c1-4d15-96fd-31fa5c43375c",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 34,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "42443303-7bcf-432c-b529-0e6c615e4657",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 33,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "17c4c00f-9ebe-49d8-ad6a-5498ffc842ca",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 35,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6bf8bcd7-4500-48ea-b26b-aea9a0b1363f",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 36,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "6210e303-4ea0-4aaf-8b77-fe7f01b4f4cf",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 37,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 0
+  },
+  {
+    "id": "220a250d-4780-478f-b3af-ec4e1d2ab6f4",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 38,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "4a39c9ca-16f8-4ce0-bdcf-f8e861c37330",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 40,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 1
+  },
+  {
+    "id": "a19bf5d7-1f7a-4c37-8bbd-09b93f09846d",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 39,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1831ad04-bb95-45f3-a83e-a4bc28c6dff7",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 41,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "31b8f3ee-2c26-4976-8831-84c7c1ce0601",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 42,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 1,
+    "goles_visitante": 2
+  },
+  {
+    "id": "a44c1c54-c249-4df1-96ed-1cb347fe781b",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 43,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 4,
+    "goles_visitante": 1
+  },
+  {
+    "id": "2a046f94-c648-4a61-8037-c5b9159e1005",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 44,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 1,
+    "goles_visitante": 0
+  },
+  {
+    "id": "c138b813-5cfb-4af9-b205-23a11e4a15cb",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 45,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "87e45927-add7-403e-a922-d3ba0e01f454",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 46,
+    "puntos_obtenidos": 0,
+    "resultado": "V",
+    "goles_local": 0,
+    "goles_visitante": 2
+  },
+  {
+    "id": "94810856-ac4d-4a99-bc6e-14ccfcfb084a",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 48,
+    "puntos_obtenidos": 0,
+    "resultado": "X",
+    "goles_local": 1,
+    "goles_visitante": 1
+  },
+  {
+    "id": "1ed6800c-5d6b-4d1f-ae19-6f83e087b71a",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 47,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 2,
+    "goles_visitante": 1
+  },
+  {
+    "id": "86b44cfa-8156-45d0-8a74-20ad54a5e25d",
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "partido_id": 49,
+    "puntos_obtenidos": 0,
+    "resultado": "L",
+    "goles_local": 3,
+    "goles_visitante": 0
+  }
+]

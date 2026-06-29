@@ -1,6 +1,7 @@
 // Scoring helpers — keep in sync with POINTS_TABLE.md.
 
 import type { Resultado } from '@/app/predicciones/standings'
+import { HARDCODED_R32 } from '@/app/predicciones/bracket'
 
 export type UserMatchPred = {
   resultado: Resultado
@@ -191,5 +192,159 @@ export type PhasePoints = {
   grupos: number    // Phase 1
   clasif: number    // Phase 2
   awards: number    // Phase 3
-  knockout: number  // Phase 4 (not yet active)
+  knockout: number  // Phase 4
+}
+
+// ─── Phase 4: Knockout bracket ────────────────────────────────────────────────
+
+/** "ronda:slot" map key. */
+function bKey(ronda: string, slot: number): string {
+  return `${ronda}:${slot}`
+}
+
+/**
+ * Resolve the two teams that participate in a given bracket match.
+ * R32: fixed from HARDCODED_R32.
+ * Later rounds: derived from the winners of the two preceding slots.
+ */
+function getMatchParticipants(
+  ronda: string,
+  slot: number,
+  bracket: Map<string, number>,
+): [number | null, number | null] {
+  if (ronda === 'R32') {
+    const m = HARDCODED_R32[slot - 1]
+    return m ? [m.teamA, m.teamB] : [null, null]
+  }
+  if (ronda === 'R16') {
+    return [
+      bracket.get(bKey('R32', (slot - 1) * 2 + 1)) ?? null,
+      bracket.get(bKey('R32', (slot - 1) * 2 + 2)) ?? null,
+    ]
+  }
+  if (ronda === 'QF') {
+    return [
+      bracket.get(bKey('R16', (slot - 1) * 2 + 1)) ?? null,
+      bracket.get(bKey('R16', (slot - 1) * 2 + 2)) ?? null,
+    ]
+  }
+  if (ronda === 'SF') {
+    return [
+      bracket.get(bKey('QF', (slot - 1) * 2 + 1)) ?? null,
+      bracket.get(bKey('QF', (slot - 1) * 2 + 2)) ?? null,
+    ]
+  }
+  if (ronda === 'F') {
+    return [bracket.get(bKey('SF', 1)) ?? null, bracket.get(bKey('SF', 2)) ?? null]
+  }
+  return [null, null]
+}
+
+function sameParticipants(
+  u: [number | null, number | null],
+  r: [number | null, number | null],
+): boolean {
+  if (u[0] == null || u[1] == null || r[0] == null || r[1] == null) return false
+  return (u[0] === r[0] && u[1] === r[1]) || (u[0] === r[1] && u[1] === r[0])
+}
+
+export type BracketMatchScore = {
+  ronda: string
+  slot: number
+  /** R32–SF: 1 if correct winner, else 0. F: 8 if champion correct, else 0. */
+  base: number
+  /** Extra pts for predicting both participants correctly: R16+1 / QF+2 / SF+4 / F+8. */
+  exact: number
+}
+
+export type KnockoutScoreResult = {
+  /** Correct-winner points for R32+R16+QF+SF (max 30). */
+  base: number
+  /** Exact-match bonuses R16+QF+SF+F (max 32). */
+  exact: number
+  /** 8 if predicted champion matches reality, else 0. */
+  champion: number
+  /** base + exact + champion (max 70). */
+  total: number
+  matches: BracketMatchScore[]
+}
+
+// Extra pts per round when winner is correct AND both participants match.
+const EXACT_BONUS: Record<string, number | undefined> = { R16: 1, QF: 2, SF: 4 }
+
+/**
+ * Phase 4 – Knockout bracket scoring.
+ *
+ * @param userBracket  "ronda:slot" → predicted winner equipo_id (from predicciones_bracket)
+ * @param realBracket  "ronda:slot" → official winner equipo_id (from resultados_bracket)
+ *
+ * Scoring rules (max 70 pts):
+ *  - Base +1: correct advancing team for each of the 30 matches in R32–SF.
+ *  - Exact bonus (only if base point earned AND both participants match reality):
+ *      R16 +1 | QF +2 | SF +4
+ *  - Champion: +8 if predicted winner of the Final is correct.
+ *  - Final exact: +8 more if both finalists were also correctly predicted.
+ */
+export function bracketPoints(
+  userBracket: Map<string, number>,
+  realBracket: Map<string, number>,
+): KnockoutScoreResult {
+  const matches: BracketMatchScore[] = []
+  let base = 0
+  let exact = 0
+  let champion = 0
+
+  // ── R32, R16, QF, SF: base (+1) + optional exact bonus ───────────────────
+  const baseRounds: { ronda: string; slots: number }[] = [
+    { ronda: 'R32', slots: 16 },
+    { ronda: 'R16', slots: 8 },
+    { ronda: 'QF',  slots: 4 },
+    { ronda: 'SF',  slots: 2 },
+  ]
+
+  for (const { ronda, slots } of baseRounds) {
+    for (let slot = 1; slot <= slots; slot++) {
+      const realWinner = realBracket.get(bKey(ronda, slot)) ?? null
+      const userWinner = userBracket.get(bKey(ronda, slot)) ?? null
+      const basePoint =
+        realWinner != null && userWinner != null && userWinner === realWinner ? 1 : 0
+      let exactBonus = 0
+      if (basePoint === 1) {
+        const bonus = EXACT_BONUS[ronda]
+        if (bonus != null) {
+          if (
+            sameParticipants(
+              getMatchParticipants(ronda, slot, userBracket),
+              getMatchParticipants(ronda, slot, realBracket),
+            )
+          ) exactBonus = bonus
+        }
+      }
+      base += basePoint
+      exact += exactBonus
+      matches.push({ ronda, slot, base: basePoint, exact: exactBonus })
+    }
+  }
+
+  // ── Final: champion +8, exact finalists bonus +8 ─────────────────────────
+  const realChamp = realBracket.get(bKey('F', 1)) ?? null
+  const userChamp = userBracket.get(bKey('F', 1)) ?? null
+  let fBase = 0
+  let fExact = 0
+  if (realChamp != null && userChamp != null && userChamp === realChamp) {
+    fBase = 8
+    champion = 8
+    if (
+      sameParticipants(
+        getMatchParticipants('F', 1, userBracket),
+        getMatchParticipants('F', 1, realBracket),
+      )
+    ) {
+      fExact = 8
+      exact += 8
+    }
+  }
+  matches.push({ ronda: 'F', slot: 1, base: fBase, exact: fExact })
+
+  return { base, exact, champion, total: base + exact + champion, matches }
 }

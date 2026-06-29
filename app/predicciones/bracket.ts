@@ -77,23 +77,41 @@ export function seedLabel(s: SeedSource): string {
   return `3º #${s.rankIdx}`
 }
 
-// Build the 16 R32 matches as ordered pairs of resolved equipo_id (or null).
+// Hardcoded 2026 World Cup R32 bracket (group stage complete).
+// Left half: slots 1-8  ·  Right half: slots 9-16
+export const HARDCODED_R32: { teamA: number; teamB: number }[] = [
+  { teamA: 17, teamB: 14 }, // Slot  1: ALE vs PAR
+  { teamA: 33, teamB: 23 }, // Slot  2: FRA vs SUE
+  { teamA:  2, teamB:  5 }, // Slot  3: RSA vs CAN
+  { teamA: 21, teamB: 10 }, // Slot  4: PBA vs MAR
+  { teamA: 41, teamB: 46 }, // Slot  5: POR vs CRO
+  { teamA: 29, teamB: 39 }, // Slot  6: ESP vs AUT
+  { teamA: 13, teamB:  6 }, // Slot  7: EEUU vs BIH
+  { teamA: 25, teamB: 34 }, // Slot  8: BEL vs SEN
+  { teamA:  9, teamB: 22 }, // Slot  9: BRA vs JPN
+  { teamA: 19, teamB: 36 }, // Slot 10: CMA vs NOR  (ci=19, verificar)
+  { teamA:  1, teamB: 20 }, // Slot 11: MEX vs ECU
+  { teamA: 45, teamB: 42 }, // Slot 12: ING vs RDC
+  { teamA: 37, teamB: 30 }, // Slot 13: ARG vs CAV
+  { teamA: 15, teamB: 26 }, // Slot 14: AUS vs EGI
+  { teamA:  8, teamB: 38 }, // Slot 15: SUI vs AGL
+  { teamA: 44, teamB: 47 }, // Slot 16: COL vs GHA
+]
+
+// Build the 16 R32 matches using the hardcoded real bracket.
+// The clasif/terceros args are kept for backward compatibility but are ignored.
 export function buildR32Matches(
-  clasif: { grupo: string; equipo_id: number; posicion: number }[],
-  terceros: { equipo_id: number; posicion: number }[],
+  _clasif: { grupo: string; equipo_id: number; posicion: number }[],
+  _terceros: { equipo_id: number; posicion: number }[],
 ): { slot: number; sourceA: SeedSource; sourceB: SeedSource; teamA: number | null; teamB: number | null }[] {
-  const seeds = buildSeeding()
-  return R32_SEED_PAIRS.map(([a, b], idx) => {
-    const sourceA = seeds[a - 1]
-    const sourceB = seeds[b - 1]
-    return {
-      slot: idx + 1,
-      sourceA,
-      sourceB,
-      teamA: resolveSeed(sourceA, clasif, terceros),
-      teamB: resolveSeed(sourceB, clasif, terceros),
-    }
-  })
+  const dummy: SeedSource = { kind: 'W', grupo: 'A' }
+  return HARDCODED_R32.map(({ teamA, teamB }, idx) => ({
+    slot: idx + 1,
+    sourceA: dummy,
+    sourceB: dummy,
+    teamA,
+    teamB,
+  }))
 }
 
 // Given winners from a round (length N), produce next-round pairings (length N/2).

@@ -85,6 +85,8 @@ export async function saveOfficialMatchResult(formData: FormData): Promise<void>
   const idRaw = String(formData.get('partido_id') ?? '').trim()
   const glRaw = String(formData.get('goles_local_oficial') ?? '').trim()
   const gvRaw = String(formData.get('goles_visitante_oficial') ?? '').trim()
+  const ganadorRaw = String(formData.get('ganador_id') ?? '').trim()
+  const ganadorIdOverride = ganadorRaw !== '' ? Number(ganadorRaw) : null
 
   const partidoId = Number(idRaw)
   if (!Number.isInteger(partidoId) || partidoId <= 0) {
@@ -128,6 +130,38 @@ export async function saveOfficialMatchResult(formData: FormData): Promise<void>
     .eq('id', partidoId)
 
   if (error) return
+
+  // For KO matches: keep resultados_bracket in sync
+  const { data: partido } = await admin
+    .from('partidos')
+    .select('grupo, fase, jornada, equipo_local_id, equipo_visitante_id')
+    .eq('id', partidoId)
+    .maybeSingle()
+
+  if (partido && partido.grupo == null && partido.fase) {
+    if (golesLocal != null && golesVisitante != null) {
+      const isDraw = golesLocal === golesVisitante
+      let winnerId: number | null = null
+      if (!isDraw) {
+        winnerId = golesLocal > golesVisitante ? partido.equipo_local_id : partido.equipo_visitante_id
+      } else if (
+        ganadorIdOverride != null &&
+        Number.isInteger(ganadorIdOverride) &&
+        (ganadorIdOverride === partido.equipo_local_id || ganadorIdOverride === partido.equipo_visitante_id)
+      ) {
+        winnerId = ganadorIdOverride
+      }
+      if (winnerId != null) {
+        await admin.from('resultados_bracket').upsert(
+          { ronda: partido.fase, slot: partido.jornada, ganador_equipo_id: winnerId },
+          { onConflict: 'ronda,slot' },
+        )
+      }
+    } else {
+      await admin.from('resultados_bracket')
+        .delete().eq('ronda', partido.fase).eq('slot', partido.jornada)
+    }
+  }
 
   revalidatePath('/')
   revalidatePath('/clasificacion')

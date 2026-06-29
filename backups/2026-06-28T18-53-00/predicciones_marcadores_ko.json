@@ -1,0 +1,778 @@
+[
+  {
+    "usuario_id": "671e6423-cd6b-4fb5-ae9f-048dcc75c835",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:42:49.049081+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 4,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:49:41.519921+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 4,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:49:43.647172+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 0,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:49:45.142812+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 2,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T17:49:47.082967+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:49:47.766571+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:49:48.750327+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:49:50.197536+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 1,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T17:49:51.364931+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:49:52.043367+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 1,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T17:49:52.81786+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 0,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:49:54.796829+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:49:55.775473+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 4,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:49:57.681782+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:50:00.667847+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:50:01.915431+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:50:04.598472+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:50:06.810287+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:50:08.230357+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 3,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:50:12.766429+00:00"
+  },
+  {
+    "usuario_id": "1809a174-9993-4d69-886f-f0674a86682d",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:50:14.131458+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:50:21.915064+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:50:27.221564+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:50:37.807259+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:50:43.50236+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:50:48.458802+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 2,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T17:50:57.293115+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T17:51:04.643024+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:51:09.790936+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T17:51:14.21868+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 0,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:51:18.311042+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:51:24.440306+00:00"
+  },
+  {
+    "usuario_id": "873b4c45-3f8e-40b8-a6bb-3fc0b096bb5d",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T17:51:31.9122+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:01:14.862105+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:03:37.85475+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 0,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:03:40.761083+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:03:41.524702+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:03:43.256324+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:03:44.132746+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 3,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:03:45.42248+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:03:46.138063+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:03:47.187989+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 0,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:03:48.489919+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:03:49.392093+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 4,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:03:51.360566+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:03:52.115296+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 1,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T18:03:53.265535+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 1,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:03:54.368217+00:00"
+  },
+  {
+    "usuario_id": "209012bc-e2bb-4d55-9485-4c3e44fab92d",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:03:56.385135+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:09:04.41631+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:09:35.646618+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:09:53.173864+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:10:17.949454+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:10:28.933265+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:10:40.467453+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:10:57.56833+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:11:08.974116+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:11:19.235931+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:11:29.488662+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:11:40.633077+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:11:50.118942+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:11:59.541395+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:12:09.698219+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:12:18.148509+00:00"
+  },
+  {
+    "usuario_id": "cc7bf1f3-4f72-43a6-8d24-fa7164de3a1d",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:12:28.995804+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:05.268726+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:06.449929+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 0,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:07.33027+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 5,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:27:08.676854+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:27:09.332832+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 1,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T18:27:10.018367+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 2,
+    "goles_visitante": 4,
+    "enviado_at": "2026-06-28T18:27:10.664672+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 4,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T18:27:11.368601+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 2,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:27:12.066794+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:12.715654+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:13.366028+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:14.027321+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:14.666164+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 1,
+    "goles_visitante": 3,
+    "enviado_at": "2026-06-28T18:27:15.340173+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:27:15.985616+00:00"
+  },
+  {
+    "usuario_id": "208f29ab-a437-4843-b72c-659309e4e194",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 4,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:27:16.63012+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 1,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:48:22.253758+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 2,
+    "goles_local": 3,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:48:29.67884+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 3,
+    "goles_local": 0,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:48:42.974535+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 4,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:48:58.263699+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 5,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:49:04.323119+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 6,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:49:12.322429+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 7,
+    "goles_local": 3,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:49:21.517863+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 8,
+    "goles_local": 0,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:49:29.348412+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 9,
+    "goles_local": 2,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:49:45.961933+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 10,
+    "goles_local": 1,
+    "goles_visitante": 2,
+    "enviado_at": "2026-06-28T18:49:53.545334+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 11,
+    "goles_local": 1,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:50:01.361663+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 12,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:50:07.973962+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 13,
+    "goles_local": 1,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:50:18.16287+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 14,
+    "goles_local": 1,
+    "goles_visitante": 1,
+    "enviado_at": "2026-06-28T18:50:27.211261+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 15,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:50:38.751906+00:00"
+  },
+  {
+    "usuario_id": "4599f9f8-2301-4621-9c4b-ff584f69c3f2",
+    "ronda": "R32",
+    "slot": 16,
+    "goles_local": 2,
+    "goles_visitante": 0,
+    "enviado_at": "2026-06-28T18:50:59.665911+00:00"
+  }
+]
