@@ -77,12 +77,12 @@ export default async function PlantillasPage() {
       <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
         {/* Imagen completa, respeta su ratio 16:9 — en desktop se limita a 300px */}
         <img
-          src="/cris-leo-ney.png"
+          src="/leo.png"
           alt="Jugadores del Mundial"
           className="w-full h-auto block md:max-h-[300px] md:w-full md:object-contain md:object-center"
-          style={{display:'block'}}
+          style={{display:'block',filter:'brightness(1.22)'}}
         />
-        <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%)'}} />
+        <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 100%)'}} />
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
           <div className="flex items-center gap-2 mb-1.5">
             <Users size={13} style={{color:'#C9A84C'}} />

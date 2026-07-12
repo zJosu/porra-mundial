@@ -123,3 +123,71 @@ export function nextRoundPairs<T>(winners: (T | null)[]): { teamA: T | null; tea
   }
   return out
 }
+
+// ─── Knockout auto-advance: schedule + feeder resolution ──────────────────────
+//
+// As teams advance, next-round matches are placed automatically on the home page.
+// The match's two teams are derived from the official bracket winners; the kickoff
+// time comes from this hardcoded schedule.
+//
+// Times were provided in Europe/Madrid (CEST = UTC+2 in July) and are stored here
+// already converted to UTC.
+
+// Number of matches (slots) per knockout round.
+export const KO_ROUND_SLOTS: Record<Round, number> = {
+  R32: 16, R16: 8, QF: 4, SF: 2, P3: 1, F: 1,
+}
+
+// Kickoff times keyed by "ronda:slot". A round is only placed on the home page
+// once its date is known here. (R32 rows are seeded separately in the DB.)
+export const KO_SCHEDULE: Record<string, { fecha: string }> = {
+  // Octavos de final (R16)
+  'R16:1': { fecha: '2026-07-04T21:00:00+00:00' }, // Paraguay vs Francia    — 23:00 Madrid, sáb 4 jul
+  'R16:2': { fecha: '2026-07-04T17:00:00+00:00' }, // Canadá vs Marruecos    — 19:00 Madrid, sáb 4 jul
+  'R16:3': { fecha: '2026-07-06T19:00:00+00:00' }, // Portugal vs España     — 21:00 Madrid, lun 6 jul
+  'R16:4': { fecha: '2026-07-07T00:00:00+00:00' }, // EEUU vs Bélgica        — 02:00 Madrid, mar 7 jul
+  'R16:5': { fecha: '2026-07-05T20:00:00+00:00' }, // Brasil vs Noruega      — 22:00 Madrid, dom 5 jul
+  'R16:6': { fecha: '2026-07-06T00:00:00+00:00' }, // México vs Inglaterra   — 02:00 Madrid, lun 6 jul
+  'R16:7': { fecha: '2026-07-07T16:00:00+00:00' }, // Argentina vs Egipto    — 18:00 Madrid, mar 7 jul
+  'R16:8': { fecha: '2026-07-07T20:00:00+00:00' }, // Suiza vs Colombia      — 22:00 Madrid, mar 7 jul
+  // Cuartos de final (QF)
+  'QF:1':  { fecha: '2026-07-09T20:00:00+00:00' }, // 22:00 Madrid, jue 9 jul
+  'QF:2':  { fecha: '2026-07-10T19:00:00+00:00' }, // 21:00 Madrid, vie 10 jul
+  'QF:3':  { fecha: '2026-07-11T21:00:00+00:00' }, // 23:00 Madrid, sáb 11 jul
+  'QF:4':  { fecha: '2026-07-12T01:00:00+00:00' }, // 03:00 Madrid, dom 12 jul
+  // Semifinales (SF)
+  'SF:1':  { fecha: '2026-07-14T19:00:00+00:00' }, // 21:00 Madrid, mar 14 jul
+  'SF:2':  { fecha: '2026-07-15T19:00:00+00:00' }, // 21:00 Madrid, mié 15 jul
+  // 3.er puesto (P3)
+  'P3:1':  { fecha: '2026-07-18T21:00:00+00:00' }, // 23:00 Madrid, sáb 18 jul
+  // Final (F)
+  'F:1':   { fecha: '2026-07-19T19:00:00+00:00' }, // 21:00 Madrid, dom 19 jul
+}
+
+// Loser of a semifinal slot, derived from its two feeder (QF) winners minus the SF winner.
+function sfLoser(sfSlot: number, winners: Map<string, number>): number | null {
+  const a = winners.get(`QF:${sfSlot * 2 - 1}`) ?? null
+  const b = winners.get(`QF:${sfSlot * 2}`) ?? null
+  const win = winners.get(`SF:${sfSlot}`) ?? null
+  if (a == null || b == null || win == null) return null
+  return win === a ? b : a
+}
+
+// Resolve the two participants of a knockout match from the official bracket winners.
+// Returns [null, null] (or a partial) when a feeder result is not yet decided.
+// The order matches the exact-score prediction convention (teamA = lower feeder slot).
+export function koFeeders(
+  ronda: Round,
+  slot: number,
+  winners: Map<string, number>,
+): [number | null, number | null] {
+  const w = (r: Round, s: number) => winners.get(`${r}:${s}`) ?? null
+  switch (ronda) {
+    case 'R16': return [w('R32', slot * 2 - 1), w('R32', slot * 2)]
+    case 'QF':  return [w('R16', slot * 2 - 1), w('R16', slot * 2)]
+    case 'SF':  return [w('QF', slot * 2 - 1), w('QF', slot * 2)]
+    case 'F':   return [w('SF', 1), w('SF', 2)]
+    case 'P3':  return [sfLoser(1, winners), sfLoser(2, winners)]
+    default:    return [null, null]
+  }
+}

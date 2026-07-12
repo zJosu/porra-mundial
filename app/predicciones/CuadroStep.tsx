@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import {
   Trophy,
@@ -703,6 +703,93 @@ export function CuadroStep({
     return () => el.removeEventListener('scroll', onScroll)
   }, [r32Ready])
 
+  // ---- Fit-to-screen + pinch-to-zoom (readOnly views) ----
+  // Initially the whole bracket is scaled to fit the container; the user can then
+  // pinch with two fingers (móvil) to zoom into the bracket itself.
+  const bracketInnerRef = useRef<HTMLDivElement>(null)
+  const [naturalDims, setNaturalDims] = useState<{ w: number; h: number } | null>(null)
+  const [fitScale, setFitScale] = useState(1)
+  const [scale, setScale] = useState(1)
+  const userZoomedRef = useRef(false)
+  const MAX_ZOOM = 1.6
+  const zoomEnabled = readOnly
+
+  // Keep latest scale/fit accessible from the (stable) touch listeners.
+  const scaleRef = useRef(scale)
+  const fitScaleRef = useRef(fitScale)
+  useEffect(() => {
+    scaleRef.current = scale
+    fitScaleRef.current = fitScale
+  })
+
+  useLayoutEffect(() => {
+    if (!zoomEnabled) return
+    const scroller = scrollerRef.current
+    const inner = bracketInnerRef.current
+    if (!scroller || !inner) return
+    // offsetWidth/offsetHeight ignore CSS transforms, so we always read the natural size.
+    const measure = () => {
+      const w = inner.offsetWidth
+      const h = inner.offsetHeight
+      if (w <= 0 || h <= 0) return
+      setNaturalDims({ w, h })
+      const fit = Math.min(1, scroller.clientWidth / w)
+      setFitScale(fit)
+      if (!userZoomedRef.current) setScale(fit)
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(scroller)
+    return () => ro.disconnect()
+  }, [zoomEnabled, r32Ready])
+
+  // Pinch-to-zoom (two fingers) sobre el cuadro, manteniendo el punto focal estable.
+  useEffect(() => {
+    if (!zoomEnabled) return
+    const scroller = scrollerRef.current
+    if (!scroller) return
+    const dist = (t: TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY)
+    let pinching = false
+    let startDist = 0
+    let startScale = 1
+    let focalX = 0
+    let contentX = 0
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length !== 2) return
+      pinching = true
+      startDist = dist(e.touches)
+      startScale = scaleRef.current
+      const rect = scroller.getBoundingClientRect()
+      focalX = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left
+      contentX = (scroller.scrollLeft + focalX) / startScale
+      e.preventDefault()
+    }
+    const onTouchMove = (e: TouchEvent) => {
+      if (!pinching || e.touches.length !== 2) return
+      e.preventDefault()
+      const ratio = dist(e.touches) / startDist
+      const next = Math.min(MAX_ZOOM, Math.max(fitScaleRef.current, startScale * ratio))
+      userZoomedRef.current = true
+      setScale(next)
+      requestAnimationFrame(() => {
+        scroller.scrollLeft = contentX * next - focalX
+      })
+    }
+    const onTouchEnd = (e: TouchEvent) => {
+      if (e.touches.length < 2) pinching = false
+    }
+    scroller.addEventListener('touchstart', onTouchStart, { passive: false })
+    scroller.addEventListener('touchmove', onTouchMove, { passive: false })
+    scroller.addEventListener('touchend', onTouchEnd)
+    scroller.addEventListener('touchcancel', onTouchEnd)
+    return () => {
+      scroller.removeEventListener('touchstart', onTouchStart)
+      scroller.removeEventListener('touchmove', onTouchMove)
+      scroller.removeEventListener('touchend', onTouchEnd)
+      scroller.removeEventListener('touchcancel', onTouchEnd)
+    }
+  }, [zoomEnabled])
+
   // Auto-scroll al partido activo (modo walk)
   useEffect(() => {    if (!walkMode || !activeKey) return
     // Esperamos al siguiente frame para que React pinte la clase walk-active
@@ -856,12 +943,12 @@ export function CuadroStep({
               '0 4px 20px rgba(15,23,42,0.06), 0 0 0 1px rgba(15,23,42,0.04)',
           }}
         >
-          {/* Scroll hint */}
+          {/* Hint: desliza / pellizca para hacer zoom */}
           {hint && (
-            <div className="relative z-10 flex justify-end px-4 pt-2">
+            <div className="relative z-20 flex justify-end px-4 pt-2">
               <div className="flex items-center gap-1.5 text-[9px] text-slate-400">
                 <MoveHorizontal size={11} />
-                <span>Desliza para ver todo</span>
+                <span>{zoomEnabled ? 'Desliza · pellizca para hacer zoom' : 'Desliza para ver todo'}</span>
               </div>
             </div>
           )}
@@ -870,10 +957,24 @@ export function CuadroStep({
           <div
             ref={scrollerRef}
             className="relative z-10 overflow-x-auto overflow-y-hidden"
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            style={{ WebkitOverflowScrolling: 'touch', touchAction: zoomEnabled ? 'pan-x pan-y' : undefined }}
           >
             <div
+              className="relative"
+              style={
+                zoomEnabled && naturalDims
+                  ? { width: naturalDims.w * scale, height: naturalDims.h * scale }
+                  : undefined
+              }
+            >
+            <div
+              ref={bracketInnerRef}
               className="flex items-start px-3 pt-3 pb-4"
+              style={
+                zoomEnabled && naturalDims
+                  ? { position: 'absolute', top: 0, left: 0, transform: `scale(${scale})`, transformOrigin: 'top left' }
+                  : undefined
+              }
             >
               {/* LEFT BRACKET */}
               <RoundColumn
@@ -1098,6 +1199,7 @@ export function CuadroStep({
                 walkMode={walkMode}
                 showScores={showScores}
               />
+            </div>
             </div>
           </div>
         </div>

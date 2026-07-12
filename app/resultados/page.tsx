@@ -413,35 +413,14 @@ export default async function ResultadosPage({
 
   const puntosKnockout = kPts.total + koExactPts
 
-  // Build KO match results list for display
-  const koMatchResults = [...koResultsByKey.entries()].map(([key, res]) => {
-    const pred = koPredsByKey.get(key)
-    const pts = pred && pred.gl === res.gl && pred.gv === res.gv ? 1 : pred ? 0 : null
-    const matchScore = kPts.matches.find((m) => `${m.ronda}:${m.slot}` === key)
-    const bracketUserWinnerId = userBracket.get(key) ?? null
-    const bracketRealWinnerId = realBracket.get(key) ?? null
-    return {
-      key, gl: res.gl, gv: res.gv,
-      localId: res.local?.id ?? 0,
-      localNombre: res.local?.nombre ?? '?', localBandera: res.local?.codigo_bandera ?? '',
-      visitanteId: res.visitante?.id ?? 0,
-      visitanteNombre: res.visitante?.nombre ?? '?', visitanteBandera: res.visitante?.codigo_bandera ?? '',
-      userGl: pred?.gl ?? null, userGv: pred?.gv ?? null, pts,
-      bracketUserWinnerId,
-      bracketRealWinnerId,
-      bracketBase: matchScore?.base ?? 0,
-      bracketExact: matchScore?.exact ?? 0,
-    }
-  }).sort((a, b) => a.key.localeCompare(b.key))
-
   return (
     <div className="min-h-full pb-24">
       <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cris-leo-ney.png" alt="Jugadores del Mundial"
-          className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{ display: 'block' }} />
+        <img src="/leo.png" alt="Jugadores del Mundial"
+          className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{ display: 'block', filter: 'brightness(1.22)' }} />
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%)' }} />
+          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 100%)' }} />
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
           <div className="flex items-center gap-2 mb-1.5">
             <Swords size={13} style={{ color: '#C9A84C' }} />
@@ -487,7 +466,6 @@ export default async function ResultadosPage({
           bracketWinners={bracketWinnersObj}
           equiposForBracket={equiposForBracket}
           realBracket={realBracketObj}
-          koMatchResults={koMatchResults}
           koBreakdown={{ base: kPts.base, exact: kPts.exact, champion: kPts.champion, exactScores: koExactPts }}
         />
       )}

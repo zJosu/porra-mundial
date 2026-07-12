@@ -27,7 +27,8 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   minimumScale: 1,
-  // No maximumScale → usuario puede hacer zoom a más; sin user-scalable=no → no bloqueamos
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default async function RootLayout({

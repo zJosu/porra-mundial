@@ -1357,7 +1357,6 @@ export function ResultadosClient({
   bracketWinners,
   equiposForBracket,
   realBracket,
-  koMatchResults,
   koBreakdown,
 }: {
   partidos: PartidoUI[]
@@ -1376,16 +1375,6 @@ export function ResultadosClient({
   bracketWinners?: Record<string, number>
   equiposForBracket?: { id: number; nombre: string; codigo_bandera: string }[]
   realBracket?: Record<string, number>
-  koMatchResults?: {
-    key: string; gl: number; gv: number
-    localId: number; localNombre: string; localBandera: string
-    visitanteId: number; visitanteNombre: string; visitanteBandera: string
-    userGl: number | null; userGv: number | null; pts: number | null
-    bracketUserWinnerId: number | null
-    bracketRealWinnerId: number | null
-    bracketBase: number
-    bracketExact: number
-  }[]
   koBreakdown?: { base: number; exact: number; champion: number; exactScores: number }
 }) {
   const [tab, setTab] = useState<'grupos' | 'clasif' | 'premios' | 'reglas' | 'cuadro'>('grupos')
@@ -1650,109 +1639,39 @@ export function ResultadosClient({
             />
           </div>
 
-          {/* Real bracket — simple round-by-round card */}
-          {realBracket && equiposForBracket && Object.keys(realBracket).length > 0 && (() => {
-            const equipoById = new Map(equiposForBracket.map((e) => [e.id, e]))
-            const ROUND_ORDER_DISPLAY = ['R32', 'R16', 'QF', 'SF', 'P3', 'F']
-            const ROUND_LABEL_DISPLAY: Record<string, string> = { R32: 'Dieciseisavos', R16: 'Octavos', QF: 'Cuartos', SF: 'Semis', P3: '3.er puesto', F: 'Campeón' }
-            return (
-              <div className="px-4 mb-4">
-                <div className="bg-white rounded-2xl shadow-sm px-4 py-3">
-                  <p className="text-[9px] font-black uppercase tracking-widest text-gray-400 mb-3">Cuadro real · avances</p>
-                  {ROUND_ORDER_DISPLAY.map((round) => {
-                    const entries = Object.entries(realBracket)
-                      .filter(([k]) => k.startsWith(round + ':'))
-                      .sort(([a], [b]) => Number(a.split(':')[1]) - Number(b.split(':')[1]))
-                    if (entries.length === 0) return null
-                    return (
-                      <div key={round} className="mb-2.5 last:mb-0">
-                        <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1">{ROUND_LABEL_DISPLAY[round] ?? round}</p>
-                        <div className="space-y-1">
-                          {entries.map(([key, teamId]) => {
-                            const team = equipoById.get(teamId)
-                            return team ? (
-                              <div key={key} className="flex items-center gap-2">
-                                <FlagImg codigo={team.codigo_bandera} nombre={team.nombre} size={14} />
-                                <span className="text-[12px] font-bold text-gray-800">{team.nombre}</span>
-                                <span className="ml-auto text-[9px] font-black text-emerald-600">AVANZA</span>
-                              </div>
-                            ) : null
-                          })}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
+          {/* Real bracket — full tree that cascades automatically as the admin enters results */}
+          {realBracket && equiposForBracket && Object.keys(realBracket).length > 0 && (
+            <>
+              <div className="px-4 mb-1">
+                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Cuadro real · avances</p>
               </div>
-            )
-          })()}
-
-          {/* KO match results: bracket winner + exact score per match */}
-          {koMatchResults && koMatchResults.length > 0 && (
-            <div className="px-4 pb-4 space-y-2">
-              <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Partidos KO</p>
-              {koMatchResults.map((m) => {
-                const bracketPts = m.bracketBase + m.bracketExact
-                const hasBracketData = m.bracketRealWinnerId != null
-                const userPickedLocal = m.bracketUserWinnerId === m.localId
-                const userPickedVisitante = m.bracketUserWinnerId === m.visitanteId
-                const userPickNombre = userPickedLocal ? m.localNombre : userPickedVisitante ? m.visitanteNombre : null
-                const userPickBandera = userPickedLocal ? m.localBandera : userPickedVisitante ? m.visitanteBandera : null
-                return (
-                  <div key={m.key} className="bg-white rounded-xl shadow-sm px-3 py-2.5 space-y-2">
-                    {/* Official result */}
-                    <div className="flex items-center gap-1.5">
-                      <FlagImg codigo={m.localBandera} nombre={m.localNombre} size={13} />
-                      <span className="text-[11px] font-bold text-gray-700 truncate">{m.localNombre}</span>
-                      <span className="text-[11px] font-black text-gray-900 tabular-nums mx-1">{m.gl}–{m.gv}</span>
-                      <span className="text-[11px] font-bold text-gray-700 truncate">{m.visitanteNombre}</span>
-                      <FlagImg codigo={m.visitanteBandera} nombre={m.visitanteNombre} size={13} />
-                    </div>
-                    {/* Bracket winner row */}
-                    {hasBracketData && (
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1.5 min-w-0">
-                          <span className="text-[9px] font-black uppercase tracking-widest text-gray-400 shrink-0">Pasa</span>
-                          {userPickNombre && userPickBandera ? (
-                            <div className="flex items-center gap-1">
-                              <FlagImg codigo={userPickBandera} nombre={userPickNombre} size={11} />
-                              <span className="text-[10px] font-bold text-gray-600 truncate">{userPickNombre}</span>
-                            </div>
-                          ) : (
-                            <span className="text-[10px] italic text-gray-300">sin pick</span>
-                          )}
-                        </div>
-                        <span
-                          className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
-                          style={{ background: bracketPts > 0 ? '#004d40' : '#e5e7eb', color: bracketPts > 0 ? 'white' : '#9ca3af' }}
-                        >
-                          {bracketPts > 0 ? `+${bracketPts}` : '0'}
-                        </span>
-                      </div>
-                    )}
-                    {/* Exact score row */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <span className="text-[9px] font-black uppercase tracking-widest text-gray-400 shrink-0">Marcador</span>
-                        {m.userGl != null ? (
-                          <span className="text-[10px] font-bold text-gray-600 tabular-nums">{m.userGl}–{m.userGv}</span>
-                        ) : (
-                          <span className="text-[10px] italic text-gray-300">sin pick</span>
-                        )}
-                      </div>
-                      {m.pts != null && (
-                        <span
-                          className="text-[9px] font-black px-1.5 py-0.5 rounded-full tabular-nums shrink-0"
-                          style={{ background: m.pts === 1 ? '#00A651' : '#e5e7eb', color: m.pts === 1 ? 'white' : '#9ca3af' }}
-                        >
-                          {m.pts === 1 ? '+1' : '0'}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+              <CuadroStep
+                equipos={equiposForBracket}
+                jugadores={[]}
+                clasif={[]}
+                terceros={[]}
+                winners={new Map(Object.entries(realBracket).map(([k, v]) => [k, v])) as BracketWinners}
+                onWinnersChange={() => {}}
+                scores={new Map() as BracketScores}
+                onScoresChange={() => {}}
+                showScores={false}
+                campeonId={null}
+                pichichiId={null}
+                mvpId={null}
+                guanteOroId={null}
+                jovenId={null}
+                bestXI={{}}
+                onCampeonChange={() => {}}
+                onPichichiChange={() => {}}
+                onMvpChange={() => {}}
+                onGuanteOroChange={() => {}}
+                onJovenChange={() => {}}
+                onBestXIChange={() => {}}
+                showBracket={true}
+                showAwards={false}
+                readOnly={true}
+              />
+            </>
           )}
 
           {/* User's predicted bracket */}

@@ -137,6 +137,7 @@ export default async function Page({
     { data: usuariosData },
     { data: extrasAllData },
     { data: koPredsTodosRaw },
+    { data: equiposData },
   ] = await Promise.all([
     supabase
       .from('partidos')
@@ -164,7 +165,14 @@ export default async function Page({
       ? supabase.from('predicciones_extras').select('usuario_id, campeon_equipo_id, pichichi_jugador_id')
       : Promise.resolve({ data: null }),
     supabase.from('predicciones_marcadores_ko').select('usuario_id, ronda, slot, goles_local, goles_visitante'),
+    supabase.from('equipos').select('id, nombre, codigo_bandera'),
   ])
+
+  // Lookup de cualquier equipo por id (para mostrar picks aunque no hayan avanzado)
+  const equipoById = new Map<number, { nombre: string; codigo_bandera: string }>()
+  for (const e of (equiposData ?? []) as { id: number; nombre: string; codigo_bandera: string }[]) {
+    equipoById.set(e.id, { nombre: e.nombre, codigo_bandera: e.codigo_bandera })
+  }
 
   // Fetch ALL users' KO predictions using admin client (bypasses RLS)
   // They are only revealed on the home page once the official result is entered
@@ -300,8 +308,8 @@ export default async function Page({
       {/* Header */}
       <div className="sticky top-0 z-40 relative overflow-hidden bg-black">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/cris-leo-ney.png" alt="Jugadores del Mundial" className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{display:'block'}} />
-        <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%)'}} />
+        <img src="/leo.png" alt="Jugadores del Mundial" className="w-full h-auto block md:max-h-[300px] md:object-contain md:object-center" style={{display:'block',filter:'brightness(1.22)'}} />
+        <div className="absolute inset-0 pointer-events-none" style={{background:'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 100%)'}} />
         <div className="absolute bottom-0 left-0 right-0 z-10 px-4 pb-5">
           <div className="flex items-center gap-2 mb-1.5">
             <Globe size={13} style={{color:'#C9A84C'}} />
@@ -381,6 +389,9 @@ export default async function Page({
             const myKOPuntos = isKO && myKOPred && played
               ? (myKOPred.gl === p.goles_local_oficial && myKOPred.gv === p.goles_visitante_oficial ? 1 : 0)
               : null
+            // Reveal everyone's KO predictions once the match starts OR once you've
+            // submitted your own prediction for this match.
+            const revealKO = isKO && (started || myKOPred != null)
             const local = p.equipo_local
             const visitante = p.equipo_visitante
             if (!local || !visitante) return null
@@ -477,7 +488,7 @@ export default async function Page({
                 {/* Predicciones de todos — knockout exact scores + bracket winner */}
                 {isKO && allKOEntries.length > 0 && (
                   <div className="mt-2 pt-2 border-t border-gray-100 space-y-1">
-                    {allKOEntries.filter(e => started || e.userId === user?.id).map(({ userId, nombre, gl, gv }) => {
+                    {allKOEntries.filter(e => revealKO || e.userId === user?.id).map(({ userId, nombre, gl, gv }) => {
                       const isMe = userId === user?.id
                       const exactPts = played ? (gl === p.goles_local_oficial && gv === p.goles_visitante_oficial ? 1 : 0) : null
                       const userBracketPick = bracketByUserByKey.get(userId)?.get(koKey) ?? null
@@ -485,8 +496,17 @@ export default async function Page({
                       const bracketPts = realWinner != null ? (userBracketPick === realWinner ? 1 : 0) : null
                       const bracketPickLocal = userBracketPick === p.equipo_local_id
                       const bracketPickVisit = userBracketPick === p.equipo_visitante_id
-                      const bracketNombre = bracketPickLocal ? local.nombre : bracketPickVisit ? visitante.nombre : null
-                      const bracketBandera = bracketPickLocal ? local.codigo_bandera : bracketPickVisit ? visitante.codigo_bandera : null
+                      const advanced = bracketPickLocal || bracketPickVisit
+                      // Equipo elegido: local/visitante si avanzó, si no lo buscamos igualmente
+                      const pickedTeam = bracketPickLocal
+                        ? local
+                        : bracketPickVisit
+                          ? visitante
+                          : userBracketPick != null
+                            ? equipoById.get(userBracketPick) ?? null
+                            : null
+                      const bracketNombre = pickedTeam?.nombre ?? null
+                      const bracketBandera = pickedTeam?.codigo_bandera ?? null
                       return (
                         <div key={userId} className="flex items-center gap-1.5">
                           <span className="text-[10px] font-bold truncate flex-1 min-w-0" style={{ color: isMe ? '#004d40' : '#6b7280' }}>
@@ -494,7 +514,7 @@ export default async function Page({
                           </span>
                           {/* bracket pick */}
                           {bracketNombre && bracketBandera && (
-                            <div className="flex items-center gap-1 shrink-0">
+                            <div className={`flex items-center gap-1 shrink-0 ${advanced ? '' : 'opacity-40'}`}>
                               <FlagImg codigo={bracketBandera} nombre={bracketNombre} size={10} />
                               {bracketPts != null && (
                                 <span className="text-[9px] font-black px-1 py-0.5 rounded-full tabular-nums"

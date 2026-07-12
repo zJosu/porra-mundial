@@ -280,10 +280,11 @@ const EXACT_BONUS: Record<string, number | undefined> = { R16: 1, QF: 2, SF: 4 }
  *
  * Scoring rules (max 70 pts):
  *  - Base +1: correct advancing team for each of the 30 matches in R32–SF.
- *  - Exact bonus (only if base point earned AND both participants match reality):
+ *  - Cruce/exact bonus (awarded when both participants match reality, regardless
+ *    of who wins the match — i.e. as soon as the pairing is decided):
  *      R16 +1 | QF +2 | SF +4
  *  - Champion: +8 if predicted winner of the Final is correct.
- *  - Final exact: +8 more if both finalists were also correctly predicted.
+ *  - Final exact: +8 more if both finalists were correctly predicted.
  */
 export function bracketPoints(
   userBracket: Map<string, number>,
@@ -308,18 +309,17 @@ export function bracketPoints(
       const userWinner = userBracket.get(bKey(ronda, slot)) ?? null
       const basePoint =
         realWinner != null && userWinner != null && userWinner === realWinner ? 1 : 0
+      // "Cruce correcto": awarded for predicting both participants of the match,
+      // independent of who wins it (available as soon as the pairing is decided).
       let exactBonus = 0
-      if (basePoint === 1) {
-        const bonus = EXACT_BONUS[ronda]
-        if (bonus != null) {
-          if (
-            sameParticipants(
-              getMatchParticipants(ronda, slot, userBracket),
-              getMatchParticipants(ronda, slot, realBracket),
-            )
-          ) exactBonus = bonus
-        }
-      }
+      const bonus = EXACT_BONUS[ronda]
+      if (
+        bonus != null &&
+        sameParticipants(
+          getMatchParticipants(ronda, slot, userBracket),
+          getMatchParticipants(ronda, slot, realBracket),
+        )
+      ) exactBonus = bonus
       base += basePoint
       exact += exactBonus
       matches.push({ ronda, slot, base: basePoint, exact: exactBonus })
@@ -334,15 +334,16 @@ export function bracketPoints(
   if (realChamp != null && userChamp != null && userChamp === realChamp) {
     fBase = 8
     champion = 8
-    if (
-      sameParticipants(
-        getMatchParticipants('F', 1, userBracket),
-        getMatchParticipants('F', 1, realBracket),
-      )
-    ) {
-      fExact = 8
-      exact += 8
-    }
+  }
+  // Final exacta: both finalists correct, independent of the champion pick.
+  if (
+    sameParticipants(
+      getMatchParticipants('F', 1, userBracket),
+      getMatchParticipants('F', 1, realBracket),
+    )
+  ) {
+    fExact = 8
+    exact += 8
   }
   matches.push({ ronda: 'F', slot: 1, base: fBase, exact: fExact })
 

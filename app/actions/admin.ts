@@ -4,6 +4,7 @@ import { createAdminClient, isAdminEmail } from '@/utils/supabase/admin'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
+import { KO_SCHEDULE, KO_ROUND_SLOTS, koFeeders, type Round } from '@/app/predicciones/bracket'
 
 // Normalize a player name into a slug password
 // "Lionel Messi" → "lionel_messi"
@@ -71,6 +72,96 @@ export async function listParticipants() {
   const admin = createAdminClient()
   const { data } = await admin.from('usuarios').select('id, email, nombre, puntos_totales').order('puntos_totales', { ascending: false })
   return data ?? []
+}
+
+type AdminClient = ReturnType<typeof createAdminClient>
+
+// Rounds derived from earlier results, in dependency order (each feeds the next).
+const KO_SYNC_ORDER: Round[] = ['R16', 'QF', 'SF', 'P3', 'F']
+
+// Keep the knockout `partidos` rows in sync with the official bracket winners:
+// as teams advance, place each next-round match (with its scheduled kickoff) so it
+// shows up automatically on the home page. Handles result corrections by refreshing
+// team pairings and cascading the invalidation to later rounds.
+async function syncKnockoutPartidos(admin: AdminClient): Promise<void> {
+  const { data: brRows } = await admin
+    .from('resultados_bracket')
+    .select('ronda, slot, ganador_equipo_id')
+  const winners = new Map<string, number>()
+  for (const r of (brRows ?? []) as { ronda: string; slot: number; ganador_equipo_id: number }[]) {
+    winners.set(`${r.ronda}:${r.slot}`, r.ganador_equipo_id)
+  }
+
+  type KoRow = {
+    id: number; fase: string; jornada: number
+    equipo_local_id: number; equipo_visitante_id: number
+    goles_local_oficial: number | null; goles_visitante_oficial: number | null
+  }
+  const { data: koRows } = await admin
+    .from('partidos')
+    .select('id, fase, jornada, equipo_local_id, equipo_visitante_id, goles_local_oficial, goles_visitante_oficial')
+    .is('grupo', null)
+  const existing = new Map<string, KoRow>()
+  for (const r of (koRows ?? []) as KoRow[]) existing.set(`${r.fase}:${r.jornada}`, r)
+
+  const invalidateResult = async (ronda: string, slot: number) => {
+    if (winners.has(`${ronda}:${slot}`)) {
+      await admin.from('resultados_bracket').delete().eq('ronda', ronda).eq('slot', slot)
+      winners.delete(`${ronda}:${slot}`)
+    }
+  }
+
+  // Process rounds in dependency order so cascades (from an edited earlier result)
+  // propagate correctly through the mutable `winners` map.
+  for (const ronda of KO_SYNC_ORDER) {
+    for (let slot = 1; slot <= KO_ROUND_SLOTS[ronda]; slot++) {
+      const key = `${ronda}:${slot}`
+      const [teamA, teamB] = koFeeders(ronda, slot, winners)
+      const sched = KO_SCHEDULE[key]
+      const cur = existing.get(key)
+      const ready = teamA != null && teamB != null && sched != null
+
+      if (!ready) {
+        // Not decided yet (or no date): remove a previously-placed match if it has no result.
+        if (cur) {
+          const hasResult = cur.goles_local_oficial != null && cur.goles_visitante_oficial != null
+          if (!hasResult) {
+            await admin.from('partidos').delete().eq('id', cur.id)
+            await invalidateResult(ronda, slot)
+            existing.delete(key)
+          }
+        }
+        continue
+      }
+
+      if (!cur) {
+        await admin.from('partidos').insert({
+          equipo_local_id: teamA,
+          equipo_visitante_id: teamB,
+          fecha: sched!.fecha,
+          fase: ronda,
+          jornada: slot,
+          grupo: null,
+          sede: null,
+          estado: 'pendiente',
+          goles_local_oficial: null,
+          goles_visitante_oficial: null,
+        })
+      } else if (cur.equipo_local_id !== teamA || cur.equipo_visitante_id !== teamB) {
+        // A feeder result changed: refresh the pairing, wipe its (now stale) official
+        // result and bracket winner so later rounds cascade on subsequent iterations.
+        await admin.from('partidos').update({
+          equipo_local_id: teamA,
+          equipo_visitante_id: teamB,
+          fecha: sched!.fecha,
+          goles_local_oficial: null,
+          goles_visitante_oficial: null,
+          estado: 'pendiente',
+        }).eq('id', cur.id)
+        await invalidateResult(ronda, slot)
+      }
+    }
+  }
 }
 
 export async function saveOfficialMatchResult(formData: FormData): Promise<void> {
@@ -161,6 +252,9 @@ export async function saveOfficialMatchResult(formData: FormData): Promise<void>
       await admin.from('resultados_bracket')
         .delete().eq('ronda', partido.fase).eq('slot', partido.jornada)
     }
+
+    // Advancing a team may unlock the next round's match(es) — place them now.
+    await syncKnockoutPartidos(admin)
   }
 
   revalidatePath('/')
